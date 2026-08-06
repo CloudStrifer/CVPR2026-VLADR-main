@@ -1,0 +1,10 @@
+/data
+/data
+/reid/utils/data/__pycache__
+*.pyc
+/__pycache__
+/_BLIP_TEXT_DESC
+/__pycache__
+/_BLIP_TEXT_DESC
+/_STAGE1_PROMPTS_WEIGHT
+/config/__pycache__

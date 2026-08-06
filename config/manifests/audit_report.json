@@ -1,0 +1,418 @@
+{
+  "data_root": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\data",
+  "split_seed": 42,
+  "ipanda_train_id_count": 35,
+  "boat_test_id_count": 27,
+  "domains": {
+    "market1501": {
+      "root": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\data\\market1501",
+      "manifest": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\manifests\\market1501.csv",
+      "notes": {
+        "skipped_junk_images": 3819
+      },
+      "audit": {
+        "status": "ok",
+        "protocol": "market1501",
+        "splits": {
+          "train": {
+            "images": 12936,
+            "identities": 751,
+            "cameras_or_sessions": 6
+          },
+          "query": {
+            "images": 3368,
+            "identities": 750,
+            "cameras_or_sessions": 6
+          },
+          "gallery": {
+            "images": 15913,
+            "identities": 751,
+            "cameras_or_sessions": 6
+          }
+        },
+        "train_eval_identity_overlap": 0,
+        "train_eval_source_overlap": 0,
+        "invalid_queries": 0,
+        "warnings": [],
+        "errors": []
+      }
+    },
+    "ipanda50": {
+      "root": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\data\\iPanda50",
+      "manifest": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\manifests\\ipanda50.csv",
+      "notes": {
+        "identity_split_seed": 42,
+        "train_identity_ids": [
+          0,
+          1,
+          2,
+          5,
+          6,
+          7,
+          8,
+          10,
+          13,
+          14,
+          15,
+          17,
+          18,
+          20,
+          22,
+          24,
+          27,
+          28,
+          30,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          40,
+          41,
+          42,
+          43,
+          44,
+          46,
+          47,
+          48,
+          49
+        ],
+        "test_identity_ids": [
+          3,
+          4,
+          9,
+          11,
+          12,
+          16,
+          19,
+          21,
+          23,
+          25,
+          26,
+          29,
+          31,
+          39,
+          45
+        ],
+        "original_five_splits": {
+          "0": {
+            "train_images": 4106,
+            "test_images": 2768,
+            "overlapping_identities": 50
+          },
+          "1": {
+            "train_images": 4106,
+            "test_images": 2768,
+            "overlapping_identities": 50
+          },
+          "2": {
+            "train_images": 4106,
+            "test_images": 2768,
+            "overlapping_identities": 50
+          },
+          "3": {
+            "train_images": 4106,
+            "test_images": 2768,
+            "overlapping_identities": 50
+          },
+          "4": {
+            "train_images": 4106,
+            "test_images": 2768,
+            "overlapping_identities": 50
+          }
+        }
+      },
+      "audit": {
+        "status": "ok",
+        "protocol": "session_reid",
+        "splits": {
+          "train": {
+            "images": 5179,
+            "identities": 35,
+            "cameras_or_sessions": 1275
+          },
+          "query": {
+            "images": 408,
+            "identities": 15,
+            "cameras_or_sessions": 408
+          },
+          "gallery": {
+            "images": 1287,
+            "identities": 15,
+            "cameras_or_sessions": 323
+          }
+        },
+        "train_eval_identity_overlap": 0,
+        "train_eval_source_overlap": 0,
+        "invalid_queries": 0,
+        "warnings": [],
+        "errors": []
+      }
+    },
+    "veri": {
+      "root": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\data\\VeRi",
+      "manifest": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\manifests\\veri.csv",
+      "notes": {
+        "name_train_listed_images": 37746,
+        "image_train_directory_images": 37778,
+        "unlisted_train_images_included": [
+          "0324_c019_00024330_0.jpg",
+          "0324_c019_00024335_0.jpg",
+          "0324_c019_00024345_0.jpg",
+          "0324_c019_00024355_0.jpg",
+          "0324_c019_00024365_0.jpg",
+          "0389_c014_00061220_0.jpg",
+          "0389_c014_00061225_0.jpg",
+          "0389_c014_00061230_0.jpg",
+          "0389_c014_00061245_0.jpg",
+          "0389_c014_00061260_0.jpg",
+          "0389_c014_00061265_0.jpg",
+          "0389_c015_00061270_0.jpg",
+          "0389_c015_00061275_0.jpg",
+          "0389_c015_00061280_0.jpg",
+          "0389_c015_00061285_0.jpg",
+          "0389_c015_00061290_0.jpg",
+          "0389_c015_00061295_0.jpg",
+          "0389_c016_00061005_0.jpg",
+          "0389_c016_00061010_0.jpg",
+          "0389_c016_00061015_0.jpg",
+          "0389_c016_00061020_0.jpg",
+          "0389_c016_00061025_0.jpg",
+          "0389_c016_00061030_0.jpg",
+          "0389_c019_00061995_0.jpg",
+          "0389_c019_00062000_0.jpg",
+          "0389_c019_00062005_0.jpg",
+          "0389_c019_00062010_0.jpg",
+          "0389_c019_00062015_0.jpg",
+          "0389_c019_00062020_0.jpg",
+          "0395_c012_00049505_0.jpg",
+          "0395_c012_00049520_0.jpg",
+          "0395_c012_00049530_0.jpg"
+        ]
+      },
+      "audit": {
+        "status": "ok",
+        "protocol": "veri776",
+        "splits": {
+          "train": {
+            "images": 37778,
+            "identities": 576,
+            "cameras_or_sessions": 20
+          },
+          "query": {
+            "images": 1678,
+            "identities": 200,
+            "cameras_or_sessions": 19
+          },
+          "gallery": {
+            "images": 11579,
+            "identities": 200,
+            "cameras_or_sessions": 19
+          }
+        },
+        "train_eval_identity_overlap": 0,
+        "train_eval_source_overlap": 0,
+        "invalid_queries": 0,
+        "warnings": [],
+        "errors": []
+      }
+    },
+    "atrw": {
+      "root": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\data\\atrw",
+      "manifest": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\manifests\\atrw.csv",
+      "notes": {
+        "listed_train_images": 1887,
+        "unlisted_train_images_excluded": 1505,
+        "atrw_local_test_version_images": 1764
+      },
+      "audit": {
+        "status": "ok",
+        "protocol": "single_query",
+        "splits": {
+          "train": {
+            "images": 1887,
+            "identities": 107,
+            "cameras_or_sessions": 1
+          },
+          "query": {
+            "images": 75,
+            "identities": 75,
+            "cameras_or_sessions": 1
+          },
+          "gallery": {
+            "images": 1689,
+            "identities": 75,
+            "cameras_or_sessions": 1
+          }
+        },
+        "train_eval_identity_overlap": 0,
+        "train_eval_source_overlap": 0,
+        "invalid_queries": 0,
+        "warnings": [],
+        "errors": []
+      }
+    },
+    "boat": {
+      "root": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\data\\boat",
+      "manifest": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\manifests\\boat.csv",
+      "notes": {
+        "raw_images": 5523,
+        "identity_split_seed": 42,
+        "train_identity_ids": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          11,
+          12,
+          13,
+          14,
+          15,
+          17,
+          18,
+          19,
+          20,
+          21,
+          23,
+          24,
+          25,
+          26,
+          28,
+          29,
+          30,
+          32,
+          33,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          55,
+          56,
+          57,
+          59,
+          63,
+          64,
+          65,
+          66,
+          71,
+          72,
+          73,
+          76,
+          77,
+          79,
+          80,
+          81,
+          83,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "test_identity_ids": [
+          1,
+          8,
+          9,
+          10,
+          16,
+          22,
+          27,
+          31,
+          34,
+          43,
+          44,
+          54,
+          58,
+          60,
+          61,
+          62,
+          67,
+          68,
+          69,
+          70,
+          74,
+          75,
+          78,
+          82,
+          84,
+          85,
+          101
+        ],
+        "transform_code_counts": {
+          "00": 789,
+          "000": 789,
+          "001": 789,
+          "002": 789,
+          "003": 789,
+          "004": 789,
+          "005": 789
+        },
+        "unusual_view_ids": [
+          12
+        ],
+        "missing_progressive_index_files": [
+          "72_c1_00_.jpg"
+        ]
+      },
+      "audit": {
+        "status": "ok",
+        "protocol": "cross_view",
+        "splits": {
+          "train": {
+            "images": 4179,
+            "identities": 80,
+            "cameras_or_sessions": 6
+          },
+          "query": {
+            "images": 27,
+            "identities": 27,
+            "cameras_or_sessions": 3
+          },
+          "gallery": {
+            "images": 165,
+            "identities": 27,
+            "cameras_or_sessions": 6
+          }
+        },
+        "train_eval_identity_overlap": 0,
+        "train_eval_source_overlap": 0,
+        "invalid_queries": 0,
+        "warnings": [],
+        "errors": []
+      }
+    }
+  }
+}

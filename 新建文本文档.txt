@@ -1,0 +1,69 @@
+[Stage2] Training domain 3/5: veri
+================================================================================
+Expanded classifier and prompt bank to 1362 identities.
+Traceback (most recent call last):
+  File "/workspace/GuangjinOuyang/code/train_stage2.py", line 606, in <module>
+    main_worker(args)
+  File "/workspace/GuangjinOuyang/code/train_stage2.py", line 465, in main_worker
+    class_centers = initial_classifier(model, init_loader)
+  File "/workspace/GuangjinOuyang/code/reid/utils/feature_tools.py", line 23, in initial_classifier
+    descriptors = model(images)[:, :main_feature_dim]
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/parallel/data_parallel.py", line 194, in forward
+    outputs = self.parallel_apply(replicas, inputs, module_kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/parallel/data_parallel.py", line 213, in parallel_apply
+    return parallel_apply(
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/parallel/parallel_apply.py", line 129, in parallel_apply
+    output.reraise()
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/_utils.py", line 769, in reraise
+    raise exception
+torch.OutOfMemoryError: Caught OutOfMemoryError in replica 1 on device 1.
+Original Traceback (most recent call last):
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/parallel/parallel_apply.py", line 99, in _worker
+    output = module(*input, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/GuangjinOuyang/code/reid/models/wrapper.py", line 41, in forward
+    return self.base(
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/GuangjinOuyang/code/reid/models/CLIP_ReID/model/make_model_clipreid.py", line 191, in forward
+    _, image_features, image_features_proj = self.image_encoder(x, None)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/GuangjinOuyang/code/reid/models/CLIP_ReID/model/clip/model.py", line 230, in forward
+    x11 = self.transformer.resblocks[:11](x)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/GuangjinOuyang/code/reid/models/CLIP_ReID/model/clip/model.py", line 185, in forward
+    x = x + self.mlp(self.ln_2(x))
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/kemove/GuangjinOuyang/ouyang_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/GuangjinOuyang/code/reid/models/CLIP_ReID/model/clip/model.py", line 162, in forward
+    return x * torch.sigmoid(1.702 * x)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 74.00 MiB. GPU 1 has a total capacity of 23.57 GiB of which 30.12 MiB is free. Including non-PyTorch memory, this process has 1.56 GiB memory in use. Process 2129758 has 21.95 GiB memory in use. Of the allocated memory 1.01 GiB is allocated by PyTorch, and 146.52 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
