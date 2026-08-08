@@ -224,6 +224,21 @@ def _rank(
     gallery_cids,
     args,
 ):
+    pair_count = int(query_features.size(0)) * int(gallery_features.size(0))
+    full_matrix_limit = int(
+        getattr(args, 'eval_full_matrix_max_elements', 100000000)
+    )
+    if full_matrix_limit >= 0 and pair_count > full_matrix_limit:
+        return _rank_chunked(
+            query_features,
+            gallery_features,
+            query_pids,
+            gallery_pids,
+            query_cids,
+            gallery_cids,
+            args,
+        )
+
     distance_matrix = compute_distance_matrix(
         query_features,
         gallery_features,
@@ -241,6 +256,122 @@ def _rank(
         use_cython=use_cython,
         save_dir=save_dir,
     )
+    return {
+        'mAP': float(mean_ap * 100),
+        'Rank1': _cmc_at_rank(cmc, 1),
+        'Rank5': _cmc_at_rank(cmc, 5),
+        'Rank10': _cmc_at_rank(cmc, 10),
+    }
+
+
+def _valid_market1501_query_indices(
+    query_pids,
+    gallery_pids,
+    query_cids,
+    gallery_cids,
+):
+    gallery_cameras = {}
+    for pid, camera in zip(gallery_pids.tolist(), gallery_cids.tolist()):
+        gallery_cameras.setdefault(int(pid), set()).add(int(camera))
+    return np.asarray(
+        [
+            index
+            for index, (pid, camera) in enumerate(
+                zip(query_pids.tolist(), query_cids.tolist())
+            )
+            if any(
+                gallery_camera != int(camera)
+                for gallery_camera in gallery_cameras.get(int(pid), ())
+            )
+        ],
+        dtype=np.int64,
+    )
+
+
+def _rank_chunked(
+    query_features,
+    gallery_features,
+    query_pids,
+    gallery_pids,
+    query_cids,
+    gallery_cids,
+    args,
+):
+    """Compute exact Market1501 metrics without a full QxG matrix."""
+
+    chunk_size = int(getattr(args, 'eval_query_chunk_size', 256))
+    if chunk_size <= 0:
+        raise ValueError('eval query chunk size must be positive')
+
+    query_pids_np = query_pids.detach().cpu().numpy()
+    gallery_pids_np = gallery_pids.detach().cpu().numpy()
+    query_cids_np = query_cids.detach().cpu().numpy()
+    gallery_cids_np = gallery_cids.detach().cpu().numpy()
+    valid_indices = _valid_market1501_query_indices(
+        query_pids_np,
+        gallery_pids_np,
+        query_cids_np,
+        gallery_cids_np,
+    )
+    if not len(valid_indices):
+        raise AssertionError(
+            'Error: all query identities do not appear in gallery'
+        )
+
+    pair_count = int(query_features.size(0)) * int(gallery_features.size(0))
+    print(
+        '[eval] chunked exact ranking: {:,} query-gallery pairs, '
+        '{} queries/chunk.'.format(pair_count, chunk_size)
+    )
+    if getattr(args, 'save_evaluation', False):
+        print(
+            '[eval] per-match JSON export is disabled for chunked ranking '
+            'to keep memory bounded.'
+        )
+
+    use_cython, _ = _evaluation_options(args)
+    cmc_sum = None
+    map_sum = 0.0
+    valid_count = 0
+    starts = range(0, len(valid_indices), chunk_size)
+    with torch.no_grad():
+        for start in tqdm(starts, desc='Ranking chunks'):
+            chunk_indices_np = valid_indices[start:start + chunk_size]
+            chunk_indices = torch.as_tensor(
+                chunk_indices_np,
+                dtype=torch.long,
+                device=query_features.device,
+            )
+            query_chunk = query_features.index_select(0, chunk_indices)
+            distance_matrix = compute_distance_matrix(
+                query_chunk,
+                gallery_features,
+                'euclidean',
+            ).detach().cpu().numpy()
+            cmc, mean_ap = fast_evaluate_rank(
+                distance_matrix,
+                query_pids_np[chunk_indices_np],
+                gallery_pids_np,
+                query_cids_np[chunk_indices_np],
+                gallery_cids_np,
+                max_rank=50,
+                use_metric_cuhk03=False,
+                use_cython=use_cython,
+                save_dir=None,
+                verbose=False,
+            )
+            current_count = len(chunk_indices_np)
+            weighted_cmc = np.asarray(cmc, dtype=np.float64) * current_count
+            if cmc_sum is None:
+                cmc_sum = weighted_cmc
+            else:
+                cmc_sum += weighted_cmc
+            map_sum += float(mean_ap) * current_count
+            valid_count += current_count
+            del distance_matrix
+
+    cmc = cmc_sum / valid_count
+    mean_ap = map_sum / valid_count
     return {
         'mAP': float(mean_ap * 100),
         'Rank1': _cmc_at_rank(cmc, 1),

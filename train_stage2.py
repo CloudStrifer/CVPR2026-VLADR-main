@@ -1618,6 +1618,24 @@ def build_parser():
     parser.add_argument('--epochs', type=int, default=60)
     parser.add_argument('--eval-epoch', type=int, default=100)
     parser.add_argument('--eval-stage', type=str, default='0,1,2,3,4')
+    parser.add_argument(
+        '--eval-query-chunk-size',
+        type=int,
+        default=256,
+        help=(
+            'number of queries per exact ranking chunk when the full '
+            'distance matrix exceeds --eval-full-matrix-max-elements'
+        ),
+    )
+    parser.add_argument(
+        '--eval-full-matrix-max-elements',
+        type=int,
+        default=100000000,
+        help=(
+            'maximum QxG element count for full-matrix ranking; larger '
+            'evaluations use exact query chunking, and -1 disables chunking'
+        ),
+    )
     parser.add_argument('--seed', type=int, default=1234)
     parser.add_argument('--data-dir', type=str, required=True)
     parser.add_argument('--logs-dir', type=str, default='./RESULTS')
@@ -1719,6 +1737,12 @@ if __name__ == '__main__':
         raise ValueError('--adapter-bottleneck-dim must be in [1, 768]')
     if args.adapter_topk <= 0:
         raise ValueError('--adapter-topk must be positive')
+    if args.eval_query_chunk_size <= 0:
+        raise ValueError('--eval-query-chunk-size must be positive')
+    if args.eval_full_matrix_max_elements < -1:
+        raise ValueError(
+            '--eval-full-matrix-max-elements must be -1 or non-negative'
+        )
     if (
         not np.isfinite(args.adapter_routing_temperature)
         or args.adapter_routing_temperature <= 0.0

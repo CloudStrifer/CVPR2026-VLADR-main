@@ -740,6 +740,38 @@ gallery/0001_c2.jpg,p0001,1,gallery
 
 不要为未知域增加 `prompt_checkpoint`，也不要把它加入 `train_domains`。
 
+仓库已经提供 MSMT17 V2 未知域构建器。它只读取 `query` 与
+`bounding_box_test`，不会读取 `bounding_box_train`：
+
+~~~bash
+python tools/build_msmt17_unseen_manifest.py
+~~~
+
+该命令会生成：
+
+- `config/manifests/msmt17_unseen.csv`；
+- `config/manifests/msmt17_unseen_audit.json`；
+- `config/cross_category_five_domains_with_msmt17_unseen.json`。
+
+在启动模型评测前可执行完整清单校验和图像解码冒烟测试：
+
+~~~bash
+python tools/validate_cross_category_config.py \
+  --domain-config config/cross_category_five_domains_with_msmt17_unseen.json \
+  --data-dir data
+
+python tools/smoke_test_cross_category_loaders.py \
+  --domain-config config/cross_category_five_domains_with_msmt17_unseen.json \
+  --data-dir data \
+  --workers 0
+~~~
+
+Stage 1 和 Stage 2 训练仍使用不含未知域的
+`config/cross_category_five_domains.json`；仅最终 `--testing` 使用带
+MSMT17 的评测配置。MSMT17 全量评测默认在距离矩阵超过
+`100000000` 个元素时自动启用精确 Query 分块排名，可通过
+`--eval-query-chunk-size` 调整块大小。
+
 建议维护两类配置：
 
 1. `cross_category_all5_with_external_unseen.json`：五域全部训练，增加外部未知域；

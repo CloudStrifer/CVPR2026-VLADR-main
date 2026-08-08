@@ -1,0 +1,226 @@
+{
+  "input_size": [
+    224,
+    224
+  ],
+  "resize_mode": "pad",
+  "data_protocol": {
+    "source": "PAD object_reid loaders",
+    "split_seed": 42,
+    "ipanda_protocol": "identity",
+    "ipanda_train_ids": 35,
+    "boat_test_ids": 27
+  },
+  "train_domains": [
+    {
+      "name": "market1501",
+      "category": "person",
+      "object_noun": "person",
+      "category_generic_prompts": [
+        "A photo showing the overall silhouette of a person.",
+        "A photo showing the basic part structure of a person.",
+        "A photo of a person from a common viewpoint."
+      ],
+      "attributes": [
+        {
+          "name": "overall_color",
+          "prompt": "The overall color distribution of the object."
+        },
+        {
+          "name": "surface_pattern",
+          "prompt": "The visible surface texture and pattern of the object."
+        },
+        {
+          "name": "body_shape",
+          "prompt": "The overall shape, silhouette, and proportions of the object."
+        },
+        {
+          "name": "head_appearance",
+          "prompt": "Hair, face, and head accessories that distinguish this person."
+        },
+        {
+          "name": "body_parts",
+          "prompt": "Upper clothing, lower clothing, carried items, and footwear that distinguish this person."
+        }
+      ],
+      "manifest": "manifests/market1501.csv",
+      "root": "../data/market1501",
+      "eval_protocol": "market1501",
+      "prompt_checkpoint": "../_CROSS_CATEGORY_PROMPTS/market1501_clipreid_prompt.pth",
+      "max_train_ids": 0,
+      "hflip_prob": 0.5,
+      "random_erasing_prob": 0.5,
+      "crop_padding": 10
+    },
+    {
+      "name": "ipanda50",
+      "category": "panda",
+      "object_noun": "giant panda",
+      "category_generic_prompts": [
+        "A photo showing the overall silhouette of a giant panda.",
+        "A photo showing the basic body structure of a giant panda.",
+        "A photo of a giant panda from a common viewpoint."
+      ],
+      "attributes": [
+        {
+          "name": "overall_color",
+          "prompt": "The overall color distribution of the object."
+        },
+        {
+          "name": "surface_pattern",
+          "prompt": "The visible surface texture and pattern of the object."
+        },
+        {
+          "name": "body_shape",
+          "prompt": "The overall shape, silhouette, and proportions of the object."
+        },
+        {
+          "name": "head_appearance",
+          "prompt": "Black eye patches, ears, and facial markings that distinguish this giant panda."
+        },
+        {
+          "name": "body_parts",
+          "prompt": "Torso fur regions, forelegs, and hind legs that distinguish this giant panda."
+        }
+      ],
+      "manifest": "manifests/ipanda50.csv",
+      "root": "../data/iPanda50",
+      "eval_protocol": "session_reid",
+      "prompt_checkpoint": "../_CROSS_CATEGORY_PROMPTS/ipanda50_clipreid_prompt.pth",
+      "max_train_ids": 0,
+      "hflip_prob": 0.5,
+      "random_erasing_prob": 0.5,
+      "crop_padding": 10
+    },
+    {
+      "name": "veri",
+      "category": "vehicle",
+      "object_noun": "vehicle",
+      "category_generic_prompts": [
+        "A photo showing the overall silhouette of a vehicle.",
+        "A photo showing the basic part structure of a vehicle.",
+        "A photo of a vehicle from a common viewpoint."
+      ],
+      "attributes": [
+        {
+          "name": "overall_color",
+          "prompt": "The overall color distribution of the object."
+        },
+        {
+          "name": "surface_pattern",
+          "prompt": "The visible surface texture and pattern of the object."
+        },
+        {
+          "name": "body_shape",
+          "prompt": "The overall shape, silhouette, and proportions of the object."
+        },
+        {
+          "name": "front_appearance",
+          "prompt": "Headlights, grille, and license plate at the front of this vehicle."
+        },
+        {
+          "name": "body_parts",
+          "prompt": "Side windows, doors, mirrors, and wheels that distinguish this vehicle."
+        }
+      ],
+      "manifest": "manifests/veri.csv",
+      "root": "../data/VeRi",
+      "eval_protocol": "veri776",
+      "prompt_checkpoint": "../_CROSS_CATEGORY_PROMPTS/veri_clipreid_prompt.pth",
+      "max_train_ids": 0,
+      "hflip_prob": 0.5,
+      "random_erasing_prob": 0.5,
+      "crop_padding": 10
+    },
+    {
+      "name": "atrw",
+      "category": "tiger",
+      "object_noun": "tiger",
+      "category_generic_prompts": [
+        "A photo showing the overall silhouette of a tiger.",
+        "A photo showing the basic body structure of a tiger.",
+        "A photo of a tiger from a common viewpoint."
+      ],
+      "attributes": [
+        {
+          "name": "overall_color",
+          "prompt": "The overall color distribution of the object."
+        },
+        {
+          "name": "surface_pattern",
+          "prompt": "The visible surface texture and pattern of the object."
+        },
+        {
+          "name": "body_shape",
+          "prompt": "The overall shape, silhouette, and proportions of the object."
+        },
+        {
+          "name": "head_appearance",
+          "prompt": "Facial stripes, ears, eyes, and muzzle that distinguish this tiger."
+        },
+        {
+          "name": "body_parts",
+          "prompt": "Torso stripe regions, forelegs, and hind legs that distinguish this tiger."
+        }
+      ],
+      "manifest": "manifests/atrw.csv",
+      "root": "../data/atrw",
+      "eval_protocol": "single_query",
+      "prompt_checkpoint": "../_CROSS_CATEGORY_PROMPTS/atrw_clipreid_prompt.pth",
+      "max_train_ids": 0,
+      "hflip_prob": 0.5,
+      "random_erasing_prob": 0.5,
+      "crop_padding": 10
+    },
+    {
+      "name": "boat",
+      "category": "boat",
+      "object_noun": "boat",
+      "category_generic_prompts": [
+        "A photo showing the overall silhouette of a boat.",
+        "A photo showing the basic part structure of a boat.",
+        "A photo of a boat from a common viewpoint."
+      ],
+      "attributes": [
+        {
+          "name": "overall_color",
+          "prompt": "The overall color distribution of the object."
+        },
+        {
+          "name": "surface_pattern",
+          "prompt": "The visible surface texture and pattern of the object."
+        },
+        {
+          "name": "body_shape",
+          "prompt": "The overall shape, silhouette, and proportions of the object."
+        },
+        {
+          "name": "front_appearance",
+          "prompt": "Bow, cabin, and windshield structures that distinguish this boat."
+        },
+        {
+          "name": "body_parts",
+          "prompt": "Hull side, deck, railings, and equipment that distinguish this boat."
+        }
+      ],
+      "manifest": "manifests/boat.csv",
+      "root": "../data/boat",
+      "eval_protocol": "cross_view",
+      "prompt_checkpoint": "../_CROSS_CATEGORY_PROMPTS/boat_clipreid_prompt.pth",
+      "max_train_ids": 0,
+      "hflip_prob": 0.5,
+      "random_erasing_prob": 0.5,
+      "crop_padding": 10
+    }
+  ],
+  "test_domains": [
+    {
+      "name": "msmt17_unseen",
+      "category": "person",
+      "object_noun": "person",
+      "manifest": "manifests/msmt17_unseen.csv",
+      "root": "../data/MSMT17",
+      "eval_protocol": "market1501"
+    }
+  ]
+}

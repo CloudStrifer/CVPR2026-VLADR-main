@@ -88,15 +88,17 @@ def eval_market1501(
     g_camids,
     max_rank,
     save_dir=None,
+    show_progress=True,
 ):
     num_q, num_g = distmat.shape
 
     if num_g < max_rank:
         max_rank = num_g
-        print(
-            'Note: number of gallery samples is quite small, got {}'.
-            format(num_g)
-        )
+        if show_progress:
+            print(
+                'Note: number of gallery samples is quite small, got {}'.
+                format(num_g)
+            )
 
     indices = np.argsort(distmat, axis=1)
     matches = (g_pids[indices] == q_pids[:, np.newaxis]).astype(np.int32)
@@ -105,7 +107,11 @@ def eval_market1501(
     all_AP = []
     num_valid_q = 0. 
 
-    for q_idx in tqdm(range(num_q), desc='Testing'):
+    for q_idx in tqdm(
+        range(num_q),
+        desc='Testing',
+        disable=not show_progress,
+    ):
         q_pid = q_pids[q_idx]
         q_camid = q_camids[q_idx]
 
@@ -162,7 +168,15 @@ def eval_market1501(
 
 
 def evaluate_py(
-    distmat, q_pids, g_pids, q_camids, g_camids, max_rank, use_metric_cuhk03,save_dir
+    distmat,
+    q_pids,
+    g_pids,
+    q_camids,
+    g_camids,
+    max_rank,
+    use_metric_cuhk03,
+    save_dir,
+    show_progress=True,
 ):
     if use_metric_cuhk03:
         return eval_cuhk03(
@@ -170,7 +184,14 @@ def evaluate_py(
         )
     else:
         return eval_market1501(
-            distmat, q_pids, g_pids, q_camids, g_camids, max_rank,save_dir
+            distmat,
+            q_pids,
+            g_pids,
+            q_camids,
+            g_camids,
+            max_rank,
+            save_dir,
+            show_progress=show_progress,
         )
 
 
@@ -183,7 +204,8 @@ def fast_evaluate_rank(
     max_rank=50,
     use_metric_cuhk03=False,
     use_cython=True,
-    save_dir=None
+    save_dir=None,
+    verbose=True,
 ):
     """Evaluates CMC rank.
 
@@ -201,18 +223,21 @@ def fast_evaluate_rank(
         use_metric_cuhk03 (bool, optional): use single-gallery-shot setting for cuhk03.
             Default is False. This should be enabled when using cuhk03 classic split.
         use_cython (bool, optional): use cython code for evaluation. Default is True.
-            This is highly recommended as the cython code can speed up the cmc computation
-            by more than 10x. This requires Cython to be installed.
+            This is highly recommended as the Cython code can speed up CMC
+            computation by more than 10x. This requires Cython to be installed.
+        verbose (bool, optional): print evaluator/progress messages.
     """
     if use_cython and IS_CYTHON_AVAI:
-        print("fast testing!!!")
+        if verbose:
+            print("fast testing!!!")
         return evaluate_cy(
             distmat, q_pids, g_pids, q_camids, g_camids, max_rank,
             use_metric_cuhk03
         )
     else:
-        print("python testing!!!")
+        if verbose:
+            print("python testing!!!")
         return evaluate_py(
             distmat, q_pids, g_pids, q_camids, g_camids, max_rank,
-            use_metric_cuhk03, save_dir
+            use_metric_cuhk03, save_dir, show_progress=verbose
         )

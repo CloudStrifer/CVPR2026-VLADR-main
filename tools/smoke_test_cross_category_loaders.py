@@ -132,6 +132,38 @@ def main():
             )
         )
 
+    for domain in config['test_domains']:
+        dataset = manifest_module.ManifestReID(str(args.data_dir), domain)
+        if dataset.train:
+            raise RuntimeError(
+                '{} is test-only but exposes {} training images'.format(
+                    domain['name'],
+                    len(dataset.train),
+                )
+            )
+        evaluation = sorted(
+            list(set(dataset.query) | set(dataset.gallery))
+        )
+        evaluation_loader = DataLoader(
+            Preprocessor(
+                evaluation,
+                root=dataset.images_dir,
+                transform=transform,
+            ),
+            batch_size=min(args.batch_size, len(evaluation)),
+            shuffle=False,
+            num_workers=args.workers,
+        )
+        images, _, _, _, _ = next(iter(evaluation_loader))
+        print(
+            '{} [unseen]: query={}, gallery={}, eval_batch={}'.format(
+                domain['name'],
+                len(dataset.query),
+                len(dataset.gallery),
+                tuple(images.shape),
+            )
+        )
+
     print('All cross-category loader smoke tests passed.')
 
 

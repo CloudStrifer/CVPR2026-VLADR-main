@@ -1,0 +1,31 @@
+{
+  "domain": "msmt17_unseen",
+  "root": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\data\\MSMT17",
+  "protocol": "market1501",
+  "training_images_used": 0,
+  "query_images": 11659,
+  "gallery_images": 82161,
+  "query_identities": 3060,
+  "gallery_identities": 3060,
+  "eval_identities": 3060,
+  "cameras": 15,
+  "camera_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "query_gallery_path_overlap": 0,
+  "queries_without_cross_camera_positive": 0
+}
