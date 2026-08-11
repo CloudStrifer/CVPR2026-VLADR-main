@@ -459,18 +459,33 @@ w_t(x)\widetilde{\mathbf\Delta}_t(x),
 \]
 
 \[
+\mathbf f_u(x)
+=
+\begin{cases}
+\mathbf f_0(x), & \texttt{base},\\
+\mathbf f_0(x)+\lambda_f\bigl(\mathbf f_{t^*}(x)-\mathbf f_0(x)\bigr),
+& \texttt{top1},
+\end{cases}
+\]
+
+其中，$t^*$ 是路由得分最高的 Top-1 Adapter。最终描述符为：
+
+\[
 \mathbf z_u(x)
 =
 \operatorname{norm}
 \left[
-\mathbf f_0^{768}(x)
+\mathbf f_u^{768}(x)
 \Vert
 \mathbf q_u^{512}(x)
 \right].
 \]
 
-`lambda_f` 对应 `--adapter-fusion-weight`。OSAF 只融合 512 维
-CLIP 投影；768 维分支保持基础路径。
+`lambda_f` 对应 `--adapter-fusion-weight`。`--adapter-main-fusion base`
+保留旧实现，只在 512 维 CLIP 投影分支进行 Top-K 去偏融合；
+`--adapter-main-fusion top1` 在此基础上，再让 768 维主分支使用 Top-1
+Adapter 的完整特征修改。默认值是 `base`，因此旧命令和旧 checkpoint
+仍可原样使用。
 
 ### 8.7 当前边界
 
@@ -654,6 +669,7 @@ CUDA_VISIBLE_DEVICES=0 python train_stage2.py \
   --adapter-routing-temperature 0.1 \
   --adapter-debias-strength 1.0 \
   --adapter-fusion-weight 1.0 \
+  --adapter-main-fusion top1 \
   --stage2-base-lr 0.000005 \
   --classifier-lr-multiplier 10 \
   --batch-size 64 \
@@ -698,12 +714,18 @@ python train_stage2.py \
   --adapter-routing-temperature 0.1 \
   --adapter-debias-strength 1.0 \
   --adapter-fusion-weight 1.0 \
+  --adapter-main-fusion top1 \
   --eval-descriptor raw \
   --batch-size 64 \
   --workers 8 \
   --testing "$CKPT_DIR" \
   --logs-dir ./RESULTS/eval_full
 ~~~
+
+该开关只改变 OSAF 评测时描述符的构造，不改变模型训练过程、参数结构或
+checkpoint 中的权重张量，因此不需要重新训练。若新模式效果不理想，在同一条评测命令中改为
+`--adapter-main-fusion base` 即可恢复旧版 768 维基础路径；不写该参数也等价于
+`base`。日志中的 `main_fusion=top1/base` 可用于确认本次实际采用的模式。
 
 ---
 

@@ -149,6 +149,13 @@ def _osaf_descriptor(model, images, routing_bank, args):
 
         base_main = base_descriptor[:, :-projected_dim]
         base_projected = base_descriptor[:, -projected_dim:]
+        main_fusion = getattr(args, 'adapter_main_fusion', 'base')
+        if main_fusion not in ('base', 'top1'):
+            raise ValueError(
+                'unsupported adapter main fusion mode: {}'.format(
+                    main_fusion
+                )
+            )
         domain_names, scores = adapter_routing_scores(
             base_projected,
             routing_bank,
@@ -160,6 +167,7 @@ def _osaf_descriptor(model, images, routing_bank, args):
             temperature=args.adapter_routing_temperature,
         )
 
+        fused_main_residual = torch.zeros_like(base_main)
         fused_residual = torch.zeros_like(base_projected)
         unique_indices = torch.unique(selected_indices).tolist()
         for domain_index in unique_indices:
@@ -167,7 +175,19 @@ def _osaf_descriptor(model, images, routing_bank, args):
             domain_name = domain_names[domain_index]
             controller.set_active_adapter(domain_name)
             adapter_descriptor = model(images)
+            adapter_main = adapter_descriptor[:, :-projected_dim]
             adapter_projected = adapter_descriptor[:, -projected_dim:]
+            if main_fusion == 'top1':
+                top1_mask = (
+                    selected_indices[:, 0]
+                    .eq(domain_index)
+                    .to(dtype=adapter_main.dtype)
+                    .unsqueeze(1)
+                )
+                fused_main_residual = (
+                    fused_main_residual
+                    + top1_mask * (adapter_main - base_main)
+                )
             adapter_residual = adapter_projected - base_projected
             debiased_residual = semantic_debiased_residual(
                 adapter_residual,
@@ -186,11 +206,17 @@ def _osaf_descriptor(model, images, routing_bank, args):
                 * debiased_residual
             )
 
+        fusion_weight = float(args.adapter_fusion_weight)
+        fused_main = (
+            base_main + fusion_weight * fused_main_residual
+            if main_fusion == 'top1'
+            else base_main
+        )
         fused_projected = (
             base_projected
-            + float(args.adapter_fusion_weight) * fused_residual
+            + fusion_weight * fused_residual
         )
-        descriptor = torch.cat([base_main, fused_projected], dim=1)
+        descriptor = torch.cat([fused_main, fused_projected], dim=1)
         top1_indices = selected_indices[:, 0].detach().cpu()
         return F.normalize(descriptor, dim=1), domain_names, top1_indices
     finally:
@@ -492,7 +518,8 @@ def fast_test_p_s(
             )
             print(
                 '[eval] OSAF {}-domain routing for {}: Top-K={}, '
-                'semantic_weight={}, debias_strength={}, fusion_weight={}.'
+                'semantic_weight={}, debias_strength={}, fusion_weight={}, '
+                'main_fusion={}.'
                 .format(
                     (
                         'seen'
@@ -504,6 +531,7 @@ def fast_test_p_s(
                     args.adapter_semantic_weight,
                     args.adapter_debias_strength,
                     args.adapter_fusion_weight,
+                    getattr(args, 'adapter_main_fusion', 'base'),
                 )
             )
 

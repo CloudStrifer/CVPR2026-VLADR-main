@@ -994,12 +994,13 @@ def main_worker(args):
         if args.adapter_routing == 'osaf':
             print(
                 'OSAF: Top-K={}, semantic_weight={}, temperature={}, '
-                'debias_strength={}, fusion_weight={}.'.format(
+                'debias_strength={}, fusion_weight={}, main_fusion={}.'.format(
                     args.adapter_topk,
                     args.adapter_semantic_weight,
                     args.adapter_routing_temperature,
                     args.adapter_debias_strength,
                     args.adapter_fusion_weight,
+                    args.adapter_main_fusion,
                 )
             )
 
@@ -1292,6 +1293,7 @@ def main_worker(args):
                         'adapter_fusion_weight': (
                             args.adapter_fusion_weight
                         ),
+                        'adapter_main_fusion': args.adapter_main_fusion,
                         'adapter_domains': list(
                             base.domain_adapter_names()
                         ),
@@ -1516,6 +1518,16 @@ def build_parser():
         type=float,
         default=1.0,
         help='weight of the fused debiased adapter residual',
+    )
+    parser.add_argument(
+        '--adapter-main-fusion',
+        choices=['base', 'top1'],
+        default='base',
+        help=(
+            'keep the legacy base 768-D main feature, or replace it via '
+            'the Top-1 Adapter residual while retaining Top-K fusion in '
+            'the 512-D projected branch'
+        ),
     )
     parser.add_argument(
         '--scsd-semantic-threshold',
@@ -1785,6 +1797,13 @@ if __name__ == '__main__':
     ):
         raise ValueError(
             '--adapter-routing-scope all requires --adapter-routing osaf'
+        )
+    if (
+        args.adapter_main_fusion != 'base'
+        and args.adapter_routing != 'osaf'
+    ):
+        raise ValueError(
+            '--adapter-main-fusion top1 requires --adapter-routing osaf'
         )
     if (
         args.adapter_routing == 'osaf'

@@ -3,6 +3,7 @@ from types import SimpleNamespace
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 from reid.evaluation.adapter_fusion import (
     adapter_routing_scores,
@@ -169,8 +170,10 @@ class AdapterFusionTests(unittest.TestCase):
             def forward(self, inputs):
                 descriptor = inputs.clone()
                 if self.active == 'person':
+                    descriptor[:, 0] += 2.0
                     descriptor[:, -2] += 1.0
                 elif self.active == 'vehicle':
+                    descriptor[:, 1] += 3.0
                     descriptor[:, -1] += 1.0
                 return descriptor
 
@@ -208,12 +211,46 @@ class AdapterFusionTests(unittest.TestCase):
         )
         self.assertEqual(names, ('person', 'vehicle'))
         self.assertEqual(top1.tolist(), [0, 1])
+        legacy_expected = F.normalize(
+            torch.tensor(
+                [
+                    [0.2, 0.3, 2.0, 0.0],
+                    [0.2, 0.3, 0.0, 2.0],
+                ]
+            ),
+            dim=1,
+        )
+        self.assertTrue(
+            torch.allclose(descriptor, legacy_expected, atol=1e-6)
+        )
         self.assertTrue(
             torch.allclose(
                 descriptor.norm(dim=1),
                 torch.ones(2),
                 atol=1e-6,
             )
+        )
+        self.assertIsNone(model.get_active_adapter())
+
+        args.adapter_main_fusion = 'top1'
+        args.adapter_debias_strength = 0.0
+        top1_descriptor, _, _ = _osaf_descriptor(
+            model,
+            inputs,
+            bank,
+            args,
+        )
+        oracle_expected = F.normalize(
+            torch.tensor(
+                [
+                    [2.2, 0.3, 2.0, 0.0],
+                    [0.2, 3.3, 0.0, 2.0],
+                ]
+            ),
+            dim=1,
+        )
+        self.assertTrue(
+            torch.allclose(top1_descriptor, oracle_expected, atol=1e-6)
         )
         self.assertIsNone(model.get_active_adapter())
 
