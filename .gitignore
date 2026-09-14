@@ -8,3 +8,5 @@
 /_BLIP_TEXT_DESC
 /_STAGE1_PROMPTS_WEIGHT
 /config/__pycache__
+/tmp
+/docs

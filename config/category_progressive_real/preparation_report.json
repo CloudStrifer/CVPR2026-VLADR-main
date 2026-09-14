@@ -1,0 +1,213 @@
+{
+  "recipe": {
+    "seed": 42,
+    "validation_fraction": 0.1,
+    "min_train_ids_per_stage": 8,
+    "stages": [
+      {
+        "stage_id": "t1",
+        "categories": [
+          "person",
+          "vehicle"
+        ]
+      },
+      {
+        "stage_id": "t2",
+        "categories": [
+          "person",
+          "panda",
+          "tiger"
+        ]
+      },
+      {
+        "stage_id": "t3",
+        "categories": [
+          "vehicle",
+          "panda",
+          "person"
+        ]
+      },
+      {
+        "stage_id": "t4",
+        "categories": [
+          "tiger",
+          "boat",
+          "vehicle"
+        ]
+      }
+    ]
+  },
+  "sources": {
+    "boat": {
+      "source_dataset": "boat",
+      "source_manifest": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\manifests\\boat.csv",
+      "source_manifest_sha256": "52aa07ead674d03aadcf010f5d5cb717f43119d15d653b2ac4a06f8e28ce996c",
+      "original_train_identities": 80,
+      "original_train_images": 4179,
+      "validation_identities": 8,
+      "validation_queries": 8,
+      "validation_gallery": 45,
+      "excluded_heldout_augmented_images": 318,
+      "training_stages": {
+        "t4": {
+          "identities": 72,
+          "images": 3808
+        }
+      },
+      "test_query_images": 27,
+      "test_gallery_images": 165,
+      "test_identities": 27,
+      "protocol": "cross_camera",
+      "original_test_rows_preserved": true
+    },
+    "panda": {
+      "source_dataset": "ipanda50",
+      "source_manifest": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\manifests\\ipanda50.csv",
+      "source_manifest_sha256": "40c1fdef0e4a0a969601144225911926eaf03a4568f607ec97ca663f915fff5a",
+      "original_train_identities": 35,
+      "original_train_images": 5179,
+      "validation_identities": 4,
+      "validation_queries": 4,
+      "validation_gallery": 483,
+      "excluded_heldout_augmented_images": 0,
+      "training_stages": {
+        "t2": {
+          "identities": 16,
+          "images": 2032
+        },
+        "t3": {
+          "identities": 15,
+          "images": 2660
+        }
+      },
+      "test_query_images": 408,
+      "test_gallery_images": 1287,
+      "test_identities": 15,
+      "protocol": "cross_camera",
+      "original_test_rows_preserved": true
+    },
+    "person": {
+      "source_dataset": "market1501",
+      "source_manifest": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\manifests\\market1501.csv",
+      "source_manifest_sha256": "32581ac9b6ff7dca33b0ec26b8c9967956fa87aba5f2a90c225159617441ed3c",
+      "original_train_identities": 751,
+      "original_train_images": 12936,
+      "validation_identities": 76,
+      "validation_queries": 76,
+      "validation_gallery": 1363,
+      "excluded_heldout_augmented_images": 0,
+      "training_stages": {
+        "t1": {
+          "identities": 225,
+          "images": 4001
+        },
+        "t2": {
+          "identities": 225,
+          "images": 3849
+        },
+        "t3": {
+          "identities": 225,
+          "images": 3647
+        }
+      },
+      "test_query_images": 3368,
+      "test_gallery_images": 15913,
+      "test_identities": 751,
+      "protocol": "cross_camera",
+      "original_test_rows_preserved": true
+    },
+    "tiger": {
+      "source_dataset": "atrw",
+      "source_manifest": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\manifests\\atrw.csv",
+      "source_manifest_sha256": "ad938592a759ca0ed6647039d6db1e5abe48e363811cc6704a52a98503903ad9",
+      "original_train_identities": 107,
+      "original_train_images": 1887,
+      "validation_identities": 11,
+      "validation_queries": 11,
+      "validation_gallery": 157,
+      "excluded_heldout_augmented_images": 0,
+      "training_stages": {
+        "t2": {
+          "identities": 48,
+          "images": 885
+        },
+        "t4": {
+          "identities": 48,
+          "images": 834
+        }
+      },
+      "test_query_images": 75,
+      "test_gallery_images": 1689,
+      "test_identities": 75,
+      "protocol": "exclude_self",
+      "original_test_rows_preserved": true
+    },
+    "vehicle": {
+      "source_dataset": "veri",
+      "source_manifest": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\manifests\\veri.csv",
+      "source_manifest_sha256": "c17686d2d0fcf6d6a6d552ea603dd811c63dbfe5c40e28000019530c513c74ec",
+      "original_train_identities": 576,
+      "original_train_images": 37778,
+      "validation_identities": 58,
+      "validation_queries": 58,
+      "validation_gallery": 3583,
+      "excluded_heldout_augmented_images": 0,
+      "training_stages": {
+        "t1": {
+          "identities": 173,
+          "images": 10622
+        },
+        "t3": {
+          "identities": 173,
+          "images": 11738
+        },
+        "t4": {
+          "identities": 172,
+          "images": 11777
+        }
+      },
+      "test_query_images": 1678,
+      "test_gallery_images": 11579,
+      "test_identities": 200,
+      "protocol": "cross_camera",
+      "original_test_rows_preserved": true
+    }
+  },
+  "source_config_sha256": "b3b7b619af0f6f06c48059d2f7959b2d4f98d6ff9803918149ed271795b91b6e",
+  "image_existence_checked": true,
+  "image_contents_decoded": false,
+  "output_manifest_sha256": {
+    "manifests/eval_01_test_gallery.csv": "fdcda94d14ca4cb4bd97b35b0f58a27b587a581e106b22a7da41d3a4a7baaa04",
+    "manifests/eval_01_test_query.csv": "45ad10d2c240ac4528d9e1d8cbfe87fcf8b6280b4be5f9bcf1f704aa47f398fa",
+    "manifests/eval_01_validation_gallery.csv": "738d0a3ab5c0394c9b6edc01727f90b4ac4fa1dcd66c90ace72e923d9a26f317",
+    "manifests/eval_01_validation_query.csv": "024e5dff27f6fd7e02d90c0b417bf997c60714a00633555b051890df0cf38cd0",
+    "manifests/eval_02_test_gallery.csv": "ebb21e0b9442b9781f68537019cc36ffdd6e3322e2d118f082eec11a0cbc844e",
+    "manifests/eval_02_test_query.csv": "a5a4abea953fecde88f4e53a04ab40bd6d21c0d9e290585ea5bae5c61cecf99a",
+    "manifests/eval_02_validation_gallery.csv": "f3ebd19d52ee8188283d403e3cc343c33f5b15d129555fd516c164dc02dbec15",
+    "manifests/eval_02_validation_query.csv": "6644e69d3c3eead0902b7c085690bcacf60e074f55c852fd94fca1c38e5737d6",
+    "manifests/eval_03_test_gallery.csv": "cac372074aa9aa468ab8dc14fecc8954ea57961d275a7ef7896dc4a7f982eb53",
+    "manifests/eval_03_test_query.csv": "6acdb94e0b55b10239a054342d8bded9b0b48edd1e3763cd50a71410bf2f6610",
+    "manifests/eval_03_validation_gallery.csv": "e6c8c04182ee77856ed45e329b27aa63ec84b1c55a9b00b5ab6ed6bce4eda6e9",
+    "manifests/eval_03_validation_query.csv": "10730a963e3d2884da42f005d057245ec068f215d21fa86a4f84067ad3f5fd0a",
+    "manifests/eval_04_test_gallery.csv": "ec0b8451c448913983d84d033105c14976be16dc54d3bf0a690b032aec41418d",
+    "manifests/eval_04_test_query.csv": "0a92e8ec64b5c4d32e9cca648e4333bc894a7e29fc88015839804beb45bf37b1",
+    "manifests/eval_04_validation_gallery.csv": "61c3631f69880acebdbeeca6d4bf7849424665aa4c7fc634b8086a5f2dc737b2",
+    "manifests/eval_04_validation_query.csv": "89163e5357d10c70fd9d9c24354eb726a0adc3de13b8f375c75235a72d46acef",
+    "manifests/eval_05_test_gallery.csv": "2bb54b92da6fc8c6becd11a15ffdded4dd6652e7f230c45f8232260a3dd98c1c",
+    "manifests/eval_05_test_query.csv": "e370febb77ca71b68015c74925f77131954969941d1e0d82385ba1d0567b8a43",
+    "manifests/eval_05_validation_gallery.csv": "0ba3eee69127c2a06a26bc934e6b7442ce8ca495c3440eeaec893f50d67deb6e",
+    "manifests/eval_05_validation_query.csv": "7ef3c46a2d43173b7dd7a15ba875ad8c64f3b04c6827148822fffbaae589a9f5",
+    "manifests/train_01_03.csv": "087b8b7e70737bfe4f1510fd5785744dd738874f46d18c5c96362582983788e5",
+    "manifests/train_01_05.csv": "7d792c9ec2841fa345da5dc858847e33535fedc106f80f7e93a1719d8c777da7",
+    "manifests/train_02_02.csv": "00dbcfab52ca15334ad8b57915f577d4ce10082943f9f5f2d5ba29ba8055ee6c",
+    "manifests/train_02_03.csv": "98dc33cc11656d2d276191c8ca210485782529c057c921594c535f80287de936",
+    "manifests/train_02_04.csv": "6ba84d697d0a250e9a71af2d92c62ad5c30962ef858c8944fdc0e367067a8cda",
+    "manifests/train_03_02.csv": "4aa72f429fa9a6fa45e0bb25605e92375b61e82ebac92a347ab1b26615399a92",
+    "manifests/train_03_03.csv": "d688f71934b362fc8d22c9da16ab372e5c29ad931c4fe5e9634fe03fa0988f85",
+    "manifests/train_03_05.csv": "b380edba898207a75e3e27e315c16b7923e4c7759472f73ce37bf7c4bf3bdd75",
+    "manifests/train_04_01.csv": "d294ce1a0fe219ca1c72d12ada7d7a66ead4da5e8d2ec104ce0c55d10b47696f",
+    "manifests/train_04_04.csv": "90cdf47961efaf0552cadc0d3094df3de0b61c8b49b8dd21cd22d80802e4e4fa",
+    "manifests/train_04_05.csv": "b566fe42df3c877111b19d76e67f20a054a0c2ce831a51a27648494db62144ae"
+  },
+  "note": "Audit paths/fingerprint are local; re-audit after moving to Ubuntu before starting a new run."
+}

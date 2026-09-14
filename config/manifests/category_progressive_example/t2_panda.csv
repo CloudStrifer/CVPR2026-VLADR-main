@@ -1,0 +1,5 @@
+path,original_pid,source_dataset,camid
+panda/a_1.jpg,a,panda_demo,0
+panda/a_2.jpg,a,panda_demo,1
+panda/b_1.jpg,b,panda_demo,0
+panda/b_2.jpg,b,panda_demo,1

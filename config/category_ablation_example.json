@@ -1,0 +1,16 @@
+{
+  "stream_config": "config/category_progressive_example.json",
+  "device": "cuda",
+  "amp": true,
+  "epochs": 10,
+  "iterations_per_epoch": 100,
+  "batch_size": 4,
+  "num_instances": 2,
+  "prototype_batch_size": 128,
+  "workers": 0,
+  "seed": 42,
+  "eval_split": "test",
+  "eval_gallery": "both",
+  "eval_batch_size": 128,
+  "beta": 0.5
+}

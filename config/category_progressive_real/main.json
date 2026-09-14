@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "description": "Generated interleaved stream; whole IDs allocated once; original test split preserved.",
+  "data_root": "../../data",
+  "stages": [
+    {
+      "stage_id": "t1",
+      "categories": [
+        {
+          "category": "person",
+          "train_manifest": "manifests/train_01_03.csv"
+        },
+        {
+          "category": "vehicle",
+          "train_manifest": "manifests/train_01_05.csv"
+        }
+      ]
+    },
+    {
+      "stage_id": "t2",
+      "categories": [
+        {
+          "category": "person",
+          "train_manifest": "manifests/train_02_03.csv"
+        },
+        {
+          "category": "panda",
+          "train_manifest": "manifests/train_02_02.csv"
+        },
+        {
+          "category": "tiger",
+          "train_manifest": "manifests/train_02_04.csv"
+        }
+      ]
+    },
+    {
+      "stage_id": "t3",
+      "categories": [
+        {
+          "category": "vehicle",
+          "train_manifest": "manifests/train_03_05.csv"
+        },
+        {
+          "category": "panda",
+          "train_manifest": "manifests/train_03_02.csv"
+        },
+        {
+          "category": "person",
+          "train_manifest": "manifests/train_03_03.csv"
+        }
+      ]
+    },
+    {
+      "stage_id": "t4",
+      "categories": [
+        {
+          "category": "tiger",
+          "train_manifest": "manifests/train_04_04.csv"
+        },
+        {
+          "category": "boat",
+          "train_manifest": "manifests/train_04_01.csv"
+        },
+        {
+          "category": "vehicle",
+          "train_manifest": "manifests/train_04_05.csv"
+        }
+      ]
+    }
+  ],
+  "evaluation": [
+    {
+      "name": "boat_validation",
+      "category": "boat",
+      "split": "validation",
+      "protocol": "cross_camera",
+      "query_manifest": "manifests/eval_01_validation_query.csv",
+      "gallery_manifest": "manifests/eval_01_validation_gallery.csv"
+    },
+    {
+      "name": "boat_test",
+      "category": "boat",
+      "split": "test",
+      "protocol": "cross_camera",
+      "query_manifest": "manifests/eval_01_test_query.csv",
+      "gallery_manifest": "manifests/eval_01_test_gallery.csv"
+    },
+    {
+      "name": "panda_validation",
+      "category": "panda",
+      "split": "validation",
+      "protocol": "cross_camera",
+      "query_manifest": "manifests/eval_02_validation_query.csv",
+      "gallery_manifest": "manifests/eval_02_validation_gallery.csv"
+    },
+    {
+      "name": "panda_test",
+      "category": "panda",
+      "split": "test",
+      "protocol": "cross_camera",
+      "query_manifest": "manifests/eval_02_test_query.csv",
+      "gallery_manifest": "manifests/eval_02_test_gallery.csv"
+    },
+    {
+      "name": "person_validation",
+      "category": "person",
+      "split": "validation",
+      "protocol": "cross_camera",
+      "query_manifest": "manifests/eval_03_validation_query.csv",
+      "gallery_manifest": "manifests/eval_03_validation_gallery.csv"
+    },
+    {
+      "name": "person_test",
+      "category": "person",
+      "split": "test",
+      "protocol": "cross_camera",
+      "query_manifest": "manifests/eval_03_test_query.csv",
+      "gallery_manifest": "manifests/eval_03_test_gallery.csv"
+    },
+    {
+      "name": "tiger_validation",
+      "category": "tiger",
+      "split": "validation",
+      "protocol": "exclude_self",
+      "query_manifest": "manifests/eval_04_validation_query.csv",
+      "gallery_manifest": "manifests/eval_04_validation_gallery.csv"
+    },
+    {
+      "name": "tiger_test",
+      "category": "tiger",
+      "split": "test",
+      "protocol": "exclude_self",
+      "query_manifest": "manifests/eval_04_test_query.csv",
+      "gallery_manifest": "manifests/eval_04_test_gallery.csv"
+    },
+    {
+      "name": "vehicle_validation",
+      "category": "vehicle",
+      "split": "validation",
+      "protocol": "cross_camera",
+      "query_manifest": "manifests/eval_05_validation_query.csv",
+      "gallery_manifest": "manifests/eval_05_validation_gallery.csv"
+    },
+    {
+      "name": "vehicle_test",
+      "category": "vehicle",
+      "split": "test",
+      "protocol": "cross_camera",
+      "query_manifest": "manifests/eval_05_test_query.csv",
+      "gallery_manifest": "manifests/eval_05_test_gallery.csv"
+    }
+  ]
+}

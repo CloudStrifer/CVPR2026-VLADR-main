@@ -1,0 +1,107 @@
+{
+  "input_size": [224, 224],
+  "resize_mode": "pad",
+  "train_domains": [
+    {
+      "name": "person_domain",
+      "category": "person",
+      "object_noun": "person",
+      "category_generic_prompts": [
+        "A photo showing the overall silhouette of a person.",
+        "A photo showing the basic part structure of a person.",
+        "A photo of a person from a common viewpoint."
+      ],
+      "attributes": [
+        {"name": "overall_color", "prompt": "The overall color distribution of the object."},
+        {"name": "surface_pattern", "prompt": "The visible surface texture and pattern of the object."},
+        {"name": "body_shape", "prompt": "The overall shape, silhouette, and proportions of the object."},
+        {"name": "head_appearance", "prompt": "Hair, face, and head accessories that distinguish this person."},
+        {"name": "body_parts", "prompt": "Clothing, carried items, and footwear that distinguish this person."}
+      ],
+      "manifest": "manifests/person.csv",
+      "prompt_checkpoint": "../_CROSS_CATEGORY_PROMPTS/person_domain_clipreid_prompt.pth",
+      "max_train_ids": 0
+    },
+    {
+      "name": "vehicle_domain",
+      "category": "vehicle",
+      "object_noun": "vehicle",
+      "category_generic_prompts": [
+        "A photo showing the overall silhouette of a vehicle.",
+        "A photo showing the basic part structure of a vehicle.",
+        "A photo of a vehicle from a common viewpoint."
+      ],
+      "attributes": [
+        {"name": "overall_color", "prompt": "The overall color distribution of the object."},
+        {"name": "surface_pattern", "prompt": "The visible surface texture and pattern of the object."},
+        {"name": "body_shape", "prompt": "The overall shape, silhouette, and proportions of the object."},
+        {"name": "front_appearance", "prompt": "Headlights, grille, and license plate at the front of this vehicle."},
+        {"name": "body_parts", "prompt": "Side windows, doors, mirrors, and wheels that distinguish this vehicle."}
+      ],
+      "manifest": "manifests/vehicle.csv",
+      "prompt_checkpoint": "../_CROSS_CATEGORY_PROMPTS/vehicle_domain_clipreid_prompt.pth",
+      "max_train_ids": 0
+    },
+    {
+      "name": "animal_domain",
+      "category": "animal",
+      "object_noun": "animal",
+      "category_generic_prompts": [
+        "A photo showing the overall silhouette of an animal.",
+        "A photo showing the basic body structure of an animal.",
+        "A photo of an animal from a common viewpoint."
+      ],
+      "attributes": [
+        {"name": "overall_color", "prompt": "The overall color distribution of the object."},
+        {"name": "surface_pattern", "prompt": "The visible surface texture and pattern of the object."},
+        {"name": "body_shape", "prompt": "The overall shape, silhouette, and proportions of the object."},
+        {"name": "head_appearance", "prompt": "Ears, eyes, muzzle, and facial markings that distinguish this animal."},
+        {"name": "body_parts", "prompt": "Torso regions and limbs that distinguish this animal."}
+      ],
+      "manifest": "manifests/animal.csv",
+      "prompt_checkpoint": "../_CROSS_CATEGORY_PROMPTS/animal_domain_clipreid_prompt.pth",
+      "max_train_ids": 0
+    },
+    {
+      "name": "aircraft_domain",
+      "category": "aircraft",
+      "object_noun": "aircraft",
+      "category_generic_prompts": [
+        "A photo showing the overall silhouette of an aircraft.",
+        "A photo showing the basic part structure of an aircraft.",
+        "A photo of an aircraft from a common viewpoint."
+      ],
+      "attributes": [
+        {"name": "overall_color", "prompt": "The overall color distribution of the object."},
+        {"name": "surface_pattern", "prompt": "The visible surface texture and pattern of the object."},
+        {"name": "body_shape", "prompt": "The overall shape, silhouette, and proportions of the object."},
+        {"name": "front_appearance", "prompt": "Nose, cockpit, and front structures that distinguish this aircraft."},
+        {"name": "body_parts", "prompt": "Wings, engines, tail, and landing gear that distinguish this aircraft."}
+      ],
+      "manifest": "manifests/aircraft.csv",
+      "prompt_checkpoint": "../_CROSS_CATEGORY_PROMPTS/aircraft_domain_clipreid_prompt.pth",
+      "max_train_ids": 0
+    },
+    {
+      "name": "product_domain",
+      "category": "product",
+      "object_noun": "product",
+      "category_generic_prompts": [
+        "A photo showing the overall silhouette of a product.",
+        "A photo showing the basic part structure of a product.",
+        "A photo of a product from a common viewpoint."
+      ],
+      "attributes": [
+        {"name": "overall_color", "prompt": "The overall color distribution of the object."},
+        {"name": "surface_pattern", "prompt": "The visible surface texture and pattern of the object."},
+        {"name": "body_shape", "prompt": "The overall shape, silhouette, and proportions of the object."},
+        {"name": "front_appearance", "prompt": "Front-facing labels, controls, and structures that distinguish this product."},
+        {"name": "body_parts", "prompt": "Functional parts and attachments that distinguish this product."}
+      ],
+      "manifest": "manifests/product.csv",
+      "prompt_checkpoint": "../_CROSS_CATEGORY_PROMPTS/product_domain_clipreid_prompt.pth",
+      "max_train_ids": 0
+    }
+  ],
+  "test_domains": []
+}

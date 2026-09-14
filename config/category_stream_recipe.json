@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "validation_fraction": 0.1,
+  "min_train_ids_per_stage": 8,
+  "stages": [
+    {"stage_id": "t1", "categories": ["person", "vehicle"]},
+    {"stage_id": "t2", "categories": ["person", "panda", "tiger"]},
+    {"stage_id": "t3", "categories": ["vehicle", "panda", "person"]},
+    {"stage_id": "t4", "categories": ["tiger", "boat", "vehicle"]}
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "config_path": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\category_progressive_real\\main.json",
+  "protocol_fingerprint": "403d6e2a7881477d01cdac947ae59028d78d8c9de03bbd7c04eab27ba75e5a6c",
+  "image_contents_read": false,
+  "stages": [
+    {
+      "stage_id": "t1",
+      "new_categories": [
+        "person",
+        "vehicle"
+      ],
+      "recurring_categories": [],
+      "absent_categories": [],
+      "seen_before": [],
+      "categories": [
+        {
+          "category": "person",
+          "identities": 225,
+          "images": 4001
+        },
+        {
+          "category": "vehicle",
+          "identities": 173,
+          "images": 10622
+        }
+      ]
+    },
+    {
+      "stage_id": "t2",
+      "new_categories": [
+        "panda",
+        "tiger"
+      ],
+      "recurring_categories": [
+        "person"
+      ],
+      "absent_categories": [
+        "vehicle"
+      ],
+      "seen_before": [
+        "person",
+        "vehicle"
+      ],
+      "categories": [
+        {
+          "category": "person",
+          "identities": 225,
+          "images": 3849
+        },
+        {
+          "category": "panda",
+          "identities": 16,
+          "images": 2032
+        },
+        {
+          "category": "tiger",
+          "identities": 48,
+          "images": 885
+        }
+      ]
+    },
+    {
+      "stage_id": "t3",
+      "new_categories": [],
+      "recurring_categories": [
+        "panda",
+        "person",
+        "vehicle"
+      ],
+      "absent_categories": [
+        "tiger"
+      ],
+      "seen_before": [
+        "panda",
+        "person",
+        "tiger",
+        "vehicle"
+      ],
+      "categories": [
+        {
+          "category": "vehicle",
+          "identities": 173,
+          "images": 11738
+        },
+        {
+          "category": "panda",
+          "identities": 15,
+          "images": 2660
+        },
+        {
+          "category": "person",
+          "identities": 225,
+          "images": 3647
+        }
+      ]
+    },
+    {
+      "stage_id": "t4",
+      "new_categories": [
+        "boat"
+      ],
+      "recurring_categories": [
+        "tiger",
+        "vehicle"
+      ],
+      "absent_categories": [
+        "panda",
+        "person"
+      ],
+      "seen_before": [
+        "panda",
+        "person",
+        "tiger",
+        "vehicle"
+      ],
+      "categories": [
+        {
+          "category": "tiger",
+          "identities": 48,
+          "images": 834
+        },
+        {
+          "category": "boat",
+          "identities": 72,
+          "images": 3808
+        },
+        {
+          "category": "vehicle",
+          "identities": 172,
+          "images": 11777
+        }
+      ]
+    }
+  ],
+  "evaluation": [
+    {
+      "name": "boat_validation",
+      "category": "boat",
+      "split": "validation",
+      "protocol": "cross_camera",
+      "identities": 8,
+      "query_images": 8,
+      "gallery_images": 45
+    },
+    {
+      "name": "boat_test",
+      "category": "boat",
+      "split": "test",
+      "protocol": "cross_camera",
+      "identities": 27,
+      "query_images": 27,
+      "gallery_images": 165
+    },
+    {
+      "name": "panda_validation",
+      "category": "panda",
+      "split": "validation",
+      "protocol": "cross_camera",
+      "identities": 4,
+      "query_images": 4,
+      "gallery_images": 483
+    },
+    {
+      "name": "panda_test",
+      "category": "panda",
+      "split": "test",
+      "protocol": "cross_camera",
+      "identities": 15,
+      "query_images": 408,
+      "gallery_images": 1287
+    },
+    {
+      "name": "person_validation",
+      "category": "person",
+      "split": "validation",
+      "protocol": "cross_camera",
+      "identities": 76,
+      "query_images": 76,
+      "gallery_images": 1363
+    },
+    {
+      "name": "person_test",
+      "category": "person",
+      "split": "test",
+      "protocol": "cross_camera",
+      "identities": 751,
+      "query_images": 3368,
+      "gallery_images": 15913
+    },
+    {
+      "name": "tiger_validation",
+      "category": "tiger",
+      "split": "validation",
+      "protocol": "exclude_self",
+      "identities": 11,
+      "query_images": 11,
+      "gallery_images": 157
+    },
+    {
+      "name": "tiger_test",
+      "category": "tiger",
+      "split": "test",
+      "protocol": "exclude_self",
+      "identities": 75,
+      "query_images": 75,
+      "gallery_images": 1689
+    },
+    {
+      "name": "vehicle_validation",
+      "category": "vehicle",
+      "split": "validation",
+      "protocol": "cross_camera",
+      "identities": 58,
+      "query_images": 58,
+      "gallery_images": 3583
+    },
+    {
+      "name": "vehicle_test",
+      "category": "vehicle",
+      "split": "test",
+      "protocol": "cross_camera",
+      "identities": 200,
+      "query_images": 1678,
+      "gallery_images": 11579
+    }
+  ],
+  "total_train_identities": 1392,
+  "total_train_images": 55853,
+  "warnings": [],
+  "image_existence_checked": true,
+  "image_contents_decoded": false
+}

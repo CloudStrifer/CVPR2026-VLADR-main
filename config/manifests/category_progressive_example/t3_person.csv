@@ -1,0 +1,5 @@
+path,original_pid,source_dataset,camid
+person/e_1.jpg,e,person_demo,0
+person/e_2.jpg,e,person_demo,1
+person/f_1.jpg,f,person_demo,0
+person/f_2.jpg,f,person_demo,1

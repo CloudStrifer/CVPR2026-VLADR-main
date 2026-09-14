@@ -99,3 +99,14 @@ def make_model(
     )
     print('Global CLIP-ReID baseline built...')
     return model
+
+
+def make_category_model(**kwargs):
+    """New ECPM/PGCA visual-only entry; leaves make_model/legacy training unchanged.
+
+    Returns CategoryAdapterBank with encode_reference/encode_category interfaces.
+    See category_adapter_bank.build_category_model for local weight/config options.
+    """
+    from .category_adapter_bank import build_category_model
+
+    return build_category_model(**kwargs)

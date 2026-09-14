@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "description": "Metadata-only tutorial. Image names are placeholders; use real manifests/data_root before loading images.",
+  "data_root": "../data/category_progressive_example",
+  "stages": [
+    {
+      "stage_id": "t1",
+      "categories": [
+        {"category": "person", "train_manifest": "manifests/category_progressive_example/t1_person.csv"},
+        {"category": "vehicle", "train_manifest": "manifests/category_progressive_example/t1_vehicle.csv"}
+      ]
+    },
+    {
+      "stage_id": "t2",
+      "categories": [
+        {"category": "person", "train_manifest": "manifests/category_progressive_example/t2_person.csv"},
+        {"category": "panda", "train_manifest": "manifests/category_progressive_example/t2_panda.csv"}
+      ]
+    },
+    {
+      "stage_id": "t3",
+      "categories": [
+        {"category": "vehicle", "train_manifest": "manifests/category_progressive_example/t3_vehicle.csv"},
+        {"category": "person", "train_manifest": "manifests/category_progressive_example/t3_person.csv"}
+      ]
+    }
+  ],
+  "evaluation": [
+    {"name": "person_validation", "category": "person", "split": "validation", "protocol": "cross_camera", "query_manifest": "manifests/category_progressive_example/person_validation_query.csv", "gallery_manifest": "manifests/category_progressive_example/person_validation_gallery.csv"},
+    {"name": "person_test", "category": "person", "split": "test", "protocol": "cross_camera", "query_manifest": "manifests/category_progressive_example/person_test_query.csv", "gallery_manifest": "manifests/category_progressive_example/person_test_gallery.csv"},
+    {"name": "vehicle_test", "category": "vehicle", "split": "test", "protocol": "cross_camera", "query_manifest": "manifests/category_progressive_example/vehicle_test_query.csv", "gallery_manifest": "manifests/category_progressive_example/vehicle_test_gallery.csv"},
+    {"name": "panda_test", "category": "panda", "split": "test", "protocol": "exclude_self", "query_manifest": "manifests/category_progressive_example/panda_test_query.csv", "gallery_manifest": "manifests/category_progressive_example/panda_test_gallery.csv"}
+  ]
+}

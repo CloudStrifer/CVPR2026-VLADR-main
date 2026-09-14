@@ -8,6 +8,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+from tools.build_cross_category_manifests import parse_args
+
 
 class TextConditionedAttributePooler(nn.Module):
     """Pool CLIP patch tokens with frozen CLIP attribute embeddings.
