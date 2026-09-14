@@ -1,5 +1,7 @@
 # ECPM + PGCA 分步实施计划
 
+当前模块原理、公式、代码对应关系与实现边界见 [ECPM 与 PGCA 技术手册](E:/Multi_modal_Code/CVPR2026-VLADR-main/docs/ecpm_pgca_technical_manual_zh.md)。
+
 日期：2026-09-14  
 依据：`C:\Users\Cloud\Desktop\name2.tex` 中的方法定义，以及当前仓库代码。  
 状态：第 1—9 步的基础实现与验收已完成。第 9 步硬路由、逐阶段检索/路由诊断/遗忘矩阵、评估事务恢复及 9 个消融配方已接入；190 项回归检查通过，真实 CLIP CUDA＋AMP 三阶段评估与恢复对照通过。已按用户确认方案生成五数据集四阶段真实数据划分；正式多种子性能实验尚未开展，生成图像验证不能证明方法有效。

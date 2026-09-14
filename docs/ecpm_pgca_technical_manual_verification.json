@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "document": "docs\\ecpm_pgca_technical_manual_zh.md",
+  "lines": 487,
+  "local_links_checked": 22,
+  "code_modules_checked": 7,
+  "fences_balanced": true,
+  "display_math_balanced": true,
+  "verification_scope": "Static document and source-symbol checks; no training code changed or training rerun"
+}
