@@ -1,0 +1,54 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+E:\Multi_modal_Code\CVPR2026-VLADR-main\reid\evaluation\rank.py:11: UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.
+  warnings.warn(
+test_atomic_failure_keeps_previous_checkpoint (test_progressive_resume.ProgressiveResumeTests.test_atomic_failure_keeps_previous_checkpoint) ... D:\python3.13.7\Lib\site-packages\finch\finch.py:12: UserWarning: pynndescent is not installed: No module named 'pynndescent'
+  warnings.warn('pynndescent is not installed: {}'.format(e))
+ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 3, "summed_loss": 2.1739237308502197}
+{"stage_id": "t1", "completed_epochs": 2, "total_updates": 6, "summed_loss": 1.9659740924835205}
+test_changed_cursor_or_teacher_is_rejected (test_progressive_resume.ProgressiveResumeTests.test_changed_cursor_or_teacher_is_rejected) ... ok
+test_changed_log_prefix_is_rejected_without_truncation (test_progressive_resume.ProgressiveResumeTests.test_changed_log_prefix_is_rejected_without_truncation) ... ok
+test_changed_reference_and_config_are_rejected (test_progressive_resume.ProgressiveResumeTests.test_changed_reference_and_config_are_rejected) ... ok
+{"phase": "training", "stage_index": 0, "total_updates": 2, "checkpoint": "C:\\Users\\Cloud\\AppData\\Local\\Temp\\tmp4djjpzn4\\run\\latest.pt"}
+test_cli_resume_uses_saved_configuration (test_progressive_resume.ProgressiveResumeTests.test_cli_resume_uses_saved_configuration) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 3, "summed_loss": 2.1739237308502197}
+{"stage_id": "t1", "completed_epochs": 2, "total_updates": 6, "summed_loss": 1.9659740924835205}
+test_commit_save_failure_reloads_uncommitted_candidate_once (test_progressive_resume.ProgressiveResumeTests.test_commit_save_failure_reloads_uncommitted_candidate_once) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 3, "summed_loss": 2.1739237308502197}
+{"stage_id": "t1", "completed_epochs": 2, "total_updates": 6, "summed_loss": 1.9659740924835205}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 9, "summed_loss": 2.3848754167556763}
+{"stage_id": "t2", "completed_epochs": 2, "total_updates": 12, "summed_loss": 2.2718636989593506}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 15, "summed_loss": 2.4592219591140747}
+{"stage_id": "t3", "completed_epochs": 2, "total_updates": 18, "summed_loss": 1.94319486618042}
+test_last_update_pending_commit_resumes_without_duplicate_identities (test_progressive_resume.ProgressiveResumeTests.test_last_update_pending_commit_resumes_without_duplicate_identities) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 3, "summed_loss": 2.1739237308502197}
+{"stage_id": "t1", "completed_epochs": 2, "total_updates": 6, "summed_loss": 1.9659740924835205}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 9, "summed_loss": 2.3848754167556763}
+{"stage_id": "t2", "completed_epochs": 2, "total_updates": 12, "summed_loss": 2.2718636989593506}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 15, "summed_loss": 2.4592219591140747}
+{"stage_id": "t3", "completed_epochs": 2, "total_updates": 18, "summed_loss": 1.94319486618042}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 3, "summed_loss": 2.1739237308502197}
+{"stage_id": "t1", "completed_epochs": 2, "total_updates": 6, "summed_loss": 1.9659740924835205}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 9, "summed_loss": 2.3848754167556763}
+{"stage_id": "t2", "completed_epochs": 2, "total_updates": 12, "summed_loss": 2.2718636989593506}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 15, "summed_loss": 2.4592219591140747}
+{"stage_id": "t3", "completed_epochs": 2, "total_updates": 18, "summed_loss": 1.94319486618042}
+test_mid_epoch_resume_preserves_teacher_optimizer_rng_and_all_steps (test_progressive_resume.ProgressiveResumeTests.test_mid_epoch_resume_preserves_teacher_optimizer_rng_and_all_steps) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 3, "summed_loss": 2.1739237308502197}
+{"stage_id": "t1", "completed_epochs": 2, "total_updates": 6, "summed_loss": 1.9659740924835205}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 9, "summed_loss": 2.3848754167556763}
+{"stage_id": "t2", "completed_epochs": 2, "total_updates": 12, "summed_loss": 2.2718636989593506}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 15, "summed_loss": 2.4592219591140747}
+{"stage_id": "t3", "completed_epochs": 2, "total_updates": 18, "summed_loss": 1.94319486618042}
+test_no_old_or_future_image_access_and_completed_resume_is_noop (test_progressive_resume.ProgressiveResumeTests.test_no_old_or_future_image_access_and_completed_resume_is_noop) ... ok
+test_preparation_interruption_restarts_from_boundary_and_archives_log_tail (test_progressive_resume.ProgressiveResumeTests.test_preparation_interruption_restarts_from_boundary_and_archives_log_tail) ... ok
+test_rng_roundtrip_including_gaussian_cache (test_progressive_resume.ProgressiveResumeTests.test_rng_roundtrip_including_gaussian_cache) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 3, "summed_loss": 2.1739237308502197}
+test_unsaved_updates_are_replayed_and_log_tail_is_archived (test_progressive_resume.ProgressiveResumeTests.test_unsaved_updates_are_replayed_and_log_tail_is_archived) ... ok
+test_variable_pass_lengths_resume_at_correct_batch (test_progressive_resume.ProgressiveResumeTests.test_variable_pass_lengths_resume_at_correct_batch) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 15.681s
+
+OK

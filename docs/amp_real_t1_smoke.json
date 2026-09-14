@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "scope": "real CLIP and real T1 images, two CE+Triplet updates, no evaluation or full ECPM preparation",
+  "torch": "2.8.0+cu126",
+  "device": "NVIDIA GeForce RTX 4060 Ti",
+  "batch_size": 32,
+  "num_instances": 4,
+  "identities": {
+    "person": 225,
+    "vehicle": 173
+  },
+  "optimizer_steps": 2,
+  "scale": 32768.0,
+  "retries": [
+    {
+      "event": "amp_overflow_retry",
+      "stage_id": "t1",
+      "optimizer_step": 2,
+      "attempt": 1,
+      "scale_before": 65536.0,
+      "scale_after": 32768.0
+    }
+  ],
+  "report": {
+    "event": "epoch_end",
+    "stage_id": "t1",
+    "epoch": 0,
+    "optimizer_steps": 2,
+    "categories": {
+      "person": {
+        "ce": 5.41904878616333,
+        "triplet": 0.41402287781238556,
+        "weighted_triplet": 0.41402287781238556,
+        "total": 5.833071708679199,
+        "accuracy": 0.0,
+        "positive_distance": 0.5782608985900879,
+        "negative_distance": 0.4642380326986313,
+        "active_triplet_fraction": 1.0,
+        "images": 64,
+        "updates": 2,
+        "loader_restarts": 0
+      },
+      "vehicle": {
+        "ce": 5.155270099639893,
+        "triplet": 0.349648118019104,
+        "weighted_triplet": 0.349648118019104,
+        "total": 5.504918098449707,
+        "accuracy": 0.0,
+        "positive_distance": 0.5102435946464539,
+        "negative_distance": 0.46059550344944,
+        "active_triplet_fraction": 1.0,
+        "images": 64,
+        "updates": 2,
+        "loader_restarts": 0
+      }
+    }
+  }
+}

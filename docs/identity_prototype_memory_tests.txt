@@ -1,0 +1,37 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+E:\Multi_modal_Code\CVPR2026-VLADR-main\reid\evaluation\rank.py:11: UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.
+  warnings.warn(
+test_alias_identity_merges_sources_within_stage (test_identity_prototype_memory.IdentityMemoryTests.test_alias_identity_merges_sources_within_stage) ... ok
+test_atomic_save_failure_preserves_previous_file (test_identity_prototype_memory.IdentityMemoryTests.test_atomic_save_failure_preserves_previous_file) ... ok
+test_changed_reference_and_preprocessing_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_changed_reference_and_preprocessing_rejected) ... ok
+{"event": "extract_start", "stage_id": "t1", "previous_stages": []}
+{"event": "memory_saved", "output_memory": "C:\\Users\\Cloud\\AppData\\Local\\Temp\\tmpu_0s5cru\\memory.pt", "processed_stages": ["t1"], "identities": 4, "images": 8, "categories": {"person": 2, "vehicle": 2}, "feature_dim": 4, "vector_bytes": 64, "reference_signature": "80f556a34150ae04fd71dc61834e7f5c07158a40bbaee3a5257f49979c126e92", "stream_fingerprint": "83d42d59fb19244aa8a9d71edf6825203c84b2e7a176fbf39cdce2ff8cd7d505"}
+test_cli_accepts_completed_baseline_model_checkpoint (test_identity_prototype_memory.IdentityMemoryTests.test_cli_accepts_completed_baseline_model_checkpoint) ... ok
+{"event": "extract_start", "stage_id": "t1", "previous_stages": []}
+{"event": "memory_saved", "output_memory": "C:\\Users\\Cloud\\AppData\\Local\\Temp\\tmppmxiyhv_\\t1.pt", "processed_stages": ["t1"], "identities": 4, "images": 8, "categories": {"person": 2, "vehicle": 2}, "feature_dim": 4, "vector_bytes": 64, "reference_signature": "80f556a34150ae04fd71dc61834e7f5c07158a40bbaee3a5257f49979c126e92", "stream_fingerprint": "6538ba06167c9f3fdde13a1b9b049541c9f28d4931fb1b3db4e462846345d866"}
+{"event": "extract_start", "stage_id": "t2", "previous_stages": ["t1"]}
+{"event": "memory_saved", "output_memory": "C:\\Users\\Cloud\\AppData\\Local\\Temp\\tmppmxiyhv_\\t2.pt", "processed_stages": ["t1", "t2"], "identities": 8, "images": 16, "categories": {"panda": 2, "person": 4, "vehicle": 2}, "feature_dim": 4, "vector_bytes": 128, "reference_signature": "80f556a34150ae04fd71dc61834e7f5c07158a40bbaee3a5257f49979c126e92", "stream_fingerprint": "6538ba06167c9f3fdde13a1b9b049541c9f28d4931fb1b3db4e462846345d866"}
+test_cli_two_stages_and_reject_existing_output (test_identity_prototype_memory.IdentityMemoryTests.test_cli_two_stages_and_reject_existing_output) ... ok
+test_extraction_independent_of_adapters_and_preserves_policy (test_identity_prototype_memory.IdentityMemoryTests.test_extraction_independent_of_adapters_and_preserves_policy) ... ok
+test_failed_commit_keeps_all_history (test_identity_prototype_memory.IdentityMemoryTests.test_failed_commit_keeps_all_history) ... ok
+test_image_failure_in_second_category_does_not_partially_commit (test_identity_prototype_memory.IdentityMemoryTests.test_image_failure_in_second_category_does_not_partially_commit) ... ok
+test_independent_loader_supports_one_identity_one_image (test_identity_prototype_memory.IdentityMemoryTests.test_independent_loader_supports_one_identity_one_image) ... ok
+test_loader_rejects_evaluation_rows_and_bad_options (test_identity_prototype_memory.IdentityMemoryTests.test_loader_rejects_evaluation_rows_and_bad_options) ... ok
+test_mean_raw_features_then_normalize_not_mean_normalized (test_identity_prototype_memory.IdentityMemoryTests.test_mean_raw_features_then_normalize_not_mean_normalized) ... ok
+test_missing_and_repeated_images_are_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_missing_and_repeated_images_are_rejected) ... ok
+test_modified_stage_contract_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_modified_stage_contract_rejected) ... ok
+test_prepare_does_not_commit_and_commit_copies_candidate (test_identity_prototype_memory.IdentityMemoryTests.test_prepare_does_not_commit_and_commit_copies_candidate) ... ok
+test_preprocessing_signature_mismatch_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_preprocessing_signature_mismatch_rejected) ... ok
+test_recurrence_appends_and_absent_category_stays_exactly_unchanged (test_identity_prototype_memory.IdentityMemoryTests.test_recurrence_appends_and_absent_category_stays_exactly_unchanged) ... ok
+test_repeated_and_out_of_order_stages_rejected_before_images (test_identity_prototype_memory.IdentityMemoryTests.test_repeated_and_out_of_order_stages_rejected_before_images) ... ok
+test_restore_rejects_wrong_stream_and_malformed_rows (test_identity_prototype_memory.IdentityMemoryTests.test_restore_rejects_wrong_stream_and_malformed_rows) ... ok
+test_save_restore_then_continue (test_identity_prototype_memory.IdentityMemoryTests.test_save_restore_then_continue) ... ok
+test_snapshots_do_not_expose_mutable_history_or_image_paths (test_identity_prototype_memory.IdentityMemoryTests.test_snapshots_do_not_expose_mutable_history_or_image_paths) ... ok
+test_wrong_metadata_and_unknown_image_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_wrong_metadata_and_unknown_image_rejected) ... ok
+test_zero_mean_nonfinite_and_wrong_shape_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_zero_mean_nonfinite_and_wrong_shape_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 2.840s
+
+OK

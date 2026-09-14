@@ -1,0 +1,638 @@
+{
+  "status": "passed",
+  "data": "generated colored rectangles; no real ReID accuracy claim",
+  "device": "cuda",
+  "amp": true,
+  "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+  "reference_features_exactly_unchanged": true,
+  "teachers_exactly_unchanged": true,
+  "recurring_teachers_match_stage_start": true,
+  "current_adapters_updated": true,
+  "absent_adapters_exactly_unchanged": true,
+  "saved_and_restored_each_stage": true,
+  "old_images_removed_before_next_stage": true,
+  "stages": [
+    {
+      "training": {
+        "event": "stage_end",
+        "stage_id": "t1",
+        "completed_epochs": 2,
+        "optimizer_steps": 4,
+        "category_updates": {
+          "person": 4,
+          "vehicle": 4
+        },
+        "config": {
+          "epochs": 2,
+          "iterations_per_epoch": 2,
+          "adapter_lr": 0.0003,
+          "head_lr": 0.01,
+          "weight_decay": 0.0001,
+          "lambda_tri": 1.0,
+          "triplet_margin": 0.3,
+          "amp": true,
+          "max_grad_norm": null
+        },
+        "epochs": [
+          {
+            "event": "epoch_end",
+            "stage_id": "t1",
+            "epoch": 0,
+            "optimizer_steps": 2,
+            "categories": {
+              "person": {
+                "ce": 0.500386580824852,
+                "triplet": 0.06415122747421265,
+                "weighted_triplet": 0.06415122747421265,
+                "total": 0.5645378082990646,
+                "accuracy": 0.75,
+                "positive_distance": 0.13727810978889465,
+                "negative_distance": 0.4563017785549164,
+                "active_triplet_fraction": 0.5,
+                "images": 8,
+                "consistency": 0.0,
+                "weighted_consistency": 0.0,
+                "consistency_weight": 0.0,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": null
+              },
+              "vehicle": {
+                "ce": 0.499523401260376,
+                "triplet": 0.06415122747421265,
+                "weighted_triplet": 0.06415122747421265,
+                "total": 0.5636746287345886,
+                "accuracy": 0.75,
+                "positive_distance": 0.13853858411312103,
+                "negative_distance": 0.45535948872566223,
+                "active_triplet_fraction": 0.5,
+                "images": 8,
+                "consistency": 0.0,
+                "weighted_consistency": 0.0,
+                "consistency_weight": 0.0,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": null
+              }
+            }
+          },
+          {
+            "event": "epoch_end",
+            "stage_id": "t1",
+            "epoch": 1,
+            "optimizer_steps": 2,
+            "categories": {
+              "person": {
+                "ce": 0.035021058516576886,
+                "triplet": 0.0,
+                "weighted_triplet": 0.0,
+                "total": 0.035021058516576886,
+                "accuracy": 1.0,
+                "positive_distance": 0.13020377606153488,
+                "negative_distance": 0.9201497435569763,
+                "active_triplet_fraction": 0.0,
+                "images": 8,
+                "consistency": 0.0,
+                "weighted_consistency": 0.0,
+                "consistency_weight": 0.0,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": null
+              },
+              "vehicle": {
+                "ce": 0.03151306393556297,
+                "triplet": 0.0,
+                "weighted_triplet": 0.0,
+                "total": 0.03151306393556297,
+                "accuracy": 1.0,
+                "positive_distance": 0.13088273257017136,
+                "negative_distance": 0.9452784657478333,
+                "active_triplet_fraction": 0.0,
+                "images": 8,
+                "consistency": 0.0,
+                "weighted_consistency": 0.0,
+                "consistency_weight": 0.0,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": null
+              }
+            }
+          }
+        ],
+        "pgca": {
+          "config": {
+            "mode": "drift",
+            "lambda_con": 2.0,
+            "gamma": 3.0
+          },
+          "recurring_categories": [],
+          "drifts": {
+            "person": null,
+            "vehicle": null
+          },
+          "weights": {
+            "person": 0.0,
+            "vehicle": 0.0
+          },
+          "teacher": null
+        }
+      },
+      "ecpm": {
+        "processed_stages": [
+          "t1"
+        ],
+        "identities": 4,
+        "images": 8,
+        "categories": {
+          "person": 2,
+          "vehicle": 2
+        },
+        "feature_dim": 512,
+        "vector_bytes": 8192,
+        "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+        "stream_fingerprint": "ee578cbfbc4005f78def582c92057684833fbbf3ad1143ca1aa17af0783b4b15",
+        "clustering_config": {
+          "chunk_size": 2
+        },
+        "finch_runtime": {
+          "package": "finch-clust",
+          "version": "0.2.3",
+          "dependencies": {
+            "numpy": "2.3.3",
+            "scipy": "1.18.1",
+            "scikit-learn": "1.9.1"
+          },
+          "source_sha256": "1d3c01620d22d63fee91beea2742b51f7245b10588005188fe8cbf2e50aa4845"
+        },
+        "category_modes": {
+          "person": {
+            "identities": 2,
+            "modes": 1,
+            "cluster_sizes": [
+              2
+            ],
+            "last_updated_stage": "t1",
+            "clustering_seconds": 0.011485100025311112,
+            "distance_block_bytes": 16,
+            "mode_and_center_bytes": 4096,
+            "assignment_bytes": 24
+          },
+          "vehicle": {
+            "identities": 2,
+            "modes": 1,
+            "cluster_sizes": [
+              2
+            ],
+            "last_updated_stage": "t1",
+            "clustering_seconds": 0.0011171999503858387,
+            "distance_block_bytes": 16,
+            "mode_and_center_bytes": 4096,
+            "assignment_bytes": 24
+          }
+        },
+        "drifts": {
+          "person": null,
+          "vehicle": null
+        },
+        "summary_tensor_bytes": 8240,
+        "old_snapshot_tensor_bytes": 0,
+        "total_tensor_bytes": 16432
+      }
+    },
+    {
+      "training": {
+        "event": "stage_end",
+        "stage_id": "t2",
+        "completed_epochs": 2,
+        "optimizer_steps": 4,
+        "category_updates": {
+          "panda": 4,
+          "person": 4
+        },
+        "config": {
+          "epochs": 2,
+          "iterations_per_epoch": 2,
+          "adapter_lr": 0.0003,
+          "head_lr": 0.01,
+          "weight_decay": 0.0001,
+          "lambda_tri": 1.0,
+          "triplet_margin": 0.3,
+          "amp": true,
+          "max_grad_norm": null
+        },
+        "epochs": [
+          {
+            "event": "epoch_end",
+            "stage_id": "t2",
+            "epoch": 0,
+            "optimizer_steps": 2,
+            "categories": {
+              "panda": {
+                "ce": 0.5004246979951859,
+                "triplet": 0.06292471289634705,
+                "weighted_triplet": 0.06292471289634705,
+                "total": 0.5633494108915329,
+                "accuracy": 0.75,
+                "positive_distance": 0.1478840708732605,
+                "negative_distance": 0.44207069277763367,
+                "active_triplet_fraction": 0.5,
+                "images": 8,
+                "consistency": 0.0,
+                "weighted_consistency": 0.0,
+                "consistency_weight": 0.0,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": null
+              },
+              "person": {
+                "ce": 0.40716203674674034,
+                "triplet": 0.0,
+                "weighted_triplet": 0.0,
+                "total": 0.43138404935598373,
+                "accuracy": 0.5,
+                "positive_distance": 0.13023082166910172,
+                "negative_distance": 1.1042561531066895,
+                "active_triplet_fraction": 0.0,
+                "images": 8,
+                "consistency": 0.01216387003660202,
+                "weighted_consistency": 0.024222010746598244,
+                "consistency_weight": 1.9913078436767233,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": 0.0014518499374389648
+              }
+            }
+          },
+          {
+            "event": "epoch_end",
+            "stage_id": "t2",
+            "epoch": 1,
+            "optimizer_steps": 2,
+            "categories": {
+              "panda": {
+                "ce": 0.035524592734873295,
+                "triplet": 0.0,
+                "weighted_triplet": 0.0,
+                "total": 0.035524592734873295,
+                "accuracy": 1.0,
+                "positive_distance": 0.13444694876670837,
+                "negative_distance": 0.8897683322429657,
+                "active_triplet_fraction": 0.0,
+                "images": 8,
+                "consistency": 0.0,
+                "weighted_consistency": 0.0,
+                "consistency_weight": 0.0,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": null
+              },
+              "person": {
+                "ce": 0.01050795242190361,
+                "triplet": 0.0,
+                "weighted_triplet": 0.0,
+                "total": 0.04288097843527794,
+                "accuracy": 1.0,
+                "positive_distance": 0.11471111699938774,
+                "negative_distance": 1.163910150527954,
+                "active_triplet_fraction": 0.0,
+                "images": 8,
+                "consistency": 0.016257166862487793,
+                "weighted_consistency": 0.032373025082051754,
+                "consistency_weight": 1.9913078436767233,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": 0.0014518499374389648
+              }
+            }
+          }
+        ],
+        "pgca": {
+          "config": {
+            "mode": "drift",
+            "lambda_con": 2.0,
+            "gamma": 3.0
+          },
+          "recurring_categories": [
+            "person"
+          ],
+          "drifts": {
+            "panda": null,
+            "person": 0.0014518499374389648
+          },
+          "weights": {
+            "panda": 0.0,
+            "person": 1.9913078436767233
+          },
+          "teacher": {
+            "categories": [
+              "person"
+            ],
+            "state_sha256": "4fe62cac9b0e1ccd7e560c913f7498bbf1c760a5538cc585a56bd5ae5eb24493",
+            "adapter_sha256": {
+              "person": "3d665eb5f8f19a667e4563bb9c3843b2ba57ebeab6a6a250df6d506c1ac8c0a0"
+            },
+            "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+            "tensor_bytes": 347942912,
+            "implementation": "independent_frozen_visual_bank"
+          }
+        }
+      },
+      "ecpm": {
+        "processed_stages": [
+          "t1",
+          "t2"
+        ],
+        "identities": 8,
+        "images": 16,
+        "categories": {
+          "panda": 2,
+          "person": 4,
+          "vehicle": 2
+        },
+        "feature_dim": 512,
+        "vector_bytes": 16384,
+        "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+        "stream_fingerprint": "ee578cbfbc4005f78def582c92057684833fbbf3ad1143ca1aa17af0783b4b15",
+        "clustering_config": {
+          "chunk_size": 2
+        },
+        "finch_runtime": {
+          "package": "finch-clust",
+          "version": "0.2.3",
+          "dependencies": {
+            "numpy": "2.3.3",
+            "scipy": "1.18.1",
+            "scikit-learn": "1.9.1"
+          },
+          "source_sha256": "1d3c01620d22d63fee91beea2742b51f7245b10588005188fe8cbf2e50aa4845"
+        },
+        "category_modes": {
+          "person": {
+            "identities": 4,
+            "modes": 2,
+            "cluster_sizes": [
+              2,
+              2
+            ],
+            "last_updated_stage": "t2",
+            "clustering_seconds": 0.0018736000056378543,
+            "distance_block_bytes": 32,
+            "mode_and_center_bytes": 6144,
+            "assignment_bytes": 48
+          },
+          "vehicle": {
+            "identities": 2,
+            "modes": 1,
+            "cluster_sizes": [
+              2
+            ],
+            "last_updated_stage": "t1",
+            "clustering_seconds": 0.0011171999503858387,
+            "distance_block_bytes": 16,
+            "mode_and_center_bytes": 4096,
+            "assignment_bytes": 24
+          },
+          "panda": {
+            "identities": 2,
+            "modes": 1,
+            "cluster_sizes": [
+              2
+            ],
+            "last_updated_stage": "t2",
+            "clustering_seconds": 0.0011754000443033874,
+            "distance_block_bytes": 16,
+            "mode_and_center_bytes": 4096,
+            "assignment_bytes": 24
+          }
+        },
+        "drifts": {
+          "panda": null,
+          "person": 0.0014518499374389648
+        },
+        "summary_tensor_bytes": 14432,
+        "old_snapshot_tensor_bytes": 8240,
+        "total_tensor_bytes": 39056
+      }
+    },
+    {
+      "training": {
+        "event": "stage_end",
+        "stage_id": "t3",
+        "completed_epochs": 2,
+        "optimizer_steps": 4,
+        "category_updates": {
+          "person": 4,
+          "vehicle": 4
+        },
+        "config": {
+          "epochs": 2,
+          "iterations_per_epoch": 2,
+          "adapter_lr": 0.0003,
+          "head_lr": 0.01,
+          "weight_decay": 0.0001,
+          "lambda_tri": 1.0,
+          "triplet_margin": 0.3,
+          "amp": true,
+          "max_grad_norm": null
+        },
+        "epochs": [
+          {
+            "event": "epoch_end",
+            "stage_id": "t3",
+            "epoch": 0,
+            "optimizer_steps": 2,
+            "categories": {
+              "person": {
+                "ce": 0.4057837054133415,
+                "triplet": 0.0,
+                "weighted_triplet": 0.0,
+                "total": 0.42573609203100204,
+                "accuracy": 0.75,
+                "positive_distance": 0.13226529955863953,
+                "negative_distance": 1.111965000629425,
+                "active_triplet_fraction": 0.0,
+                "images": 8,
+                "consistency": 0.00999576598405838,
+                "weighted_consistency": 0.019952386617660522,
+                "consistency_weight": 1.9960838799429386,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": 0.0006533265113830566
+              },
+              "vehicle": {
+                "ce": 0.3992939107120037,
+                "triplet": 0.0,
+                "weighted_triplet": 0.0,
+                "total": 0.4467727392911911,
+                "accuracy": 1.0,
+                "positive_distance": 0.1546449512243271,
+                "negative_distance": 1.1560003161430359,
+                "active_triplet_fraction": 0.0,
+                "images": 8,
+                "consistency": 0.02395818382501602,
+                "weighted_consistency": 0.047478824581761,
+                "consistency_weight": 1.9817372260372856,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": 0.0030577778816223145
+              }
+            }
+          },
+          {
+            "event": "epoch_end",
+            "stage_id": "t3",
+            "epoch": 1,
+            "optimizer_steps": 2,
+            "categories": {
+              "person": {
+                "ce": 0.0087805544026196,
+                "triplet": 0.0,
+                "weighted_triplet": 0.0,
+                "total": 0.0379702877253294,
+                "accuracy": 1.0,
+                "positive_distance": 0.11846622079610825,
+                "negative_distance": 1.1789112091064453,
+                "active_triplet_fraction": 0.0,
+                "images": 8,
+                "consistency": 0.014623500406742096,
+                "weighted_consistency": 0.02918973285704851,
+                "consistency_weight": 1.9960838799429386,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": 0.0006533265113830566
+              },
+              "vehicle": {
+                "ce": 0.009767051902599633,
+                "triplet": 0.0,
+                "weighted_triplet": 0.0,
+                "total": 0.07095947489142418,
+                "accuracy": 1.0,
+                "positive_distance": 0.13735294342041016,
+                "negative_distance": 1.2178175449371338,
+                "active_triplet_fraction": 0.0,
+                "images": 8,
+                "consistency": 0.03087817132472992,
+                "weighted_consistency": 0.06119242310523987,
+                "consistency_weight": 1.9817372260372856,
+                "updates": 2,
+                "loader_restarts": 1,
+                "prototype_drift": 0.0030577778816223145
+              }
+            }
+          }
+        ],
+        "pgca": {
+          "config": {
+            "mode": "drift",
+            "lambda_con": 2.0,
+            "gamma": 3.0
+          },
+          "recurring_categories": [
+            "person",
+            "vehicle"
+          ],
+          "drifts": {
+            "person": 0.0006533265113830566,
+            "vehicle": 0.0030577778816223145
+          },
+          "weights": {
+            "person": 1.9960838799429386,
+            "vehicle": 1.9817372260372856
+          },
+          "teacher": {
+            "categories": [
+              "person",
+              "vehicle"
+            ],
+            "state_sha256": "77013ef4d9109fd3efd1b47c29ab9d673a158290ebb069c89aa723b7d84d381c",
+            "adapter_sha256": {
+              "person": "723a48ddb3595ecdec07c4a0aeb2f7df2a15e6265dbc0e06d9a9f8dc9c856389",
+              "vehicle": "202c6a1a22d3e8c02a18b3756b44c6578479fedf5ff487cdefeadf71c9b14b59"
+            },
+            "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+            "tensor_bytes": 349529088,
+            "implementation": "independent_frozen_visual_bank"
+          }
+        }
+      },
+      "ecpm": {
+        "processed_stages": [
+          "t1",
+          "t2",
+          "t3"
+        ],
+        "identities": 12,
+        "images": 24,
+        "categories": {
+          "panda": 2,
+          "person": 6,
+          "vehicle": 4
+        },
+        "feature_dim": 512,
+        "vector_bytes": 24576,
+        "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+        "stream_fingerprint": "ee578cbfbc4005f78def582c92057684833fbbf3ad1143ca1aa17af0783b4b15",
+        "clustering_config": {
+          "chunk_size": 2
+        },
+        "finch_runtime": {
+          "package": "finch-clust",
+          "version": "0.2.3",
+          "dependencies": {
+            "numpy": "2.3.3",
+            "scipy": "1.18.1",
+            "scikit-learn": "1.9.1"
+          },
+          "source_sha256": "1d3c01620d22d63fee91beea2742b51f7245b10588005188fe8cbf2e50aa4845"
+        },
+        "category_modes": {
+          "person": {
+            "identities": 6,
+            "modes": 2,
+            "cluster_sizes": [
+              3,
+              3
+            ],
+            "last_updated_stage": "t3",
+            "clustering_seconds": 0.002805899945087731,
+            "distance_block_bytes": 48,
+            "mode_and_center_bytes": 6144,
+            "assignment_bytes": 64
+          },
+          "vehicle": {
+            "identities": 4,
+            "modes": 2,
+            "cluster_sizes": [
+              2,
+              2
+            ],
+            "last_updated_stage": "t3",
+            "clustering_seconds": 0.002348100009839982,
+            "distance_block_bytes": 32,
+            "mode_and_center_bytes": 6144,
+            "assignment_bytes": 48
+          },
+          "panda": {
+            "identities": 2,
+            "modes": 1,
+            "cluster_sizes": [
+              2
+            ],
+            "last_updated_stage": "t2",
+            "clustering_seconds": 0.0011754000443033874,
+            "distance_block_bytes": 16,
+            "mode_and_center_bytes": 4096,
+            "assignment_bytes": 24
+          }
+        },
+        "drifts": {
+          "person": 0.0006533265113830566,
+          "vehicle": 0.0030577778816223145
+        },
+        "summary_tensor_bytes": 16520,
+        "old_snapshot_tensor_bytes": 14432,
+        "total_tensor_bytes": 55528
+      }
+    }
+  ]
+}

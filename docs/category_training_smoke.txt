@@ -1,0 +1,13 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "status": "passed",
+  "data": "generated colored rectangles; no real ReID accuracy claim",
+  "device": "cuda",
+  "amp": true,
+  "feature_dim": 512,
+  "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+  "reference_features_exactly_unchanged": true,
+  "absent_vehicle_features_exactly_unchanged_in_t2": true,
+  "temporary_heads_after_finish": 0
+}

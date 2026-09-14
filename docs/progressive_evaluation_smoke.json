@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "device": "cuda",
+  "amp": true,
+  "data": "generated images only; no real-world retrieval efficacy claim",
+  "stages": 3,
+  "updates": 6,
+  "resumed_at_stage_boundary_and_inside_t2": true,
+  "adapter_rng_and_training_logs_bitwise_equal": true,
+  "retrieval_and_routing_reports_equal": true,
+  "reloaded_routing_scores_predictions_descriptors_bitwise_equal": true,
+  "per_dataset_and_mixed_gallery": true,
+  "oracle_and_prototype": true,
+  "full_performance_and_forgetting_matrices": true
+}

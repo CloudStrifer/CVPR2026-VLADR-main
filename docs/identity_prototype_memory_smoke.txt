@@ -1,0 +1,49 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{
+  "status": "passed",
+  "data": "generated rectangles; no real ReID accuracy claim",
+  "device": "cuda",
+  "outer_autocast": true,
+  "feature_dim": 512,
+  "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+  "reference_weights_unchanged": true,
+  "historical_prototypes_exactly_unchanged": true,
+  "old_images_removed_before_next_stage": true,
+  "save_restore_each_stage": true,
+  "hand_mean_max_absolute_error": 1.1920928955078125e-07,
+  "stages": [
+    {
+      "processed_stages": [
+        "t1"
+      ],
+      "identities": 4,
+      "images": 8,
+      "categories": {
+        "person": 2,
+        "vehicle": 2
+      },
+      "feature_dim": 512,
+      "vector_bytes": 8192,
+      "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+      "stream_fingerprint": "e4d7ecb5c777dcaa5946a6e0060d78aecd0a23a9f372d5d14ea539eb0bbdfbfa"
+    },
+    {
+      "processed_stages": [
+        "t1",
+        "t2"
+      ],
+      "identities": 8,
+      "images": 16,
+      "categories": {
+        "panda": 2,
+        "person": 4,
+        "vehicle": 2
+      },
+      "feature_dim": 512,
+      "vector_bytes": 16384,
+      "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+      "stream_fingerprint": "e4d7ecb5c777dcaa5946a6e0060d78aecd0a23a9f372d5d14ea539eb0bbdfbfa"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+Collecting finch-clust==0.2.3
+  Downloading finch_clust-0.2.3-py3-none-any.whl.metadata (3.9 kB)
+Collecting scipy (from finch-clust==0.2.3)
+  Downloading scipy-1.18.1-cp313-cp313-win_amd64.whl.metadata (61 kB)
+Collecting scikit-learn (from finch-clust==0.2.3)
+  Downloading scikit_learn-1.9.1-cp313-cp313-win_amd64.whl.metadata (9.3 kB)
+Requirement already satisfied: numpy in d:\python3.13.7\lib\site-packages (from finch-clust==0.2.3) (2.3.3)
+Collecting joblib>=1.4.0 (from scikit-learn->finch-clust==0.2.3)
+  Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting narwhals>=2.0.1 (from scikit-learn->finch-clust==0.2.3)
+  Downloading narwhals-2.26.0-py3-none-any.whl.metadata (15 kB)
+Collecting threadpoolctl>=3.5.0 (from scikit-learn->finch-clust==0.2.3)
+  Using cached threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting cloudpickle>=3.0 (from joblib>=1.4.0->scikit-learn->finch-clust==0.2.3)
+  Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Downloading finch_clust-0.2.3-py3-none-any.whl (11 kB)
+Downloading scikit_learn-1.9.1-cp313-cp313-win_amd64.whl (8.2 MB)
+   ---------------------------------------- 8.2/8.2 MB 25.2 MB/s  0:00:00
+Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Downloading narwhals-2.26.0-py3-none-any.whl (474 kB)
+Downloading scipy-1.18.1-cp313-cp313-win_amd64.whl (36.6 MB)
+   ---------------------------------------- 36.6/36.6 MB 19.8 MB/s  0:00:01
+Using cached threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Installing collected packages: threadpoolctl, scipy, narwhals, cloudpickle, joblib, scikit-learn, finch-clust
+
+Successfully installed cloudpickle-3.1.2 finch-clust-0.2.3 joblib-1.6.0 narwhals-2.26.0 scikit-learn-1.9.1 scipy-1.18.1 threadpoolctl-3.6.0
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip

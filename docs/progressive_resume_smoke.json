@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "device": "cuda",
+  "amp": true,
+  "data": "generated images, not a ReID accuracy experiment",
+  "stages": 3,
+  "optimizer_updates": 18,
+  "separate_process_resume": true,
+  "random_augmentation": true,
+  "gradient_clipping": 0.1,
+  "sampler_pass_restarts": true,
+  "midpoint_teacher_optimizer_scaler_heads_rng_bitwise_equal": true,
+  "all_training_logs_bitwise_equal": true,
+  "final_adapter_and_prototype_tensors_bitwise_equal": true,
+  "final_rng_bitwise_equal": true,
+  "transferred_new_category_exercised": true,
+  "reference_file_bytes": 344818959,
+  "midpoint_checkpoint_bytes": 14446411
+}

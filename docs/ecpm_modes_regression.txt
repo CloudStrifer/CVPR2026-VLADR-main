@@ -1,0 +1,127 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+E:\Multi_modal_Code\CVPR2026-VLADR-main\reid\evaluation\rank.py:11: UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.
+  warnings.warn(
+test_active_adapter_restored_after_reference_and_forward_error (test_category_adapter_bank.CategoryAdapterBankTests.test_active_adapter_restored_after_reference_and_forward_error) ... ok
+test_bank_rejects_same_architecture_different_weights_or_preprocessing (test_category_adapter_bank.CategoryAdapterBankTests.test_bank_rejects_same_architecture_different_weights_or_preprocessing) ... ok
+test_bank_roundtrip_reconstructs_names_and_features (test_category_adapter_bank.CategoryAdapterBankTests.test_bank_roundtrip_reconstructs_names_and_features) ... ok
+test_bank_validates_all_categories_before_mutating_registry (test_category_adapter_bank.CategoryAdapterBankTests.test_bank_validates_all_categories_before_mutating_registry) ... ok
+test_copy_independent_parameters_and_snapshot_not_live (test_category_adapter_bank.CategoryAdapterBankTests.test_copy_independent_parameters_and_snapshot_not_live) ... ok
+test_frozen_preprocessing_factory_matches_config (test_category_adapter_bank.CategoryAdapterBankTests.test_frozen_preprocessing_factory_matches_config) ... ok
+test_full_checkpoint_tensor_serialization_and_raw_model_restore (test_category_adapter_bank.CategoryAdapterBankTests.test_full_checkpoint_tensor_serialization_and_raw_model_restore) ... ok
+test_initial_reference_and_zero_adapter_equal_original_projected_cls (test_category_adapter_bank.CategoryAdapterBankTests.test_initial_reference_and_zero_adapter_equal_original_projected_cls) ... ok
+test_input_gradient_reference_disabled_student_preserved (test_category_adapter_bank.CategoryAdapterBankTests.test_input_gradient_reference_disabled_student_preserved) ... ok
+test_invalid_architecture_and_input_contract (test_category_adapter_bank.CategoryAdapterBankTests.test_invalid_architecture_and_input_contract) ... ok
+test_local_factory_missing_weight_fails_without_download (test_category_adapter_bank.CategoryAdapterBankTests.test_local_factory_missing_weight_fails_without_download) ... ok
+test_malformed_snapshot_rejected_before_category_creation (test_category_adapter_bank.CategoryAdapterBankTests.test_malformed_snapshot_rejected_before_category_creation) ... ok
+test_reference_is_unchanged_inside_ambient_autocast (test_category_adapter_bank.CategoryAdapterBankTests.test_reference_is_unchanged_inside_ambient_autocast) ... ok
+test_reference_mutation_is_detected_before_export (test_category_adapter_bank.CategoryAdapterBankTests.test_reference_mutation_is_detected_before_export) ... ok
+test_shared_bn_running_state_remains_frozen_under_parent_train (test_category_adapter_bank.CategoryAdapterBankTests.test_shared_bn_running_state_remains_frozen_under_parent_train) ... ok
+test_stage_stream_reuses_parameters_and_registers_only_new_categories (test_category_adapter_bank.CategoryAdapterBankTests.test_stage_stream_reuses_parameters_and_registers_only_new_categories) ... ok
+test_stage_transition_clears_stale_gradients_even_with_old_optimizer (test_category_adapter_bank.CategoryAdapterBankTests.test_stage_transition_clears_stale_gradients_even_with_old_optimizer) ... ok
+test_temporary_classifier_is_current_only_and_discardable (test_category_adapter_bank.CategoryAdapterBankTests.test_temporary_classifier_is_current_only_and_discardable) ... ok
+test_train_eval_do_not_change_feature_definition_or_unfreeze_reference (test_category_adapter_bank.CategoryAdapterBankTests.test_train_eval_do_not_change_feature_definition_or_unfreeze_reference) ... ok
+test_training_changes_only_current_adapter_and_reference_stays_fixed (test_category_adapter_bank.CategoryAdapterBankTests.test_training_changes_only_current_adapter_and_reference_stays_fixed) ... ok
+test_two_current_categories_both_keep_gradients_across_reference_forward (test_category_adapter_bank.CategoryAdapterBankTests.test_two_current_categories_both_keep_gradients_across_reference_forward) ... ok
+test_unicode_and_punctuation_category_keys_are_stable_and_safe (test_category_adapter_bank.CategoryAdapterBankTests.test_unicode_and_punctuation_category_keys_are_stable_and_safe) ... ok
+test_unknown_category_does_not_auto_create_or_change_training_policy (test_category_adapter_bank.CategoryAdapterBankTests.test_unknown_category_does_not_auto_create_or_change_training_policy) ... ok
+test_wrapper_new_entry_does_not_use_legacy_model_constructor (test_category_adapter_bank.CategoryAdapterBankTests.test_wrapper_new_entry_does_not_use_legacy_model_constructor) ... ok
+test_alias_does_not_turn_same_camera_into_cross_camera_positive (test_category_stream.CategoryStreamTests.test_alias_does_not_turn_same_camera_into_cross_camera_positive) ... ok
+test_aliases_detect_leakage_after_source_renaming (test_category_stream.CategoryStreamTests.test_aliases_detect_leakage_after_source_renaming) ... ok
+test_aliases_detect_same_real_identity_across_sources (test_category_stream.CategoryStreamTests.test_aliases_detect_same_real_identity_across_sources) ... ok
+test_aliases_merge_views_within_one_stage (test_category_stream.CategoryStreamTests.test_aliases_merge_views_within_one_stage) ... ok
+test_checked_in_example (test_category_stream.CategoryStreamTests.test_checked_in_example) ... ok
+test_cli_from_outside_repository_and_structured_report (test_category_stream.CategoryStreamTests.test_cli_from_outside_repository_and_structured_report) ... ok
+test_cross_stage_same_image_with_changed_pid_rejected (test_category_stream.CategoryStreamTests.test_cross_stage_same_image_with_changed_pid_rejected) ... ok
+test_data_root_is_explicit (test_category_stream.CategoryStreamTests.test_data_root_is_explicit) ... ok
+test_duplicate_path_in_manifest_rejected (test_category_stream.CategoryStreamTests.test_duplicate_path_in_manifest_rejected) ... ok
+test_empty_training_never_falls_back_to_evaluation (test_category_stream.CategoryStreamTests.test_empty_training_never_falls_back_to_evaluation) ... ok
+test_entry_data_root_override (test_category_stream.CategoryStreamTests.test_entry_data_root_override) ... ok
+test_exclude_self_allows_same_camera_distinct_images (test_category_stream.CategoryStreamTests.test_exclude_self_allows_same_camera_distinct_images) ... ok
+test_fingerprint_stable_and_changes_with_metadata (test_category_stream.CategoryStreamTests.test_fingerprint_stable_and_changes_with_metadata) ... ok
+test_fixed_eval_is_exposed_only_after_category_arrival (test_category_stream.CategoryStreamTests.test_fixed_eval_is_exposed_only_after_category_arrival) ... ok
+test_jsonl_and_tsv_preserve_identity_fields (test_category_stream.CategoryStreamTests.test_jsonl_and_tsv_preserve_identity_fields) ... ok
+test_local_zero_is_not_global_identity (test_category_stream.CategoryStreamTests.test_local_zero_is_not_global_identity) ... ok
+test_metadata_only_default_and_explicit_existence_check (test_category_stream.CategoryStreamTests.test_metadata_only_default_and_explicit_existence_check) ... ok
+test_missing_evaluation_coverage_is_reported (test_category_stream.CategoryStreamTests.test_missing_evaluation_coverage_is_reported) ... ok
+test_no_cross_camera_positive_rejected (test_category_stream.CategoryStreamTests.test_no_cross_camera_positive_rejected) ... ok
+test_optional_category_stage_and_split_must_match_parent (test_category_stream.CategoryStreamTests.test_optional_category_stage_and_split_must_match_parent) ... ok
+test_parser_import_does_not_import_training_dependencies (test_category_stream.CategoryStreamTests.test_parser_import_does_not_import_training_dependencies) ... ok
+test_query_can_also_be_in_gallery_if_another_positive_exists (test_category_stream.CategoryStreamTests.test_query_can_also_be_in_gallery_if_another_positive_exists) ... ok
+test_query_itself_cannot_be_its_only_positive (test_category_stream.CategoryStreamTests.test_query_itself_cannot_be_its_only_positive) ... ok
+test_rejects_cross_stage_identity_even_with_new_path (test_category_stream.CategoryStreamTests.test_rejects_cross_stage_identity_even_with_new_path) ... ok
+test_rejects_unused_alias_to_catch_typos (test_category_stream.CategoryStreamTests.test_rejects_unused_alias_to_catch_typos) ... ok
+test_relative_paths_resolve_against_config_not_cwd (test_category_stream.CategoryStreamTests.test_relative_paths_resolve_against_config_not_cwd) ... ok
+test_same_pid_in_different_source_is_distinct (test_category_stream.CategoryStreamTests.test_same_pid_in_different_source_is_distinct) ... ok
+test_schema_typos_and_duplicate_stage_category_rejected (test_category_stream.CategoryStreamTests.test_schema_typos_and_duplicate_stage_category_rejected) ... ok
+test_stage_status_and_identity_counts (test_category_stream.CategoryStreamTests.test_stage_status_and_identity_counts) ... ok
+test_string_pid_leading_zeros_preserved (test_category_stream.CategoryStreamTests.test_string_pid_leading_zeros_preserved) ... ok
+test_train_test_identity_leakage_rejected (test_category_stream.CategoryStreamTests.test_train_test_identity_leakage_rejected) ... ok
+test_validation_test_identity_leakage_rejected (test_category_stream.CategoryStreamTests.test_validation_test_identity_leakage_rejected) ... ok
+test_builder_rejects_manually_mixed_stage_or_evaluation_rows (test_category_stream_loaders.CategoryStreamLoaderTests.test_builder_rejects_manually_mixed_stage_or_evaluation_rows) ... ok
+test_builder_rejects_whole_stream (test_category_stream_loaders.CategoryStreamLoaderTests.test_builder_rejects_whole_stream) ... ok
+test_default_reference_preprocessing_deterministic (test_category_stream_loaders.CategoryStreamLoaderTests.test_default_reference_preprocessing_deterministic) ... ok
+test_evaluation_query_gallery_share_labels (test_category_stream_loaders.CategoryStreamLoaderTests.test_evaluation_query_gallery_share_labels) ... ok
+test_insufficient_identities_rejected_without_cross_category_fallback (test_category_stream_loaders.CategoryStreamLoaderTests.test_insufficient_identities_rejected_without_cross_category_fallback) ... ok
+test_only_current_images_opened_and_reference_once (test_category_stream_loaders.CategoryStreamLoaderTests.test_only_current_images_opened_and_reference_once) ... ok
+test_sampler_is_repeatable_epoch_local_and_does_not_mutate_global_rng (test_category_stream_loaders.CategoryStreamLoaderTests.test_sampler_is_repeatable_epoch_local_and_does_not_mutate_global_rng) ... ok
+test_sampler_replacement_for_short_identity (test_category_stream_loaders.CategoryStreamLoaderTests.test_sampler_replacement_for_short_identity) ... ok
+test_worker_process_can_load_current_stage (test_category_stream_loaders.CategoryStreamLoaderTests.test_worker_process_can_load_current_stage) ... D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+ok
+test_hand_computed_rank_and_ap_with_camera_and_self_filtering (test_category_training.CategoryOracleMetricTests.test_hand_computed_rank_and_ap_with_camera_and_self_filtering) ... ok
+test_bad_config_rejected (test_category_training.CategoryTrainingTests.test_bad_config_rejected) ... ok
+test_batch_guard_rejects_cross_category_stage_split_and_wrong_label (test_category_training.CategoryTrainingTests.test_batch_guard_rejects_cross_category_stage_split_and_wrong_label) ... ok
+test_category_gradient_accumulation_matches_explicit_sum (test_category_training.CategoryTrainingTests.test_category_gradient_accumulation_matches_explicit_sum) ... ok
+test_head_size_tracks_current_identity_count_not_history (test_category_training.CategoryTrainingTests.test_head_size_tracks_current_identity_count_not_history) ... ok
+test_image_errors_propagate_and_failed_trainer_cannot_continue (test_category_training.CategoryTrainingTests.test_image_errors_propagate_and_failed_trainer_cannot_continue) ... ok
+test_incomplete_stage_cannot_be_marked_finished (test_category_training.CategoryTrainingTests.test_incomplete_stage_cannot_be_marked_finished) ... ok
+test_missing_stage_history_and_stale_heads_rejected (test_category_training.CategoryTrainingTests.test_missing_stage_history_and_stale_heads_rejected) ... ok
+test_nonfinite_second_category_loss_does_not_commit_first_category_update (test_category_training.CategoryTrainingTests.test_nonfinite_second_category_loss_does_not_commit_first_category_update) ... ok
+test_oracle_evaluation_preserves_model_mode (test_category_training.CategoryTrainingTests.test_oracle_evaluation_preserves_model_mode) ... ok
+{"event": "epoch_end", "stage_id": "t1", "epoch": 0, "optimizer_steps": 1, "categories": {"person": {"ce": 0.6931432485580444, "triplet": 0.35176265239715576, "weighted_triplet": 0.35176265239715576, "total": 1.0449059009552002, "accuracy": 0.5, "positive_distance": 0.0829654335975647, "negative_distance": 0.03120279498398304, "active_triplet_fraction": 1.0, "images": 4, "updates": 1, "loader_restarts": 0}, "vehicle": {"ce": 0.6930505037307739, "triplet": 0.3861207962036133, "weighted_triplet": 0.3861207962036133, "total": 1.0791712999343872, "accuracy": 0.5, "positive_distance": 0.17224158346652985, "negative_distance": 0.08612079173326492, "active_triplet_fraction": 1.0, "images": 4, "updates": 1, "loader_restarts": 0}}}
+{"event": "epoch_end", "stage_id": "t2", "epoch": 0, "optimizer_steps": 1, "categories": {"panda": {"ce": 0.6930841207504272, "triplet": 0.5320491790771484, "weighted_triplet": 0.5320491790771484, "total": 1.2251332998275757, "accuracy": 0.5, "positive_distance": 0.4534570276737213, "negative_distance": 0.22140786051750183, "active_triplet_fraction": 1.0, "images": 4, "updates": 1, "loader_restarts": 0}, "person": {"ce": 0.6932902336120605, "triplet": 0.3861328959465027, "weighted_triplet": 0.3861328959465027, "total": 1.079423189163208, "accuracy": 0.5, "positive_distance": 0.17226573824882507, "negative_distance": 0.08613285422325134, "active_triplet_fraction": 1.0, "images": 4, "updates": 1, "loader_restarts": 0}}}
+test_single_stage_runner_and_next_stage_checkpoint (test_category_training.CategoryTrainingTests.test_single_stage_runner_and_next_stage_checkpoint) ... ok
+test_small_fixture_identity_learning_improves (test_category_training.CategoryTrainingTests.test_small_fixture_identity_learning_improves) ... ok
+test_stage_transition_reuses_adapter_replaces_heads_and_freezes_absent (test_category_training.CategoryTrainingTests.test_stage_transition_reuses_adapter_replaces_heads_and_freezes_absent) ... ok
+test_unequal_loader_lengths_get_equal_update_budget (test_category_training.CategoryTrainingTests.test_unequal_loader_lengths_get_equal_update_budget) ... ok
+test_updates_both_categories_equal_budget_and_logs_only_baseline_losses (test_category_training.CategoryTrainingTests.test_updates_both_categories_equal_budget_and_logs_only_baseline_losses) ... ok
+test_zero_triplet_weight_is_exact_ce_objective (test_category_training.CategoryTrainingTests.test_zero_triplet_weight_is_exact_ce_objective) ... ok
+test_hand_computed_hardest_positive_and_negative (test_category_training.CategoryTripletTests.test_hand_computed_hardest_positive_and_negative) ... ok
+test_identical_resampled_positive_has_finite_gradient (test_category_training.CategoryTripletTests.test_identical_resampled_positive_has_finite_gradient) ... ok
+test_invalid_features_labels_and_margin (test_category_training.CategoryTripletTests.test_invalid_features_labels_and_margin) ... ok
+test_missing_positive_or_negative_is_error (test_category_training.CategoryTripletTests.test_missing_positive_or_negative_is_error) ... ok
+test_normalization_makes_loss_invariant_to_positive_feature_scaling (test_category_training.CategoryTripletTests.test_normalization_makes_loss_invariant_to_positive_feature_scaling) ... ok
+test_alias_identity_merges_sources_within_stage (test_identity_prototype_memory.IdentityMemoryTests.test_alias_identity_merges_sources_within_stage) ... ok
+test_atomic_save_failure_preserves_previous_file (test_identity_prototype_memory.IdentityMemoryTests.test_atomic_save_failure_preserves_previous_file) ... ok
+test_changed_reference_and_preprocessing_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_changed_reference_and_preprocessing_rejected) ... ok
+{"event": "extract_start", "stage_id": "t1", "previous_stages": []}
+{"event": "memory_saved", "output_memory": "C:\\Users\\Cloud\\AppData\\Local\\Temp\\tmpsu1214pe\\memory.pt", "processed_stages": ["t1"], "identities": 4, "images": 8, "categories": {"person": 2, "vehicle": 2}, "feature_dim": 4, "vector_bytes": 64, "reference_signature": "80f556a34150ae04fd71dc61834e7f5c07158a40bbaee3a5257f49979c126e92", "stream_fingerprint": "1d2ccbf58d9ce02148003a52a820a4a1108f227f504800d1057f00e5e744256d"}
+test_cli_accepts_completed_baseline_model_checkpoint (test_identity_prototype_memory.IdentityMemoryTests.test_cli_accepts_completed_baseline_model_checkpoint) ... ok
+{"event": "extract_start", "stage_id": "t1", "previous_stages": []}
+{"event": "memory_saved", "output_memory": "C:\\Users\\Cloud\\AppData\\Local\\Temp\\tmp7ijjuamk\\t1.pt", "processed_stages": ["t1"], "identities": 4, "images": 8, "categories": {"person": 2, "vehicle": 2}, "feature_dim": 4, "vector_bytes": 64, "reference_signature": "80f556a34150ae04fd71dc61834e7f5c07158a40bbaee3a5257f49979c126e92", "stream_fingerprint": "5bb47557dd88d7b09716cfefd6d716c9d04b502f09771155678a0be832f9d85b"}
+{"event": "extract_start", "stage_id": "t2", "previous_stages": ["t1"]}
+{"event": "memory_saved", "output_memory": "C:\\Users\\Cloud\\AppData\\Local\\Temp\\tmp7ijjuamk\\t2.pt", "processed_stages": ["t1", "t2"], "identities": 8, "images": 16, "categories": {"panda": 2, "person": 4, "vehicle": 2}, "feature_dim": 4, "vector_bytes": 128, "reference_signature": "80f556a34150ae04fd71dc61834e7f5c07158a40bbaee3a5257f49979c126e92", "stream_fingerprint": "5bb47557dd88d7b09716cfefd6d716c9d04b502f09771155678a0be832f9d85b"}
+test_cli_two_stages_and_reject_existing_output (test_identity_prototype_memory.IdentityMemoryTests.test_cli_two_stages_and_reject_existing_output) ... ok
+test_extraction_independent_of_adapters_and_preserves_policy (test_identity_prototype_memory.IdentityMemoryTests.test_extraction_independent_of_adapters_and_preserves_policy) ... ok
+test_failed_commit_keeps_all_history (test_identity_prototype_memory.IdentityMemoryTests.test_failed_commit_keeps_all_history) ... ok
+test_image_failure_in_second_category_does_not_partially_commit (test_identity_prototype_memory.IdentityMemoryTests.test_image_failure_in_second_category_does_not_partially_commit) ... ok
+test_independent_loader_supports_one_identity_one_image (test_identity_prototype_memory.IdentityMemoryTests.test_independent_loader_supports_one_identity_one_image) ... ok
+test_loader_rejects_evaluation_rows_and_bad_options (test_identity_prototype_memory.IdentityMemoryTests.test_loader_rejects_evaluation_rows_and_bad_options) ... ok
+test_mean_raw_features_then_normalize_not_mean_normalized (test_identity_prototype_memory.IdentityMemoryTests.test_mean_raw_features_then_normalize_not_mean_normalized) ... ok
+test_missing_and_repeated_images_are_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_missing_and_repeated_images_are_rejected) ... ok
+test_modified_stage_contract_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_modified_stage_contract_rejected) ... ok
+test_prepare_does_not_commit_and_commit_copies_candidate (test_identity_prototype_memory.IdentityMemoryTests.test_prepare_does_not_commit_and_commit_copies_candidate) ... ok
+test_preprocessing_signature_mismatch_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_preprocessing_signature_mismatch_rejected) ... ok
+test_recurrence_appends_and_absent_category_stays_exactly_unchanged (test_identity_prototype_memory.IdentityMemoryTests.test_recurrence_appends_and_absent_category_stays_exactly_unchanged) ... ok
+test_repeated_and_out_of_order_stages_rejected_before_images (test_identity_prototype_memory.IdentityMemoryTests.test_repeated_and_out_of_order_stages_rejected_before_images) ... ok
+test_restore_rejects_wrong_stream_and_malformed_rows (test_identity_prototype_memory.IdentityMemoryTests.test_restore_rejects_wrong_stream_and_malformed_rows) ... ok
+test_save_restore_then_continue (test_identity_prototype_memory.IdentityMemoryTests.test_save_restore_then_continue) ... ok
+test_snapshots_do_not_expose_mutable_history_or_image_paths (test_identity_prototype_memory.IdentityMemoryTests.test_snapshots_do_not_expose_mutable_history_or_image_paths) ... ok
+test_wrong_metadata_and_unknown_image_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_wrong_metadata_and_unknown_image_rejected) ... ok
+test_zero_mean_nonfinite_and_wrong_shape_rejected (test_identity_prototype_memory.IdentityMemoryTests.test_zero_mean_nonfinite_and_wrong_shape_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 108 tests in 15.203s
+
+OK

@@ -1,0 +1,27 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+E:\Multi_modal_Code\CVPR2026-VLADR-main\reid\evaluation\rank.py:11: UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.
+  warnings.warn(
+test_bad_config_and_prototypes_rejected (test_pgca_transfer.TransferFormulaTests.test_bad_config_and_prototypes_rejected) ... ok
+test_direction_is_new_row_max_then_mean_not_reverse (test_pgca_transfer.TransferFormulaTests.test_direction_is_new_row_max_then_mean_not_reverse) ... ok
+test_global_and_mode_alpha_endpoints (test_pgca_transfer.TransferFormulaTests.test_global_and_mode_alpha_endpoints) ... ok
+test_scoring_ignores_outer_cpu_autocast (test_pgca_transfer.TransferFormulaTests.test_scoring_ignores_outer_cpu_autocast) ... ok
+test_threshold_inclusive_negative_scores_empty_history_and_ties (test_pgca_transfer.TransferFormulaTests.test_threshold_inclusive_negative_scores_empty_history_and_ties) ... ok
+test_absent_donor_uses_old_centers_not_current_recurring_update (test_pgca_transfer.TransferStateTests.test_absent_donor_uses_old_centers_not_current_recurring_update) ... D:\python3.13.7\Lib\site-packages\finch\finch.py:12: UserWarning: pynndescent is not installed: No module named 'pynndescent'
+  warnings.warn('pynndescent is not installed: {}'.format(e))
+ok
+test_empty_history_matches_original_default_trainer_rng_and_parameters (test_pgca_transfer.TransferStateTests.test_empty_history_matches_original_default_trainer_rng_and_parameters) ... ok
+{"event": "epoch_end", "stage_id": "t2", "epoch": 0, "optimizer_steps": 1, "categories": {"panda": {"ce": 0.6931599974632263, "triplet": 0.5135766267776489, "weighted_triplet": 0.5135766267776489, "total": 1.2067365646362305, "accuracy": 0.5, "positive_distance": 0.42715322971343994, "negative_distance": 0.21357661485671997, "active_triplet_fraction": 1.0, "images": 4, "consistency": 0.0, "weighted_consistency": 0.0, "consistency_weight": 0.0, "updates": 1, "loader_restarts": 0, "prototype_drift": null}, "person": {"ce": 0.6932846307754517, "triplet": 0.3860865831375122, "weighted_triplet": 0.3860865831375122, "total": 1.0793712139129639, "accuracy": 0.5, "positive_distance": 0.17217308282852173, "negative_distance": 0.08608651906251907, "active_triplet_fraction": 1.0, "images": 4, "consistency": 2.9802322387695312e-08, "weighted_consistency": 1.289699724793536e-08, "consistency_weight": 0.4327514034576593, "updates": 1, "loader_restarts": 0, "prototype_drift": 0.8375918418169022}}}
+{"event": "epoch_end", "stage_id": "t3", "epoch": 0, "optimizer_steps": 1, "categories": {"person": {"ce": 0.6932182312011719, "triplet": 0.5211226940155029, "weighted_triplet": 0.5211226940155029, "total": 1.2143409252166748, "accuracy": 0.5, "positive_distance": 0.43485867977142334, "negative_distance": 0.21373601257801056, "active_triplet_fraction": 1.0, "images": 4, "consistency": 2.9802322387695312e-08, "weighted_consistency": 1.7269853103130117e-08, "consistency_weight": 0.5794800992057542, "updates": 1, "loader_restarts": 0, "prototype_drift": 0.5456239581108093}, "vehicle": {"ce": 0.6932668089866638, "triplet": 0.3749181032180786, "weighted_triplet": 0.3749181032180786, "total": 1.0681848526000977, "accuracy": 0.5, "positive_distance": 0.14983615279197693, "negative_distance": 0.07491807639598846, "active_triplet_fraction": 1.0, "images": 4, "consistency": 0.0, "weighted_consistency": 0.0, "consistency_weight": 0.7189795827049198, "updates": 1, "loader_restarts": 0, "prototype_drift": 0.32992231845855713}}}
+test_full_cli_transfer_checkpoint_restores_and_continues (test_pgca_transfer.TransferStateTests.test_full_cli_transfer_checkpoint_restores_and_continues) ... ok
+test_low_similarity_fallback_is_zero_residual (test_pgca_transfer.TransferStateTests.test_low_similarity_fallback_is_zero_residual) ... ok
+test_metadata_mutation_cannot_change_prepared_source (test_pgca_transfer.TransferStateTests.test_metadata_mutation_cannot_change_prepared_source) ... ok
+test_multiple_new_categories_and_reversed_input_order_are_independent (test_pgca_transfer.TransferStateTests.test_multiple_new_categories_and_reversed_input_order_are_independent) ... ok
+test_preexisting_target_wrong_candidate_and_tampered_snapshot_rejected (test_pgca_transfer.TransferStateTests.test_preexisting_target_wrong_candidate_and_tampered_snapshot_rejected) ... ok
+test_snapshot_copy_survives_live_source_update_and_has_no_shared_storage (test_pgca_transfer.TransferStateTests.test_snapshot_copy_survives_live_source_update_and_has_no_shared_storage) ... ok
+test_transferred_new_category_trains_without_source_teacher_or_source_updates (test_pgca_transfer.TransferStateTests.test_transferred_new_category_trains_without_source_teacher_or_source_updates) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 3.926s
+
+OK

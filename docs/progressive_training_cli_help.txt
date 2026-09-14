@@ -1,0 +1,60 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+usage: train_category_progressive.py [-h] --output-dir OUTPUT_DIR [--resume]
+                                     [--max-updates MAX_UPDATES]
+                                     [--max-stages MAX_STAGES]
+                                     [--checkpoint-every CHECKPOINT_EVERY]
+                                     [--stream-config STREAM_CONFIG]
+                                     [--device DEVICE]
+                                     [--reference-checkpoint REFERENCE_CHECKPOINT]
+                                     [--epochs EPOCHS]
+                                     [--iterations-per-epoch ITERATIONS_PER_EPOCH]
+                                     [--batch-size BATCH_SIZE]
+                                     [--num-instances NUM_INSTANCES]
+                                     [--prototype-batch-size PROTOTYPE_BATCH_SIZE]
+                                     [--workers WORKERS] [--seed SEED]
+                                     [--adapter-lr ADAPTER_LR]
+                                     [--head-lr HEAD_LR]
+                                     [--weight-decay WEIGHT_DECAY]
+                                     [--lambda-tri LAMBDA_TRI]
+                                     [--triplet-margin TRIPLET_MARGIN] [--amp]
+                                     [--max-grad-norm MAX_GRAD_NORM]
+                                     [--consistency CONSISTENCY]
+                                     [--lambda-con LAMBDA_CON] [--gamma GAMMA]
+                                     [--init-mode INIT_MODE] [--alpha ALPHA]
+                                     [--delta DELTA]
+                                     [--finch-chunk-size FINCH_CHUNK_SIZE]
+
+Continuous ECPM + PGCA training with transactional optimizer-step resume.
+
+options:
+  -h, --help            show this help message and exit
+  --output-dir OUTPUT_DIR
+  --resume
+  --max-updates MAX_UPDATES
+  --max-stages MAX_STAGES
+  --checkpoint-every CHECKPOINT_EVERY
+  --stream-config STREAM_CONFIG
+  --device DEVICE
+  --reference-checkpoint REFERENCE_CHECKPOINT
+  --epochs EPOCHS
+  --iterations-per-epoch ITERATIONS_PER_EPOCH
+  --batch-size BATCH_SIZE
+  --num-instances NUM_INSTANCES
+  --prototype-batch-size PROTOTYPE_BATCH_SIZE
+  --workers WORKERS
+  --seed SEED
+  --adapter-lr ADAPTER_LR
+  --head-lr HEAD_LR
+  --weight-decay WEIGHT_DECAY
+  --lambda-tri LAMBDA_TRI
+  --triplet-margin TRIPLET_MARGIN
+  --amp
+  --max-grad-norm MAX_GRAD_NORM
+  --consistency CONSISTENCY
+  --lambda-con LAMBDA_CON
+  --gamma GAMMA
+  --init-mode INIT_MODE
+  --alpha ALPHA
+  --delta DELTA
+  --finch-chunk-size FINCH_CHUNK_SIZE

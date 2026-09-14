@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "config_path": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\config\\category_progressive_example.json",
+  "protocol_fingerprint": "1999bb6a5b465136bb3cb48218fbdb4bbce58fa3b3c08636db6ab3965542e76e",
+  "image_contents_read": false,
+  "stages": [
+    {
+      "stage_id": "t1",
+      "new_categories": [
+        "person",
+        "vehicle"
+      ],
+      "recurring_categories": [],
+      "absent_categories": [],
+      "seen_before": [],
+      "categories": [
+        {
+          "category": "person",
+          "identities": 2,
+          "images": 4
+        },
+        {
+          "category": "vehicle",
+          "identities": 2,
+          "images": 4
+        }
+      ]
+    },
+    {
+      "stage_id": "t2",
+      "new_categories": [
+        "panda"
+      ],
+      "recurring_categories": [
+        "person"
+      ],
+      "absent_categories": [
+        "vehicle"
+      ],
+      "seen_before": [
+        "person",
+        "vehicle"
+      ],
+      "categories": [
+        {
+          "category": "person",
+          "identities": 2,
+          "images": 4
+        },
+        {
+          "category": "panda",
+          "identities": 2,
+          "images": 4
+        }
+      ]
+    },
+    {
+      "stage_id": "t3",
+      "new_categories": [],
+      "recurring_categories": [
+        "person",
+        "vehicle"
+      ],
+      "absent_categories": [
+        "panda"
+      ],
+      "seen_before": [
+        "panda",
+        "person",
+        "vehicle"
+      ],
+      "categories": [
+        {
+          "category": "vehicle",
+          "identities": 2,
+          "images": 4
+        },
+        {
+          "category": "person",
+          "identities": 2,
+          "images": 4
+        }
+      ]
+    }
+  ],
+  "evaluation": [
+    {
+      "name": "person_validation",
+      "category": "person",
+      "split": "validation",
+      "protocol": "cross_camera",
+      "identities": 1,
+      "query_images": 1,
+      "gallery_images": 1
+    },
+    {
+      "name": "person_test",
+      "category": "person",
+      "split": "test",
+      "protocol": "cross_camera",
+      "identities": 2,
+      "query_images": 2,
+      "gallery_images": 2
+    },
+    {
+      "name": "vehicle_test",
+      "category": "vehicle",
+      "split": "test",
+      "protocol": "cross_camera",
+      "identities": 2,
+      "query_images": 2,
+      "gallery_images": 2
+    },
+    {
+      "name": "panda_test",
+      "category": "panda",
+      "split": "test",
+      "protocol": "exclude_self",
+      "identities": 2,
+      "query_images": 2,
+      "gallery_images": 2
+    }
+  ],
+  "total_train_identities": 12,
+  "total_train_images": 24,
+  "warnings": [
+    "No validation set configured for: panda, vehicle"
+  ],
+  "image_existence_checked": false
+}

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "file": "fast_evaluation_fix_upload.zip",
+  "sha256": "55ca23e76130625932909c9a838ac0ecb809dfe7c8a2c13d99262569095be5c2",
+  "bytes": 11772,
+  "files": {
+    "reid/evaluation/category_oracle.py": "570dc67449b1ba5d87f69a0a12522d57c7083e31cf965a0e9c2606f5e76a75d2",
+    "reid/evaluation/category_progressive.py": "ea996d47212b82b785a54bb3ab20916f7a0ace20f3bc8eff804d09079084ba11",
+    "tools/upgrade_evaluation_checkpoint.py": "c587b2e05f024e3ec6de70144db3b0e4f93fc854ad170beccd8e79807239296a",
+    "docs/fast_evaluation_recovery_zh.md": "20b3bd99af40068bcdaca71ce55c53f51c07e243447f7d6ae273ad0d2505b303"
+  }
+}

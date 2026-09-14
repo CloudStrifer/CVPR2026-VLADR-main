@@ -1,0 +1,12 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+E:\Multi_modal_Code\CVPR2026-VLADR-main\reid\evaluation\rank.py:11: UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.
+  warnings.warn(
+test_exact_agreement_random_features_and_stable_ties_both_protocols (test_fast_category_metrics.FastCategoryMetricTests.test_exact_agreement_random_features_and_stable_ties_both_protocols) ... ok
+test_missing_positive_and_invalid_features_remain_errors (test_fast_category_metrics.FastCategoryMetricTests.test_missing_positive_and_invalid_features_remain_errors) ... ok
+test_paths_resolved_once_per_image_and_callback_does_not_change_metrics (test_fast_category_metrics.FastCategoryMetricTests.test_paths_resolved_once_per_image_and_callback_does_not_change_metrics) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.437s
+
+OK

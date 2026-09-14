@@ -1,0 +1,12 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+test_adapter_state_dict_round_trip (test_domain_adapters.DomainAdapterTests.test_adapter_state_dict_round_trip) ... ok
+test_adapter_switch_selects_independent_parameters (test_domain_adapters.DomainAdapterTests.test_adapter_switch_selects_independent_parameters) ... ok
+test_old_adapter_receives_no_gradient_when_current_is_active (test_domain_adapters.DomainAdapterTests.test_old_adapter_receives_no_gradient_when_current_is_active) ... ok
+test_vision_adapter_bank_uses_only_last_blocks (test_domain_adapters.DomainAdapterTests.test_vision_adapter_bank_uses_only_last_blocks) ... ok
+test_zero_initialized_adapter_preserves_block_output (test_domain_adapters.DomainAdapterTests.test_zero_initialized_adapter_preserves_block_output) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.113s
+
+OK

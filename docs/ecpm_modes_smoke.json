@@ -1,0 +1,249 @@
+{
+  "status": "passed",
+  "data": "generated rectangles and hand vectors; no real ReID accuracy claim",
+  "device": "cuda",
+  "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+  "reference_unchanged": true,
+  "official_first_partition_matches": true,
+  "prepare_preserves_history": true,
+  "absent_categories_exactly_unchanged": true,
+  "historical_identity_vectors_exactly_unchanged": true,
+  "save_restore_each_stage": true,
+  "old_images_removed_before_next_stage": true,
+  "stages": [
+    {
+      "processed_stages": [
+        "t1"
+      ],
+      "identities": 4,
+      "images": 8,
+      "categories": {
+        "person": 2,
+        "vehicle": 2
+      },
+      "feature_dim": 512,
+      "vector_bytes": 8192,
+      "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+      "stream_fingerprint": "9f61b59abbbb4226b4aa9185ce9883b521e1ca8cd4b4701ea0fef246916f61c0",
+      "clustering_config": {
+        "chunk_size": 2
+      },
+      "finch_runtime": {
+        "package": "finch-clust",
+        "version": "0.2.3",
+        "dependencies": {
+          "numpy": "2.3.3",
+          "scipy": "1.18.1",
+          "scikit-learn": "1.9.1"
+        },
+        "source_sha256": "1d3c01620d22d63fee91beea2742b51f7245b10588005188fe8cbf2e50aa4845"
+      },
+      "category_modes": {
+        "person": {
+          "identities": 2,
+          "modes": 1,
+          "cluster_sizes": [
+            2
+          ],
+          "last_updated_stage": "t1",
+          "clustering_seconds": 0.014640799956396222,
+          "distance_block_bytes": 16,
+          "mode_and_center_bytes": 4096,
+          "assignment_bytes": 24
+        },
+        "vehicle": {
+          "identities": 2,
+          "modes": 1,
+          "cluster_sizes": [
+            2
+          ],
+          "last_updated_stage": "t1",
+          "clustering_seconds": 0.001303300028666854,
+          "distance_block_bytes": 16,
+          "mode_and_center_bytes": 4096,
+          "assignment_bytes": 24
+        }
+      },
+      "drifts": {
+        "person": null,
+        "vehicle": null
+      },
+      "summary_tensor_bytes": 8240,
+      "old_snapshot_tensor_bytes": 0,
+      "total_tensor_bytes": 16432
+    },
+    {
+      "processed_stages": [
+        "t1",
+        "t2"
+      ],
+      "identities": 8,
+      "images": 16,
+      "categories": {
+        "panda": 2,
+        "person": 4,
+        "vehicle": 2
+      },
+      "feature_dim": 512,
+      "vector_bytes": 16384,
+      "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+      "stream_fingerprint": "9f61b59abbbb4226b4aa9185ce9883b521e1ca8cd4b4701ea0fef246916f61c0",
+      "clustering_config": {
+        "chunk_size": 2
+      },
+      "finch_runtime": {
+        "package": "finch-clust",
+        "version": "0.2.3",
+        "dependencies": {
+          "numpy": "2.3.3",
+          "scipy": "1.18.1",
+          "scikit-learn": "1.9.1"
+        },
+        "source_sha256": "1d3c01620d22d63fee91beea2742b51f7245b10588005188fe8cbf2e50aa4845"
+      },
+      "category_modes": {
+        "person": {
+          "identities": 4,
+          "modes": 2,
+          "cluster_sizes": [
+            2,
+            2
+          ],
+          "last_updated_stage": "t2",
+          "clustering_seconds": 0.0020625999895855784,
+          "distance_block_bytes": 32,
+          "mode_and_center_bytes": 6144,
+          "assignment_bytes": 48
+        },
+        "vehicle": {
+          "identities": 2,
+          "modes": 1,
+          "cluster_sizes": [
+            2
+          ],
+          "last_updated_stage": "t1",
+          "clustering_seconds": 0.001303300028666854,
+          "distance_block_bytes": 16,
+          "mode_and_center_bytes": 4096,
+          "assignment_bytes": 24
+        },
+        "panda": {
+          "identities": 2,
+          "modes": 1,
+          "cluster_sizes": [
+            2
+          ],
+          "last_updated_stage": "t2",
+          "clustering_seconds": 0.0015539000160060823,
+          "distance_block_bytes": 16,
+          "mode_and_center_bytes": 4096,
+          "assignment_bytes": 24
+        }
+      },
+      "drifts": {
+        "panda": null,
+        "person": 0.0012694597244262695
+      },
+      "summary_tensor_bytes": 14432,
+      "old_snapshot_tensor_bytes": 8240,
+      "total_tensor_bytes": 39056
+    },
+    {
+      "processed_stages": [
+        "t1",
+        "t2",
+        "t3"
+      ],
+      "identities": 12,
+      "images": 24,
+      "categories": {
+        "panda": 2,
+        "person": 6,
+        "vehicle": 4
+      },
+      "feature_dim": 512,
+      "vector_bytes": 24576,
+      "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+      "stream_fingerprint": "9f61b59abbbb4226b4aa9185ce9883b521e1ca8cd4b4701ea0fef246916f61c0",
+      "clustering_config": {
+        "chunk_size": 2
+      },
+      "finch_runtime": {
+        "package": "finch-clust",
+        "version": "0.2.3",
+        "dependencies": {
+          "numpy": "2.3.3",
+          "scipy": "1.18.1",
+          "scikit-learn": "1.9.1"
+        },
+        "source_sha256": "1d3c01620d22d63fee91beea2742b51f7245b10588005188fe8cbf2e50aa4845"
+      },
+      "category_modes": {
+        "person": {
+          "identities": 6,
+          "modes": 2,
+          "cluster_sizes": [
+            3,
+            3
+          ],
+          "last_updated_stage": "t3",
+          "clustering_seconds": 0.0030322999809868634,
+          "distance_block_bytes": 48,
+          "mode_and_center_bytes": 6144,
+          "assignment_bytes": 64
+        },
+        "vehicle": {
+          "identities": 4,
+          "modes": 2,
+          "cluster_sizes": [
+            2,
+            2
+          ],
+          "last_updated_stage": "t3",
+          "clustering_seconds": 0.0017453000182285905,
+          "distance_block_bytes": 32,
+          "mode_and_center_bytes": 6144,
+          "assignment_bytes": 48
+        },
+        "panda": {
+          "identities": 2,
+          "modes": 1,
+          "cluster_sizes": [
+            2
+          ],
+          "last_updated_stage": "t2",
+          "clustering_seconds": 0.0015539000160060823,
+          "distance_block_bytes": 16,
+          "mode_and_center_bytes": 4096,
+          "assignment_bytes": 24
+        }
+      },
+      "drifts": {
+        "person": 0.0005907416343688965,
+        "vehicle": 0.0023046135902404785
+      },
+      "summary_tensor_bytes": 16520,
+      "old_snapshot_tensor_bytes": 14432,
+      "total_tensor_bytes": 55528
+    }
+  ],
+  "symmetric_drift_diagnostic": {
+    "old_modes": 1,
+    "new_modes": 3,
+    "new_cluster_sizes": [
+      2,
+      2,
+      2
+    ],
+    "old_center": [
+      1.0,
+      0.0
+    ],
+    "new_center": [
+      1.0,
+      0.0
+    ],
+    "drift": 0.0,
+    "interpretation": "Symmetric new modes can leave center drift zero; drift is not a complete distribution metric."
+  }
+}

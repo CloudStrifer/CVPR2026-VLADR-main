@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "source": "15 existing evaluation regression tests; fixtures, not research results",
+  "progress_events": 3171,
+  "phases": [
+    "dataset_start",
+    "evaluation_complete",
+    "evaluation_start",
+    "features_progress",
+    "features_start",
+    "ranking_complete",
+    "ranking_progress",
+    "ranking_start",
+    "retrieval_start",
+    "routing_diagnostics"
+  ],
+  "count_bounds_checked": true
+}

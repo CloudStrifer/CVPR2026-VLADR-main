@@ -1,0 +1,72 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+E:\Multi_modal_Code\CVPR2026-VLADR-main\reid\evaluation\rank.py:11: UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.
+  warnings.warn(
+test_all_ablation_recipes_execute_and_resume (test_progressive_evaluation.ProgressiveEvaluationTests.test_all_ablation_recipes_execute_and_resume) ... D:\python3.13.7\Lib\site-packages\finch\finch.py:12: UserWarning: pynndescent is not installed: No module named 'pynndescent'
+  warnings.warn('pynndescent is not installed: {}'.format(e))
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.28142774105072}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9658904671669006}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2814319133758545}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+test_evaluation_failure_resumes_without_retraining_or_duplicate_commit (test_progressive_evaluation.ProgressiveEvaluationTests.test_evaluation_failure_resumes_without_retraining_or_duplicate_commit) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+test_evaluation_write_before_checkpoint_is_rolled_back (test_progressive_evaluation.ProgressiveEvaluationTests.test_evaluation_write_before_checkpoint_is_rolled_back) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+test_forgetting_uses_historical_max_not_only_previous_stage (test_progressive_evaluation.ProgressiveEvaluationTests.test_forgetting_uses_historical_max_not_only_previous_stage) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+test_mean_control_resume_uses_saved_mean_drift (test_progressive_evaluation.ProgressiveEvaluationTests.test_mean_control_resume_uses_saved_mean_drift) ... ok
+test_missing_coverage_and_future_images_are_not_silently_used (test_progressive_evaluation.ProgressiveEvaluationTests.test_missing_coverage_and_future_images_are_not_silently_used) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+test_only_arrived_train_and_seen_evaluation_images_are_opened (test_progressive_evaluation.ProgressiveEvaluationTests.test_only_arrived_train_and_seen_evaluation_images_are_opened) ... ok
+test_routing_consistency_is_not_accuracy (test_progressive_evaluation.ProgressiveEvaluationTests.test_routing_consistency_is_not_accuracy) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+test_source_and_drift_diagnostics_use_one_boundary_validation_only (test_progressive_evaluation.ProgressiveEvaluationTests.test_source_and_drift_diagnostics_use_one_boundary_validation_only) ... ok
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.071911096572876}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.2809327840805054}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 6, "summed_loss": 1.9659031629562378}
+test_three_stage_metrics_rng_training_independence_and_checkpoint_evaluation (test_progressive_evaluation.ProgressiveEvaluationTests.test_three_stage_metrics_rng_training_independence_and_checkpoint_evaluation) ... ok
+test_formula_modes_max_axis_beta_and_stable_ties (test_progressive_evaluation.RouterTests.test_formula_modes_max_axis_beta_and_stable_ties) ... ok
+test_identity_mean_is_identity_weighted_and_does_not_use_cluster_sizes (test_progressive_evaluation.RouterTests.test_identity_mean_is_identity_weighted_and_does_not_use_cluster_sizes) ... ok
+test_image_only_grouped_forward_restores_mixed_order (test_progressive_evaluation.RouterTests.test_image_only_grouped_forward_restores_mixed_order) ... ok
+test_invalid_vectors_empty_bank_and_beta (test_progressive_evaluation.RouterTests.test_invalid_vectors_empty_bank_and_beta) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 30.212s
+
+OK

@@ -1,0 +1,3 @@
+PASS: all 10 original test query/gallery CSVs preserved exactly after field/path conversion; all original training IDs assigned once.
+Counter({'train': 1392, 'validation': 157})
+training image rows 55853

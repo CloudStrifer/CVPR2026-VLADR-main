@@ -1,0 +1,21 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+E:\Multi_modal_Code\CVPR2026-VLADR-main\reid\evaluation\rank.py:11: UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.
+  warnings.warn(
+D:\python3.13.7\Lib\site-packages\finch\finch.py:12: UserWarning: pynndescent is not installed: No module named 'pynndescent'
+  warnings.warn('pynndescent is not installed: {}'.format(e))
+{
+  "status": "passed",
+  "device": "cuda",
+  "amp": true,
+  "data": "generated images only; no real-world retrieval efficacy claim",
+  "stages": 3,
+  "updates": 6,
+  "resumed_at_stage_boundary_and_inside_t2": true,
+  "adapter_rng_and_training_logs_bitwise_equal": true,
+  "retrieval_and_routing_reports_equal": true,
+  "reloaded_routing_scores_predictions_descriptors_bitwise_equal": true,
+  "per_dataset_and_mixed_gallery": true,
+  "oracle_and_prototype": true,
+  "full_performance_and_forgetting_matrices": true
+}

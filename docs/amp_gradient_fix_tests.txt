@@ -1,0 +1,35 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+E:\Multi_modal_Code\CVPR2026-VLADR-main\reid\evaluation\rank.py:11: UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.
+  warnings.warn(
+test_hand_computed_rank_and_ap_with_camera_and_self_filtering (test_category_training.CategoryOracleMetricTests.test_hand_computed_rank_and_ap_with_camera_and_self_filtering) ... ok
+test_amp_overflow_retries_same_batch_and_only_updates_once (test_category_training.CategoryTrainingTests.test_amp_overflow_retries_same_batch_and_only_updates_once) ... ok
+test_amp_persistent_invalid_gradient_is_bounded_and_never_updates (test_category_training.CategoryTrainingTests.test_amp_persistent_invalid_gradient_is_bounded_and_never_updates) ... ok
+test_bad_config_rejected (test_category_training.CategoryTrainingTests.test_bad_config_rejected) ... ok
+test_batch_guard_rejects_cross_category_stage_split_and_wrong_label (test_category_training.CategoryTrainingTests.test_batch_guard_rejects_cross_category_stage_split_and_wrong_label) ... ok
+test_category_gradient_accumulation_matches_explicit_sum (test_category_training.CategoryTrainingTests.test_category_gradient_accumulation_matches_explicit_sum) ... ok
+test_head_size_tracks_current_identity_count_not_history (test_category_training.CategoryTrainingTests.test_head_size_tracks_current_identity_count_not_history) ... ok
+test_image_errors_propagate_and_failed_trainer_cannot_continue (test_category_training.CategoryTrainingTests.test_image_errors_propagate_and_failed_trainer_cannot_continue) ... ok
+test_incomplete_stage_cannot_be_marked_finished (test_category_training.CategoryTrainingTests.test_incomplete_stage_cannot_be_marked_finished) ... ok
+test_missing_stage_history_and_stale_heads_rejected (test_category_training.CategoryTrainingTests.test_missing_stage_history_and_stale_heads_rejected) ... ok
+test_non_amp_invalid_gradient_still_fails_without_update (test_category_training.CategoryTrainingTests.test_non_amp_invalid_gradient_still_fails_without_update) ... ok
+test_nonfinite_second_category_loss_does_not_commit_first_category_update (test_category_training.CategoryTrainingTests.test_nonfinite_second_category_loss_does_not_commit_first_category_update) ... ok
+test_oracle_evaluation_preserves_model_mode (test_category_training.CategoryTrainingTests.test_oracle_evaluation_preserves_model_mode) ... ok
+{"event": "epoch_end", "stage_id": "t1", "epoch": 0, "optimizer_steps": 1, "categories": {"person": {"ce": 0.6931432485580444, "triplet": 0.35176265239715576, "weighted_triplet": 0.35176265239715576, "total": 1.0449059009552002, "accuracy": 0.5, "positive_distance": 0.0829654335975647, "negative_distance": 0.03120279498398304, "active_triplet_fraction": 1.0, "images": 4, "updates": 1, "loader_restarts": 0}, "vehicle": {"ce": 0.6930505037307739, "triplet": 0.3861207962036133, "weighted_triplet": 0.3861207962036133, "total": 1.0791712999343872, "accuracy": 0.5, "positive_distance": 0.17224158346652985, "negative_distance": 0.08612079173326492, "active_triplet_fraction": 1.0, "images": 4, "updates": 1, "loader_restarts": 0}}}
+{"event": "epoch_end", "stage_id": "t2", "epoch": 0, "optimizer_steps": 1, "categories": {"panda": {"ce": 0.6930841207504272, "triplet": 0.5320491790771484, "weighted_triplet": 0.5320491790771484, "total": 1.2251332998275757, "accuracy": 0.5, "positive_distance": 0.4534570276737213, "negative_distance": 0.22140786051750183, "active_triplet_fraction": 1.0, "images": 4, "updates": 1, "loader_restarts": 0}, "person": {"ce": 0.6932902336120605, "triplet": 0.3861328959465027, "weighted_triplet": 0.3861328959465027, "total": 1.079423189163208, "accuracy": 0.5, "positive_distance": 0.17226573824882507, "negative_distance": 0.08613285422325134, "active_triplet_fraction": 1.0, "images": 4, "updates": 1, "loader_restarts": 0}}}
+test_single_stage_runner_and_next_stage_checkpoint (test_category_training.CategoryTrainingTests.test_single_stage_runner_and_next_stage_checkpoint) ... ok
+test_small_fixture_identity_learning_improves (test_category_training.CategoryTrainingTests.test_small_fixture_identity_learning_improves) ... ok
+test_stage_transition_reuses_adapter_replaces_heads_and_freezes_absent (test_category_training.CategoryTrainingTests.test_stage_transition_reuses_adapter_replaces_heads_and_freezes_absent) ... ok
+test_unequal_loader_lengths_get_equal_update_budget (test_category_training.CategoryTrainingTests.test_unequal_loader_lengths_get_equal_update_budget) ... ok
+test_updates_both_categories_equal_budget_and_logs_only_baseline_losses (test_category_training.CategoryTrainingTests.test_updates_both_categories_equal_budget_and_logs_only_baseline_losses) ... ok
+test_zero_triplet_weight_is_exact_ce_objective (test_category_training.CategoryTrainingTests.test_zero_triplet_weight_is_exact_ce_objective) ... ok
+test_hand_computed_hardest_positive_and_negative (test_category_training.CategoryTripletTests.test_hand_computed_hardest_positive_and_negative) ... ok
+test_identical_resampled_positive_has_finite_gradient (test_category_training.CategoryTripletTests.test_identical_resampled_positive_has_finite_gradient) ... ok
+test_invalid_features_labels_and_margin (test_category_training.CategoryTripletTests.test_invalid_features_labels_and_margin) ... ok
+test_missing_positive_or_negative_is_error (test_category_training.CategoryTripletTests.test_missing_positive_or_negative_is_error) ... ok
+test_normalization_makes_loss_invariant_to_positive_feature_scaling (test_category_training.CategoryTripletTests.test_normalization_makes_loss_invariant_to_positive_feature_scaling) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 6.226s
+
+OK

@@ -1,0 +1,195 @@
+{
+  "status": "passed",
+  "data": "generated colored rectangles; no real ReID accuracy claim",
+  "device": "cuda",
+  "amp": true,
+  "feature_dim": 512,
+  "reference_signature": "40fa1ba93632381ee41cd2601f96c32fcdfaef45313136d43eaa9c69db7e31e5",
+  "reference_features_exactly_unchanged": true,
+  "absent_vehicle_features_exactly_unchanged_in_t2": true,
+  "temporary_heads_after_finish": 0,
+  "stages": [
+    {
+      "event": "stage_end",
+      "stage_id": "t1",
+      "completed_epochs": 2,
+      "optimizer_steps": 4,
+      "category_updates": {
+        "person": 4,
+        "vehicle": 4
+      },
+      "config": {
+        "epochs": 2,
+        "iterations_per_epoch": 2,
+        "adapter_lr": 0.0003,
+        "head_lr": 0.01,
+        "weight_decay": 0.0001,
+        "lambda_tri": 1.0,
+        "triplet_margin": 0.3,
+        "amp": true,
+        "max_grad_norm": null
+      },
+      "epochs": [
+        {
+          "event": "epoch_end",
+          "stage_id": "t1",
+          "epoch": 0,
+          "optimizer_steps": 2,
+          "categories": {
+            "person": {
+              "ce": 0.5085633248090744,
+              "triplet": 0.07118293642997742,
+              "weighted_triplet": 0.07118293642997742,
+              "total": 0.5797462612390518,
+              "accuracy": 0.75,
+              "positive_distance": 0.13725841790437698,
+              "negative_distance": 0.4211551547050476,
+              "active_triplet_fraction": 0.5,
+              "images": 8,
+              "updates": 2,
+              "loader_restarts": 1
+            },
+            "vehicle": {
+              "ce": 0.5061827152967453,
+              "triplet": 0.07118293642997742,
+              "weighted_triplet": 0.07118293642997742,
+              "total": 0.5773656517267227,
+              "accuracy": 0.75,
+              "positive_distance": 0.13759584724903107,
+              "negative_distance": 0.4241306185722351,
+              "active_triplet_fraction": 0.5,
+              "images": 8,
+              "updates": 2,
+              "loader_restarts": 1
+            }
+          }
+        },
+        {
+          "event": "epoch_end",
+          "stage_id": "t1",
+          "epoch": 1,
+          "optimizer_steps": 2,
+          "categories": {
+            "person": {
+              "ce": 0.041312949266284704,
+              "triplet": 0.0,
+              "weighted_triplet": 0.0,
+              "total": 0.041312949266284704,
+              "accuracy": 1.0,
+              "positive_distance": 0.12784786149859428,
+              "negative_distance": 0.8786666989326477,
+              "active_triplet_fraction": 0.0,
+              "images": 8,
+              "updates": 2,
+              "loader_restarts": 1
+            },
+            "vehicle": {
+              "ce": 0.03638006979599595,
+              "triplet": 0.0,
+              "weighted_triplet": 0.0,
+              "total": 0.03638006979599595,
+              "accuracy": 1.0,
+              "positive_distance": 0.12694457545876503,
+              "negative_distance": 0.8936920762062073,
+              "active_triplet_fraction": 0.0,
+              "images": 8,
+              "updates": 2,
+              "loader_restarts": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "event": "stage_end",
+      "stage_id": "t2",
+      "completed_epochs": 2,
+      "optimizer_steps": 4,
+      "category_updates": {
+        "panda": 4,
+        "person": 4
+      },
+      "config": {
+        "epochs": 2,
+        "iterations_per_epoch": 2,
+        "adapter_lr": 0.0003,
+        "head_lr": 0.01,
+        "weight_decay": 0.0001,
+        "lambda_tri": 1.0,
+        "triplet_margin": 0.3,
+        "amp": true,
+        "max_grad_norm": null
+      },
+      "epochs": [
+        {
+          "event": "epoch_end",
+          "stage_id": "t2",
+          "epoch": 0,
+          "optimizer_steps": 2,
+          "categories": {
+            "panda": {
+              "ce": 0.5035508722066879,
+              "triplet": 0.07118293642997742,
+              "weighted_triplet": 0.07118293642997742,
+              "total": 0.5747338086366653,
+              "accuracy": 0.75,
+              "positive_distance": 0.13683227449655533,
+              "negative_distance": 0.42550286650657654,
+              "active_triplet_fraction": 0.5,
+              "images": 8,
+              "updates": 2,
+              "loader_restarts": 1
+            },
+            "person": {
+              "ce": 0.4153008311986923,
+              "triplet": 0.0,
+              "weighted_triplet": 0.0,
+              "total": 0.4153008311986923,
+              "accuracy": 0.75,
+              "positive_distance": 0.14515434205532074,
+              "negative_distance": 1.1552385687828064,
+              "active_triplet_fraction": 0.0,
+              "images": 8,
+              "updates": 2,
+              "loader_restarts": 1
+            }
+          }
+        },
+        {
+          "event": "epoch_end",
+          "stage_id": "t2",
+          "epoch": 1,
+          "optimizer_steps": 2,
+          "categories": {
+            "panda": {
+              "ce": 0.03603121265769005,
+              "triplet": 0.0,
+              "weighted_triplet": 0.0,
+              "total": 0.03603121265769005,
+              "accuracy": 1.0,
+              "positive_distance": 0.1250247322022915,
+              "negative_distance": 0.8986350297927856,
+              "active_triplet_fraction": 0.0,
+              "images": 8,
+              "updates": 2,
+              "loader_restarts": 1
+            },
+            "person": {
+              "ce": 0.007458438398316503,
+              "triplet": 0.0,
+              "weighted_triplet": 0.0,
+              "total": 0.007458438398316503,
+              "accuracy": 1.0,
+              "positive_distance": 0.12366211041808128,
+              "negative_distance": 1.3176867961883545,
+              "active_triplet_fraction": 0.0,
+              "images": 8,
+              "updates": 2,
+              "loader_restarts": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

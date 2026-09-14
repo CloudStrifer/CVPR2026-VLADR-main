@@ -1,0 +1,11 @@
+test_boat_validation_excludes_augmentations_and_entire_ids_leave_train (test_build_category_progressive_stream.BuildProgressiveStreamTests.test_boat_validation_excludes_augmentations_and_entire_ids_leave_train) ... ok
+test_deterministic_whole_ids_and_original_test_preserved (test_build_category_progressive_stream.BuildProgressiveStreamTests.test_deterministic_whole_ids_and_original_test_preserved) ... ok
+test_failed_existence_audit_does_not_publish_partial_bundle (test_build_category_progressive_stream.BuildProgressiveStreamTests.test_failed_existence_audit_does_not_publish_partial_bundle) ... ok
+test_rejects_overlap_insufficient_ids_and_existing_output (test_build_category_progressive_stream.BuildProgressiveStreamTests.test_rejects_overlap_insufficient_ids_and_existing_output) ... ok
+test_relative_bundle_survives_relocation (test_build_category_progressive_stream.BuildProgressiveStreamTests.test_relative_bundle_survives_relocation) ... ok
+test_unknown_camera_validation_uses_exclude_self (test_build_category_progressive_stream.BuildProgressiveStreamTests.test_unknown_camera_validation_uses_exclude_self) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.623s
+
+OK

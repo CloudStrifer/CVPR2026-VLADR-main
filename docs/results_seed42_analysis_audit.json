@@ -1,0 +1,50 @@
+{
+  "source": "E:\\Multi_modal_Code\\结果\\新建文件夹2\\evaluation_summary.json",
+  "source_sha256": "e8d51216f40222351e253c63e8560c2d5f4d9413bc67a7de3e9ddfb8b14f00f0",
+  "status": "consistent",
+  "seed": 42,
+  "gamma": 1.0,
+  "lambda_con": 1.0,
+  "derived_weights": [
+    {
+      "stage": "t2",
+      "category": "person",
+      "drift": 0.00027620792388916016,
+      "weight": 0.9997238302180077
+    },
+    {
+      "stage": "t3",
+      "category": "panda",
+      "drift": 0.0017467141151428223,
+      "weight": 0.9982548105021378
+    },
+    {
+      "stage": "t3",
+      "category": "person",
+      "drift": 0.00017547607421875,
+      "weight": 0.9998245393208071
+    },
+    {
+      "stage": "t3",
+      "category": "vehicle",
+      "drift": 0.00017517805099487305,
+      "weight": 0.999824837291784
+    },
+    {
+      "stage": "t4",
+      "category": "tiger",
+      "drift": 0.0005962848663330078,
+      "weight": 0.9994038928761577
+    },
+    {
+      "stage": "t4",
+      "category": "vehicle",
+      "drift": 0.00039058923721313477,
+      "weight": 0.9996094870328326
+    }
+  ],
+  "limitations": [
+    "One run, no ablation comparison supplied",
+    "Stage trainer logs with donor decisions and observed consistency losses are not present"
+  ]
+}

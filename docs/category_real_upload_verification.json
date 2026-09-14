@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "archive": "category_progressive_real_upload.zip",
+  "sha256": "6df2fe518a39f8bfe259b802b68288f8ea5cbb3db267c84ce41b59a0c9bd4803",
+  "bytes": 474205,
+  "files": 40,
+  "referenced_csvs": 31,
+  "crc_checked": true,
+  "archive_contents_match_generated_files": true,
+  "contains_images": false,
+  "contains_full_training_code": false
+}

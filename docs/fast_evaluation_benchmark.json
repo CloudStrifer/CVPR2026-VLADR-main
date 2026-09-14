@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "scope": "synthetic descriptors, local Windows CPU, one thread; not server timing or ReID results",
+  "query": 64,
+  "gallery": 1024,
+  "dimensions": 512,
+  "old_seconds": 27.979564399982337,
+  "new_seconds": 0.25868279999122024,
+  "speedup": 108.161672909571,
+  "old_path_calls": 131072,
+  "new_path_calls": 1088,
+  "metrics_exactly_equal": true
+}

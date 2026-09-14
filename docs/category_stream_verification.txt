@@ -1,0 +1,50 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+test_alias_does_not_turn_same_camera_into_cross_camera_positive (test_category_stream.CategoryStreamTests.test_alias_does_not_turn_same_camera_into_cross_camera_positive) ... ok
+test_aliases_detect_leakage_after_source_renaming (test_category_stream.CategoryStreamTests.test_aliases_detect_leakage_after_source_renaming) ... ok
+test_aliases_detect_same_real_identity_across_sources (test_category_stream.CategoryStreamTests.test_aliases_detect_same_real_identity_across_sources) ... ok
+test_aliases_merge_views_within_one_stage (test_category_stream.CategoryStreamTests.test_aliases_merge_views_within_one_stage) ... ok
+test_checked_in_example (test_category_stream.CategoryStreamTests.test_checked_in_example) ... ok
+test_cli_from_outside_repository_and_structured_report (test_category_stream.CategoryStreamTests.test_cli_from_outside_repository_and_structured_report) ... ok
+test_cross_stage_same_image_with_changed_pid_rejected (test_category_stream.CategoryStreamTests.test_cross_stage_same_image_with_changed_pid_rejected) ... ok
+test_data_root_is_explicit (test_category_stream.CategoryStreamTests.test_data_root_is_explicit) ... ok
+test_duplicate_path_in_manifest_rejected (test_category_stream.CategoryStreamTests.test_duplicate_path_in_manifest_rejected) ... ok
+test_empty_training_never_falls_back_to_evaluation (test_category_stream.CategoryStreamTests.test_empty_training_never_falls_back_to_evaluation) ... ok
+test_entry_data_root_override (test_category_stream.CategoryStreamTests.test_entry_data_root_override) ... ok
+test_exclude_self_allows_same_camera_distinct_images (test_category_stream.CategoryStreamTests.test_exclude_self_allows_same_camera_distinct_images) ... ok
+test_fingerprint_stable_and_changes_with_metadata (test_category_stream.CategoryStreamTests.test_fingerprint_stable_and_changes_with_metadata) ... ok
+test_fixed_eval_is_exposed_only_after_category_arrival (test_category_stream.CategoryStreamTests.test_fixed_eval_is_exposed_only_after_category_arrival) ... ok
+test_jsonl_and_tsv_preserve_identity_fields (test_category_stream.CategoryStreamTests.test_jsonl_and_tsv_preserve_identity_fields) ... ok
+test_local_zero_is_not_global_identity (test_category_stream.CategoryStreamTests.test_local_zero_is_not_global_identity) ... ok
+test_metadata_only_default_and_explicit_existence_check (test_category_stream.CategoryStreamTests.test_metadata_only_default_and_explicit_existence_check) ... ok
+test_missing_evaluation_coverage_is_reported (test_category_stream.CategoryStreamTests.test_missing_evaluation_coverage_is_reported) ... ok
+test_no_cross_camera_positive_rejected (test_category_stream.CategoryStreamTests.test_no_cross_camera_positive_rejected) ... ok
+test_optional_category_stage_and_split_must_match_parent (test_category_stream.CategoryStreamTests.test_optional_category_stage_and_split_must_match_parent) ... ok
+test_parser_import_does_not_import_training_dependencies (test_category_stream.CategoryStreamTests.test_parser_import_does_not_import_training_dependencies) ... ok
+test_query_can_also_be_in_gallery_if_another_positive_exists (test_category_stream.CategoryStreamTests.test_query_can_also_be_in_gallery_if_another_positive_exists) ... ok
+test_query_itself_cannot_be_its_only_positive (test_category_stream.CategoryStreamTests.test_query_itself_cannot_be_its_only_positive) ... ok
+test_rejects_cross_stage_identity_even_with_new_path (test_category_stream.CategoryStreamTests.test_rejects_cross_stage_identity_even_with_new_path) ... ok
+test_rejects_unused_alias_to_catch_typos (test_category_stream.CategoryStreamTests.test_rejects_unused_alias_to_catch_typos) ... ok
+test_relative_paths_resolve_against_config_not_cwd (test_category_stream.CategoryStreamTests.test_relative_paths_resolve_against_config_not_cwd) ... ok
+test_same_pid_in_different_source_is_distinct (test_category_stream.CategoryStreamTests.test_same_pid_in_different_source_is_distinct) ... ok
+test_schema_typos_and_duplicate_stage_category_rejected (test_category_stream.CategoryStreamTests.test_schema_typos_and_duplicate_stage_category_rejected) ... ok
+test_stage_status_and_identity_counts (test_category_stream.CategoryStreamTests.test_stage_status_and_identity_counts) ... ok
+test_string_pid_leading_zeros_preserved (test_category_stream.CategoryStreamTests.test_string_pid_leading_zeros_preserved) ... ok
+test_train_test_identity_leakage_rejected (test_category_stream.CategoryStreamTests.test_train_test_identity_leakage_rejected) ... ok
+test_validation_test_identity_leakage_rejected (test_category_stream.CategoryStreamTests.test_validation_test_identity_leakage_rejected) ... ok
+test_builder_rejects_manually_mixed_stage_or_evaluation_rows (test_category_stream_loaders.CategoryStreamLoaderTests.test_builder_rejects_manually_mixed_stage_or_evaluation_rows) ... ok
+test_builder_rejects_whole_stream (test_category_stream_loaders.CategoryStreamLoaderTests.test_builder_rejects_whole_stream) ... ok
+test_default_reference_preprocessing_deterministic (test_category_stream_loaders.CategoryStreamLoaderTests.test_default_reference_preprocessing_deterministic) ... ok
+test_evaluation_query_gallery_share_labels (test_category_stream_loaders.CategoryStreamLoaderTests.test_evaluation_query_gallery_share_labels) ... ok
+test_insufficient_identities_rejected_without_cross_category_fallback (test_category_stream_loaders.CategoryStreamLoaderTests.test_insufficient_identities_rejected_without_cross_category_fallback) ... ok
+test_only_current_images_opened_and_reference_once (test_category_stream_loaders.CategoryStreamLoaderTests.test_only_current_images_opened_and_reference_once) ... ok
+test_sampler_is_repeatable_epoch_local_and_does_not_mutate_global_rng (test_category_stream_loaders.CategoryStreamLoaderTests.test_sampler_is_repeatable_epoch_local_and_does_not_mutate_global_rng) ... ok
+test_sampler_replacement_for_short_identity (test_category_stream_loaders.CategoryStreamLoaderTests.test_sampler_replacement_for_short_identity) ... ok
+test_worker_process_can_load_current_stage (test_category_stream_loaders.CategoryStreamLoaderTests.test_worker_process_can_load_current_stage) ... D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 5.575s
+
+OK
