@@ -14,6 +14,15 @@ export REID_STREAM="/workspace/GuangjinOuyang/code/config/category_progressive_r
 export REID_CLIP="/workspace/GuangjinOuyang/code/data/pretrained/ViT-B-16.pt"
 export REID_RUN_ROOT="/workspace/GuangjinOuyang/code/experiments/ecpm_pgca"
 
+
+
+在80G服务器上，参数是这样的: 
+export REID_PROJECT="/home/haichao/ouyang/CVPR2026-VLADR-main"
+export REID_STREAM="/home/haichao/ouyang/CVPR2026-VLADR-main/config/category_progressive_real/main.json"
+export REID_CLIP="/home/haichao/ouyang/CVPR2026-VLADR-main/data/pretrained/ViT-B-16.pt"
+export REID_RUN_ROOT="/home/haichao/ouyang/CVPR2026-VLADR-main/experiments/ecpm_pgca"
+
+
 cd "$REID_PROJECT"
 mkdir -p "$REID_RUN_ROOT/console"
 export CUDA_VISIBLE_DEVICES=0
@@ -505,7 +514,12 @@ python tools/diagnose_pgca_validation.py \
 | `stage_0000.jsonl` 等 | 各阶段 CE、Triplet、蒸馏、迁移及采样日志 |
 | `evaluation.jsonl` | 每阶段完整检索与路由诊断 |
 | `evaluation_summary.json` | 类别性能矩阵、宏平均、遗忘和阶段报告 |
+| `stage_results.md` | 逐阶段可读表格：训练类别、已见类别、数据量、mAP、R1 和旧类别遗忘 |
+| `stage_results.json` | 新版结构化逐阶段报告；区分全部已见类别平均与本阶段训练类别平均 |
+| `stage_metrics.csv` | 可用 Excel 查看的逐阶段、逐类别明细 |
 | `*.recovered-*.jsonl` | 崩溃后未被有效断点包含的日志尾部归档，不再次计入正式统计 |
+
+逐阶段输出、遗忘口径和历史 JSON 转换命令见 [逐阶段结果使用说明](stage_reporting_usage_zh.md)。新代码在每阶段评估完成后立即打印并保存结果，仍需开启 `--evaluate`。本次修改改变源码指纹，旧版本训练不要直接跨版本恢复；已完成结果可用转换工具整理，无需重新训练。
 
 常见处理：
 

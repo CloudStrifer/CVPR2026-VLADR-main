@@ -1,0 +1,572 @@
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+E:\Multi_modal_Code\CVPR2026-VLADR-main\reid\evaluation\rank.py:11: UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.
+  warnings.warn(
+test_five_category_five_stage_interleaving_outputs_each_stage (test_progressive_evaluation.ProgressiveEvaluationTests.test_five_category_five_stage_interleaving_outputs_each_stage) ... D:\python3.13.7\Lib\site-packages\finch\finch.py:12: UserWarning: pynndescent is not installed: No module named 'pynndescent'
+  warnings.warn('pynndescent is not installed: {}'.format(e))
+{"event": "stage_training_start", "stage_id": "t1", "training_categories": ["person"], "new_categories": ["person"], "recurring_categories": [], "absent_categories": [], "seen_before": [], "total_stages": 5, "training_data": {"person": {"identities": 2, "images": 4, "source_datasets": ["person_source"]}}, "provenance": "training_stream"}
+{"stage_id": "t1", "completed_epochs": 1, "total_updates": 1, "summed_loss": 1.0569530725479126}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "evaluation_start", "split": "test", "gallery_scope": "both"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "dataset_start", "dataset": "person_test", "category": "person", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "features_start", "dataset": "person_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "features_progress", "dataset": "person_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "features_start", "dataset": "person_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "features_progress", "dataset": "person_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "retrieval_start", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "retrieval_start", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "retrieval_start", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "retrieval_start", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "routing_diagnostics"}
+{"event": "evaluation_progress", "stage_id": "t1", "phase": "evaluation_complete", "elapsed_seconds": 0.04, "prototype_macro": {"per_dataset": {"mAP": 75.0, "Rank1": 50.0}, "mixed": {"mAP": 75.0, "Rank1": 50.0}}}
+## t1 评估结果（第 1/5 阶段）
+
+- 本阶段训练类别：person
+- 本阶段来源数据集：person: person_source
+- 首次出现：person
+- 再次训练：无
+- 已见但本阶段未训练：无
+- 累计已见／本次评估类别：person
+- 评估集：test；类别路由准确率：100.00%。
+
+### per_dataset / prototype
+
+| 类别 | 本阶段状态 | 训练身份/图片 | mAP (%) | R1 (%) | mAP 遗忘 (pp) | R1 遗忘 (pp) |
+|---|---|---:|---:|---:|---:|---:|
+| person | 首次训练 | 2/4 | 75.00 | 50.00 | -- | -- |
+
+全部已见类别平均：mAP=75.00%，R1=50.00%。
+
+本阶段训练类别平均：mAP=75.00%，R1=50.00%。
+
+旧类别平均遗忘：mAP=-- pp，R1=-- pp（仅 0 个旧类别）。
+
+### mixed / prototype
+
+| 类别 | 本阶段状态 | 训练身份/图片 | mAP (%) | R1 (%) | mAP 遗忘 (pp) | R1 遗忘 (pp) |
+|---|---|---:|---:|---:|---:|---:|
+| person | 首次训练 | 2/4 | 75.00 | 50.00 | -- | -- |
+
+全部已见类别平均：mAP=75.00%，R1=50.00%。
+
+本阶段训练类别平均：mAP=75.00%，R1=50.00%。
+
+旧类别平均遗忘：mAP=-- pp，R1=-- pp（仅 0 个旧类别）。
+
+注：遗忘为历史最佳分数的非负下降量，单位是百分点；新类别及首阶段记为 --。
+
+{"event": "stage_training_start", "stage_id": "t2", "training_categories": ["panda", "person"], "new_categories": ["panda"], "recurring_categories": ["person"], "absent_categories": [], "seen_before": ["person"], "total_stages": 5, "training_data": {"person": {"identities": 2, "images": 4, "source_datasets": ["person_source"]}, "panda": {"identities": 2, "images": 4, "source_datasets": ["panda_source"]}}, "provenance": "training_stream"}
+{"stage_id": "t2", "completed_epochs": 1, "total_updates": 2, "summed_loss": 2.056142508983612}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "evaluation_start", "split": "test", "gallery_scope": "both"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "dataset_start", "dataset": "person_test", "category": "person", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "features_start", "dataset": "person_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "features_progress", "dataset": "person_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "features_start", "dataset": "person_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "features_progress", "dataset": "person_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.01}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "dataset_start", "dataset": "panda_test", "category": "panda", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "features_start", "dataset": "panda_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "features_progress", "dataset": "panda_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.01}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "features_start", "dataset": "panda_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "features_progress", "dataset": "panda_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "retrieval_start", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 100.0, "Rank1": 100.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "retrieval_start", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 100.0, "Rank1": 100.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "retrieval_start", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 66.66666666666666, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 50.0, "Rank1": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "retrieval_start", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 66.66666666666666, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 4, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 50.0, "Rank1": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "routing_diagnostics"}
+{"event": "evaluation_progress", "stage_id": "t2", "phase": "evaluation_complete", "elapsed_seconds": 0.08, "prototype_macro": {"per_dataset": {"mAP": 87.5, "Rank1": 75.0}, "mixed": {"mAP": 58.33333333333333, "Rank1": 25.0}}}
+## t2 评估结果（第 2/5 阶段）
+
+- 本阶段训练类别：panda, person
+- 本阶段来源数据集：panda: panda_source; person: person_source
+- 首次出现：panda
+- 再次训练：person
+- 已见但本阶段未训练：无
+- 累计已见／本次评估类别：panda, person
+- 评估集：test；类别路由准确率：50.00%。
+
+### per_dataset / prototype
+
+| 类别 | 本阶段状态 | 训练身份/图片 | mAP (%) | R1 (%) | mAP 遗忘 (pp) | R1 遗忘 (pp) |
+|---|---|---:|---:|---:|---:|---:|
+| panda | 首次训练 | 2/4 | 100.00 | 100.00 | -- | -- |
+| person | 再次训练 | 2/4 | 75.00 | 50.00 | 0.00 | 0.00 |
+
+全部已见类别平均：mAP=87.50%，R1=75.00%。
+
+本阶段训练类别平均：mAP=87.50%，R1=75.00%。
+
+旧类别平均遗忘：mAP=0.00 pp，R1=0.00 pp（仅 1 个旧类别）。
+
+### mixed / prototype
+
+| 类别 | 本阶段状态 | 训练身份/图片 | mAP (%) | R1 (%) | mAP 遗忘 (pp) | R1 遗忘 (pp) |
+|---|---|---:|---:|---:|---:|---:|
+| panda | 首次训练 | 2/4 | 50.00 | 0.00 | -- | -- |
+| person | 再次训练 | 2/4 | 66.67 | 50.00 | 8.33 | 0.00 |
+
+全部已见类别平均：mAP=58.33%，R1=25.00%。
+
+本阶段训练类别平均：mAP=58.33%，R1=25.00%。
+
+旧类别平均遗忘：mAP=8.33 pp，R1=0.00 pp（仅 1 个旧类别）。
+
+注：遗忘为历史最佳分数的非负下降量，单位是百分点；新类别及首阶段记为 --。
+
+{"event": "stage_training_start", "stage_id": "t3", "training_categories": ["panda", "vehicle"], "new_categories": ["vehicle"], "recurring_categories": ["panda"], "absent_categories": ["person"], "seen_before": ["panda", "person"], "total_stages": 5, "training_data": {"vehicle": {"identities": 2, "images": 4, "source_datasets": ["vehicle_source"]}, "panda": {"identities": 2, "images": 4, "source_datasets": ["panda_source"]}}, "provenance": "training_stream"}
+{"stage_id": "t3", "completed_epochs": 1, "total_updates": 3, "summed_loss": 2.139309525489807}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "evaluation_start", "split": "test", "gallery_scope": "both"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "dataset_start", "dataset": "person_test", "category": "person", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_start", "dataset": "person_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_progress", "dataset": "person_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_start", "dataset": "person_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_progress", "dataset": "person_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "dataset_start", "dataset": "vehicle_test", "category": "vehicle", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_start", "dataset": "vehicle_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_progress", "dataset": "vehicle_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.01}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_start", "dataset": "vehicle_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_progress", "dataset": "vehicle_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.01}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "dataset_start", "dataset": "panda_test", "category": "panda", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_start", "dataset": "panda_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_progress", "dataset": "panda_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_start", "dataset": "panda_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "features_progress", "dataset": "panda_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "retrieval_start", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 100.0, "Rank1": 100.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "retrieval_start", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 100.0, "Rank1": 100.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "retrieval_start", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 35.0, "Rank1": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 41.666666666666664, "Rank1": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "retrieval_start", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 26.666666666666668, "Rank1": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 6, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 41.666666666666664, "Rank1": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "routing_diagnostics"}
+{"event": "evaluation_progress", "stage_id": "t3", "phase": "evaluation_complete", "elapsed_seconds": 0.14, "prototype_macro": {"per_dataset": {"mAP": 83.33333333333333, "Rank1": 66.66666666666667}, "mixed": {"mAP": 47.77777777777778, "Rank1": 16.666666666666668}}}
+## t3 评估结果（第 3/5 阶段）
+
+- 本阶段训练类别：panda, vehicle
+- 本阶段来源数据集：panda: panda_source; vehicle: vehicle_source
+- 首次出现：vehicle
+- 再次训练：panda
+- 已见但本阶段未训练：person
+- 累计已见／本次评估类别：panda, person, vehicle
+- 评估集：test；类别路由准确率：33.33%。
+
+### per_dataset / prototype
+
+| 类别 | 本阶段状态 | 训练身份/图片 | mAP (%) | R1 (%) | mAP 遗忘 (pp) | R1 遗忘 (pp) |
+|---|---|---:|---:|---:|---:|---:|
+| panda | 再次训练 | 2/4 | 100.00 | 100.00 | 0.00 | 0.00 |
+| person | 未训练，仍评估 | 0/0 | 75.00 | 50.00 | 0.00 | 0.00 |
+| vehicle | 首次训练 | 2/4 | 75.00 | 50.00 | -- | -- |
+
+全部已见类别平均：mAP=83.33%，R1=66.67%。
+
+本阶段训练类别平均：mAP=87.50%，R1=75.00%。
+
+旧类别平均遗忘：mAP=0.00 pp，R1=0.00 pp（仅 2 个旧类别）。
+
+### mixed / prototype
+
+| 类别 | 本阶段状态 | 训练身份/图片 | mAP (%) | R1 (%) | mAP 遗忘 (pp) | R1 遗忘 (pp) |
+|---|---|---:|---:|---:|---:|---:|
+| panda | 再次训练 | 2/4 | 41.67 | 0.00 | 8.33 | 0.00 |
+| person | 未训练，仍评估 | 0/0 | 26.67 | 0.00 | 48.33 | 50.00 |
+| vehicle | 首次训练 | 2/4 | 75.00 | 50.00 | -- | -- |
+
+全部已见类别平均：mAP=47.78%，R1=16.67%。
+
+本阶段训练类别平均：mAP=58.33%，R1=25.00%。
+
+旧类别平均遗忘：mAP=28.33 pp，R1=25.00 pp（仅 2 个旧类别）。
+
+注：遗忘为历史最佳分数的非负下降量，单位是百分点；新类别及首阶段记为 --。
+
+{"event": "stage_training_start", "stage_id": "t4", "training_categories": ["tiger", "vehicle"], "new_categories": ["tiger"], "recurring_categories": ["vehicle"], "absent_categories": ["panda", "person"], "seen_before": ["panda", "person", "vehicle"], "total_stages": 5, "training_data": {"tiger": {"identities": 2, "images": 4, "source_datasets": ["tiger_source"]}, "vehicle": {"identities": 2, "images": 4, "source_datasets": ["vehicle_source"]}}, "provenance": "training_stream"}
+{"stage_id": "t4", "completed_epochs": 1, "total_updates": 4, "summed_loss": 2.0741257071495056}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "evaluation_start", "split": "test", "gallery_scope": "both"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "dataset_start", "dataset": "person_test", "category": "person", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_start", "dataset": "person_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_progress", "dataset": "person_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_start", "dataset": "person_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_progress", "dataset": "person_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "dataset_start", "dataset": "vehicle_test", "category": "vehicle", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_start", "dataset": "vehicle_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_progress", "dataset": "vehicle_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_start", "dataset": "vehicle_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_progress", "dataset": "vehicle_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "dataset_start", "dataset": "panda_test", "category": "panda", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_start", "dataset": "panda_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_progress", "dataset": "panda_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_start", "dataset": "panda_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_progress", "dataset": "panda_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "dataset_start", "dataset": "tiger_test", "category": "tiger", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_start", "dataset": "tiger_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_progress", "dataset": "tiger_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_start", "dataset": "tiger_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "features_progress", "dataset": "tiger_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "retrieval_start", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 100.0, "Rank1": 100.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 50.0, "Rank1": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "retrieval_start", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 100.0, "Rank1": 100.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "retrieval_start", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 35.0, "Rank1": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 33.33333333333333, "Rank1": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 50.0, "Rank1": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "retrieval_start", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 26.666666666666668, "Rank1": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 41.666666666666664, "Rank1": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 8, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "routing_diagnostics"}
+{"event": "evaluation_progress", "stage_id": "t4", "phase": "evaluation_complete", "elapsed_seconds": 0.17, "prototype_macro": {"per_dataset": {"mAP": 81.25, "Rank1": 62.5}, "mixed": {"mAP": 54.583333333333336, "Rank1": 25.0}}}
+## t4 评估结果（第 4/5 阶段）
+
+- 本阶段训练类别：tiger, vehicle
+- 本阶段来源数据集：tiger: tiger_source; vehicle: vehicle_source
+- 首次出现：tiger
+- 再次训练：vehicle
+- 已见但本阶段未训练：panda, person
+- 累计已见／本次评估类别：panda, person, tiger, vehicle
+- 评估集：test；类别路由准确率：25.00%。
+
+### per_dataset / prototype
+
+| 类别 | 本阶段状态 | 训练身份/图片 | mAP (%) | R1 (%) | mAP 遗忘 (pp) | R1 遗忘 (pp) |
+|---|---|---:|---:|---:|---:|---:|
+| panda | 未训练，仍评估 | 0/0 | 100.00 | 100.00 | 0.00 | 0.00 |
+| person | 未训练，仍评估 | 0/0 | 75.00 | 50.00 | 0.00 | 0.00 |
+| tiger | 首次训练 | 2/4 | 75.00 | 50.00 | -- | -- |
+| vehicle | 再次训练 | 2/4 | 75.00 | 50.00 | 0.00 | 0.00 |
+
+全部已见类别平均：mAP=81.25%，R1=62.50%。
+
+本阶段训练类别平均：mAP=75.00%，R1=50.00%。
+
+旧类别平均遗忘：mAP=0.00 pp，R1=0.00 pp（仅 3 个旧类别）。
+
+### mixed / prototype
+
+| 类别 | 本阶段状态 | 训练身份/图片 | mAP (%) | R1 (%) | mAP 遗忘 (pp) | R1 遗忘 (pp) |
+|---|---|---:|---:|---:|---:|---:|
+| panda | 未训练，仍评估 | 0/0 | 41.67 | 0.00 | 8.33 | 0.00 |
+| person | 未训练，仍评估 | 0/0 | 26.67 | 0.00 | 48.33 | 50.00 |
+| tiger | 首次训练 | 2/4 | 75.00 | 50.00 | -- | -- |
+| vehicle | 再次训练 | 2/4 | 75.00 | 50.00 | 0.00 | 0.00 |
+
+全部已见类别平均：mAP=54.58%，R1=25.00%。
+
+本阶段训练类别平均：mAP=75.00%，R1=50.00%。
+
+旧类别平均遗忘：mAP=18.89 pp，R1=16.67 pp（仅 3 个旧类别）。
+
+注：遗忘为历史最佳分数的非负下降量，单位是百分点；新类别及首阶段记为 --。
+
+{"event": "stage_training_start", "stage_id": "t5", "training_categories": ["boat", "person"], "new_categories": ["boat"], "recurring_categories": ["person"], "absent_categories": ["panda", "tiger", "vehicle"], "seen_before": ["panda", "person", "tiger", "vehicle"], "total_stages": 5, "training_data": {"boat": {"identities": 2, "images": 4, "source_datasets": ["boat_source"]}, "person": {"identities": 2, "images": 4, "source_datasets": ["person_source"]}}, "provenance": "training_stream"}
+{"stage_id": "t5", "completed_epochs": 1, "total_updates": 5, "summed_loss": 2.2458419799804688}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "evaluation_start", "split": "test", "gallery_scope": "both"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "dataset_start", "dataset": "person_test", "category": "person", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_start", "dataset": "person_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_progress", "dataset": "person_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_start", "dataset": "person_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_progress", "dataset": "person_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "dataset_start", "dataset": "vehicle_test", "category": "vehicle", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_start", "dataset": "vehicle_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_progress", "dataset": "vehicle_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_start", "dataset": "vehicle_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_progress", "dataset": "vehicle_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "dataset_start", "dataset": "panda_test", "category": "panda", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_start", "dataset": "panda_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_progress", "dataset": "panda_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_start", "dataset": "panda_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_progress", "dataset": "panda_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "dataset_start", "dataset": "tiger_test", "category": "tiger", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_start", "dataset": "tiger_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_progress", "dataset": "tiger_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_start", "dataset": "tiger_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_progress", "dataset": "tiger_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "dataset_start", "dataset": "boat_test", "category": "boat", "query_images": 2, "gallery_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_start", "dataset": "boat_test", "subset": "query", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_progress", "dataset": "boat_test", "subset": "query", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_start", "dataset": "boat_test", "subset": "gallery", "batches": 0, "total_batches": 1, "images": 0, "total_images": 2}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "features_progress", "dataset": "boat_test", "subset": "gallery", "batches": 1, "total_batches": 1, "images": 2, "total_images": 2, "elapsed_seconds": 0.02}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "retrieval_start", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 100.0, "Rank1": 100.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 50.0, "Rank1": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "boat_test", "category": "boat", "routing": "oracle", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "retrieval_start", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 100.0, "Rank1": 100.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 2, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "boat_test", "category": "boat", "routing": "prototype", "gallery_scope": "per_dataset"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "retrieval_start", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 35.0, "Rank1": 0.0, "dataset": "person_test", "category": "person", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 33.33333333333333, "Rank1": 0.0, "dataset": "panda_test", "category": "panda", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 50.0, "Rank1": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "boat_test", "category": "boat", "routing": "oracle", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "retrieval_start", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 26.666666666666668, "Rank1": 0.0, "dataset": "person_test", "category": "person", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "vehicle_test", "category": "vehicle", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 41.666666666666664, "Rank1": 0.0, "dataset": "panda_test", "category": "panda", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 75.0, "Rank1": 50.0, "dataset": "tiger_test", "category": "tiger", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_start", "queries": 0, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 1, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_progress", "queries": 2, "total_queries": 2, "gallery_images": 10, "elapsed_seconds": 0.0, "dataset": "boat_test", "category": "boat", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "ranking_complete", "queries": 2, "total_queries": 2, "elapsed_seconds": 0.0, "mAP": 37.5, "Rank1": 0.0, "dataset": "boat_test", "category": "boat", "routing": "prototype", "gallery_scope": "mixed"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "routing_diagnostics"}
+{"event": "evaluation_progress", "stage_id": "t5", "phase": "evaluation_complete", "elapsed_seconds": 0.23, "prototype_macro": {"per_dataset": {"mAP": 80.0, "Rank1": 60.0}, "mixed": {"mAP": 51.16666666666667, "Rank1": 20.0}}}
+## t5 评估结果（第 5/5 阶段）
+
+- 本阶段训练类别：boat, person
+- 本阶段来源数据集：boat: boat_source; person: person_source
+- 首次出现：boat
+- 再次训练：person
+- 已见但本阶段未训练：panda, tiger, vehicle
+- 累计已见／本次评估类别：boat, panda, person, tiger, vehicle
+- 评估集：test；类别路由准确率：20.00%。
+
+### per_dataset / prototype
+
+| 类别 | 本阶段状态 | 训练身份/图片 | mAP (%) | R1 (%) | mAP 遗忘 (pp) | R1 遗忘 (pp) |
+|---|---|---:|---:|---:|---:|---:|
+| boat | 首次训练 | 2/4 | 75.00 | 50.00 | -- | -- |
+| panda | 未训练，仍评估 | 0/0 | 100.00 | 100.00 | 0.00 | 0.00 |
+| person | 再次训练 | 2/4 | 75.00 | 50.00 | 0.00 | 0.00 |
+| tiger | 未训练，仍评估 | 0/0 | 75.00 | 50.00 | 0.00 | 0.00 |
+| vehicle | 未训练，仍评估 | 0/0 | 75.00 | 50.00 | 0.00 | 0.00 |
+
+全部已见类别平均：mAP=80.00%，R1=60.00%。
+
+本阶段训练类别平均：mAP=75.00%，R1=50.00%。
+
+旧类别平均遗忘：mAP=0.00 pp，R1=0.00 pp（仅 4 个旧类别）。
+
+### mixed / prototype
+
+| 类别 | 本阶段状态 | 训练身份/图片 | mAP (%) | R1 (%) | mAP 遗忘 (pp) | R1 遗忘 (pp) |
+|---|---|---:|---:|---:|---:|---:|
+| boat | 首次训练 | 2/4 | 37.50 | 0.00 | -- | -- |
+| panda | 未训练，仍评估 | 0/0 | 41.67 | 0.00 | 8.33 | 0.00 |
+| person | 再次训练 | 2/4 | 26.67 | 0.00 | 48.33 | 50.00 |
+| tiger | 未训练，仍评估 | 0/0 | 75.00 | 50.00 | 0.00 | 0.00 |
+| vehicle | 未训练，仍评估 | 0/0 | 75.00 | 50.00 | 0.00 | 0.00 |
+
+全部已见类别平均：mAP=51.17%，R1=20.00%。
+
+本阶段训练类别平均：mAP=32.08%，R1=0.00%。
+
+旧类别平均遗忘：mAP=14.17 pp，R1=12.50 pp（仅 4 个旧类别）。
+
+注：遗忘为历史最佳分数的非负下降量，单位是百分点；新类别及首阶段记为 --。
+
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.909s
+
+OK

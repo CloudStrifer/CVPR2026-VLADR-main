@@ -1,0 +1,15 @@
+E:\Multi_modal_Code\CVPR2026-VLADR-main\reid\evaluation\rank.py:11: UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.
+  warnings.warn(
+D:\python3.13.7\Lib\site-packages\torch\cuda\__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+test_exports_are_deterministic_and_rewritten_from_authoritative_prefix (test_stage_reporting.StageReportingTests.test_exports_are_deterministic_and_rewritten_from_authoritative_prefix) ... ok
+test_five_stages_show_active_and_absent_categories_without_future_leak (test_stage_reporting.StageReportingTests.test_five_stages_show_active_and_absent_categories_without_future_leak) ... ok
+test_forgetting_uses_best_prior_excludes_new_and_separates_relative_rate (test_stage_reporting.StageReportingTests.test_forgetting_uses_best_prior_excludes_new_and_separates_relative_rate) ... ok
+test_legacy_context_recovery_and_unknown_images_are_explicit (test_stage_reporting.StageReportingTests.test_legacy_context_recovery_and_unknown_images_are_explicit) ... ok
+test_missing_categories_context_or_changed_protocol_rejected (test_stage_reporting.StageReportingTests.test_missing_categories_context_or_changed_protocol_rejected) ... ok
+test_zero_best_relative_forgetting_is_undefined (test_stage_reporting.StageReportingTests.test_zero_best_relative_forgetting_is_undefined) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.047s
+
+OK

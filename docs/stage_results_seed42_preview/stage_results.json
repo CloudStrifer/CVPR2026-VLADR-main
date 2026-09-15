@@ -1,0 +1,1759 @@
+{
+  "schema_version": 1,
+  "stages": [
+    {
+      "stage_id": "t1",
+      "stage_index": 0,
+      "split": "test",
+      "seen_categories": [
+        "person",
+        "vehicle"
+      ],
+      "stage_context": {
+        "training_categories": [
+          "person",
+          "vehicle"
+        ],
+        "new_categories": [
+          "person",
+          "vehicle"
+        ],
+        "recurring_categories": [],
+        "absent_categories": [],
+        "seen_before": [],
+        "total_stages": null,
+        "training_data": {
+          "person": {
+            "identities": 225,
+            "images": null,
+            "source_datasets": []
+          },
+          "vehicle": {
+            "identities": 173,
+            "images": null,
+            "source_datasets": []
+          }
+        },
+        "provenance": "inferred_from_committed_ecpm"
+      },
+      "retrieval": {
+        "per_dataset": {
+          "prototype": {
+            "per_category": {
+              "person": {
+                "mAP": 50.769001196587546,
+                "Rank1": 71.19952494061758,
+                "status": "new",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "vehicle": {
+                "mAP": 39.90256102718004,
+                "Rank1": 70.61978545887962,
+                "status": "new",
+                "training_identities": 173,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 45.33578111188379,
+              "Rank1": 70.9096551997486
+            },
+            "macro_current_training": {
+              "mAP": 45.33578111188379,
+              "Rank1": 70.9096551997486
+            },
+            "old_categories": [],
+            "macro_forgetting_old_pp": {
+              "mAP": null,
+              "Rank1": null
+            }
+          },
+          "oracle": {
+            "per_category": {
+              "person": {
+                "mAP": 50.769001196587546,
+                "Rank1": 71.19952494061758,
+                "status": "new",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "vehicle": {
+                "mAP": 39.91179120557664,
+                "Rank1": 70.61978545887962,
+                "status": "new",
+                "training_identities": 173,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 45.34039620108209,
+              "Rank1": 70.9096551997486
+            },
+            "macro_current_training": {
+              "mAP": 45.34039620108209,
+              "Rank1": 70.9096551997486
+            },
+            "old_categories": [],
+            "macro_forgetting_old_pp": {
+              "mAP": null,
+              "Rank1": null
+            }
+          }
+        },
+        "mixed": {
+          "prototype": {
+            "per_category": {
+              "person": {
+                "mAP": 50.76823509928725,
+                "Rank1": 71.19952494061758,
+                "status": "new",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "vehicle": {
+                "mAP": 39.89418475136494,
+                "Rank1": 70.61978545887962,
+                "status": "new",
+                "training_identities": 173,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 45.33120992532609,
+              "Rank1": 70.9096551997486
+            },
+            "macro_current_training": {
+              "mAP": 45.33120992532609,
+              "Rank1": 70.9096551997486
+            },
+            "old_categories": [],
+            "macro_forgetting_old_pp": {
+              "mAP": null,
+              "Rank1": null
+            }
+          },
+          "oracle": {
+            "per_category": {
+              "person": {
+                "mAP": 50.768480009269744,
+                "Rank1": 71.19952494061758,
+                "status": "new",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "vehicle": {
+                "mAP": 39.90419042545325,
+                "Rank1": 70.61978545887962,
+                "status": "new",
+                "training_identities": 173,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 45.336335217361494,
+              "Rank1": 70.9096551997486
+            },
+            "macro_current_training": {
+              "mAP": 45.336335217361494,
+              "Rank1": 70.9096551997486
+            },
+            "old_categories": [],
+            "macro_forgetting_old_pp": {
+              "mAP": null,
+              "Rank1": null
+            }
+          }
+        }
+      },
+      "routing_accuracy": 99.96926670354662,
+      "forgetting_unit": "percentage_points",
+      "new_category_forgetting": null
+    },
+    {
+      "stage_id": "t2",
+      "stage_index": 1,
+      "split": "test",
+      "seen_categories": [
+        "panda",
+        "person",
+        "tiger",
+        "vehicle"
+      ],
+      "stage_context": {
+        "training_categories": [
+          "panda",
+          "person",
+          "tiger"
+        ],
+        "new_categories": [
+          "panda",
+          "tiger"
+        ],
+        "recurring_categories": [
+          "person"
+        ],
+        "absent_categories": [
+          "vehicle"
+        ],
+        "seen_before": [
+          "person",
+          "vehicle"
+        ],
+        "total_stages": null,
+        "training_data": {
+          "tiger": {
+            "identities": 48,
+            "images": null,
+            "source_datasets": []
+          },
+          "person": {
+            "identities": 225,
+            "images": null,
+            "source_datasets": []
+          },
+          "panda": {
+            "identities": 16,
+            "images": null,
+            "source_datasets": []
+          }
+        },
+        "provenance": "inferred_from_committed_ecpm"
+      },
+      "retrieval": {
+        "per_dataset": {
+          "prototype": {
+            "per_category": {
+              "panda": {
+                "mAP": 26.313273883515173,
+                "Rank1": 49.754901960784316,
+                "status": "new",
+                "training_identities": 16,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "person": {
+                "mAP": 52.38959404657469,
+                "Rank1": 71.55581947743468,
+                "status": "recurring",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 50.769001196587546,
+                  "Rank1": 71.19952494061758
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "tiger": {
+                "mAP": 52.20945099009139,
+                "Rank1": 86.66666666666667,
+                "status": "new",
+                "training_identities": 48,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "vehicle": {
+                "mAP": 39.860924458393754,
+                "Rank1": 70.61978545887962,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 39.90256102718004,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.04163656878628785,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.104345605180396,
+                  "Rank1": 0.0
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 42.693310844643754,
+              "Rank1": 69.64929339094132
+            },
+            "macro_current_training": {
+              "mAP": 43.63743964006042,
+              "Rank1": 69.3257960349619
+            },
+            "old_categories": [
+              "person",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.020818284393143927,
+              "Rank1": 0.0
+            }
+          },
+          "oracle": {
+            "per_category": {
+              "panda": {
+                "mAP": 26.363350159019284,
+                "Rank1": 49.754901960784316,
+                "status": "new",
+                "training_identities": 16,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "person": {
+                "mAP": 52.38959404657469,
+                "Rank1": 71.55581947743468,
+                "status": "recurring",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 50.769001196587546,
+                  "Rank1": 71.19952494061758
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "tiger": {
+                "mAP": 52.23589557568157,
+                "Rank1": 86.66666666666667,
+                "status": "new",
+                "training_identities": 48,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "vehicle": {
+                "mAP": 39.91179120557664,
+                "Rank1": 70.61978545887962,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 39.91179120557664,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 42.725157746713045,
+              "Rank1": 69.64929339094132
+            },
+            "macro_current_training": {
+              "mAP": 43.66294659375851,
+              "Rank1": 69.3257960349619
+            },
+            "old_categories": [
+              "person",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.0,
+              "Rank1": 0.0
+            }
+          }
+        },
+        "mixed": {
+          "prototype": {
+            "per_category": {
+              "panda": {
+                "mAP": 26.1029497092705,
+                "Rank1": 49.509803921568626,
+                "status": "new",
+                "training_identities": 16,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "person": {
+                "mAP": 52.38457676477256,
+                "Rank1": 71.55581947743468,
+                "status": "recurring",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 50.76823509928725,
+                  "Rank1": 71.19952494061758
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "tiger": {
+                "mAP": 51.4020820488428,
+                "Rank1": 86.66666666666667,
+                "status": "new",
+                "training_identities": 48,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "vehicle": {
+                "mAP": 39.840515253933205,
+                "Rank1": 70.56019070321811,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 39.89418475136494,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.053669497431734214,
+                  "Rank1": 0.05959475566150729
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.13452962572420524,
+                  "Rank1": 0.08438818565401623
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 42.432530944204764,
+              "Rank1": 69.57312019222202
+            },
+            "macro_current_training": {
+              "mAP": 43.296536174295284,
+              "Rank1": 69.24409668855667
+            },
+            "old_categories": [
+              "person",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.026834748715867107,
+              "Rank1": 0.029797377830753646
+            }
+          },
+          "oracle": {
+            "per_category": {
+              "panda": {
+                "mAP": 26.16742517623632,
+                "Rank1": 49.754901960784316,
+                "status": "new",
+                "training_identities": 16,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "person": {
+                "mAP": 52.38550102018404,
+                "Rank1": 71.55581947743468,
+                "status": "recurring",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 50.768480009269744,
+                  "Rank1": 71.19952494061758
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "tiger": {
+                "mAP": 51.4356859212553,
+                "Rank1": 86.66666666666667,
+                "status": "new",
+                "training_identities": 48,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "vehicle": {
+                "mAP": 39.897068939977586,
+                "Rank1": 70.61978545887962,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 39.90419042545325,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.007121485475664713,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.017846460233214526,
+                  "Rank1": 0.0
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 42.47142026441331,
+              "Rank1": 69.64929339094132
+            },
+            "macro_current_training": {
+              "mAP": 43.32953737255855,
+              "Rank1": 69.3257960349619
+            },
+            "old_categories": [
+              "person",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.0035607427378323564,
+              "Rank1": 0.0
+            }
+          }
+        }
+      },
+      "routing_accuracy": 99.92499374947913,
+      "forgetting_unit": "percentage_points",
+      "new_category_forgetting": null
+    },
+    {
+      "stage_id": "t3",
+      "stage_index": 2,
+      "split": "test",
+      "seen_categories": [
+        "panda",
+        "person",
+        "tiger",
+        "vehicle"
+      ],
+      "stage_context": {
+        "training_categories": [
+          "panda",
+          "person",
+          "vehicle"
+        ],
+        "new_categories": [],
+        "recurring_categories": [
+          "panda",
+          "person",
+          "vehicle"
+        ],
+        "absent_categories": [
+          "tiger"
+        ],
+        "seen_before": [
+          "panda",
+          "person",
+          "tiger",
+          "vehicle"
+        ],
+        "total_stages": null,
+        "training_data": {
+          "person": {
+            "identities": 225,
+            "images": null,
+            "source_datasets": []
+          },
+          "vehicle": {
+            "identities": 173,
+            "images": null,
+            "source_datasets": []
+          },
+          "panda": {
+            "identities": 15,
+            "images": null,
+            "source_datasets": []
+          }
+        },
+        "provenance": "inferred_from_committed_ecpm"
+      },
+      "retrieval": {
+        "per_dataset": {
+          "prototype": {
+            "per_category": {
+              "panda": {
+                "mAP": 33.968246445795735,
+                "Rank1": 48.03921568627451,
+                "status": "recurring",
+                "training_identities": 15,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 26.313273883515173,
+                  "Rank1": 49.754901960784316
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 1.7156862745098067
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 3.448275862068971
+                }
+              },
+              "person": {
+                "mAP": 51.712465256755706,
+                "Rank1": 70.19002375296913,
+                "status": "recurring",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.38959404657469,
+                  "Rank1": 71.55581947743468
+                },
+                "forgetting_pp": {
+                  "mAP": 0.6771287898189868,
+                  "Rank1": 1.3657957244655563
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 1.2924871859419542,
+                  "Rank1": 1.9087136929460553
+                }
+              },
+              "tiger": {
+                "mAP": 52.21080794202051,
+                "Rank1": 86.66666666666667,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.20945099009139,
+                  "Rank1": 86.66666666666667
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "vehicle": {
+                "mAP": 41.55183902958151,
+                "Rank1": 69.07032181168057,
+                "status": "recurring",
+                "training_identities": 173,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 39.90256102718004,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 1.5494636471990475
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 2.194092827004221
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 44.86083966853836,
+              "Rank1": 68.49155697939771
+            },
+            "macro_current_training": {
+              "mAP": 42.41085024404432,
+              "Rank1": 62.4331870836414
+            },
+            "old_categories": [
+              "panda",
+              "person",
+              "tiger",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.1692821974547467,
+              "Rank1": 1.1577364115436026
+            }
+          },
+          "oracle": {
+            "per_category": {
+              "panda": {
+                "mAP": 33.96088945517483,
+                "Rank1": 48.03921568627451,
+                "status": "recurring",
+                "training_identities": 15,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 26.363350159019284,
+                  "Rank1": 49.754901960784316
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 1.7156862745098067
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 3.448275862068971
+                }
+              },
+              "person": {
+                "mAP": 51.712460183490336,
+                "Rank1": 70.19002375296913,
+                "status": "recurring",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.38959404657469,
+                  "Rank1": 71.55581947743468
+                },
+                "forgetting_pp": {
+                  "mAP": 0.6771338630843573,
+                  "Rank1": 1.3657957244655563
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 1.2924968696691577,
+                  "Rank1": 1.9087136929460553
+                }
+              },
+              "tiger": {
+                "mAP": 52.23589557568157,
+                "Rank1": 86.66666666666667,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.23589557568157,
+                  "Rank1": 86.66666666666667
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "vehicle": {
+                "mAP": 41.57078590917188,
+                "Rank1": 69.12991656734208,
+                "status": "recurring",
+                "training_identities": 173,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 39.91179120557664,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 1.4898688915375402
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 2.1097046413502047
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 44.870007780879654,
+              "Rank1": 68.5064556683131
+            },
+            "macro_current_training": {
+              "mAP": 42.414711849279016,
+              "Rank1": 62.45305200219524
+            },
+            "old_categories": [
+              "panda",
+              "person",
+              "tiger",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.16928346577108933,
+              "Rank1": 1.1428377226282258
+            }
+          }
+        },
+        "mixed": {
+          "prototype": {
+            "per_category": {
+              "panda": {
+                "mAP": 33.928405956232375,
+                "Rank1": 48.03921568627451,
+                "status": "recurring",
+                "training_identities": 15,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 26.1029497092705,
+                  "Rank1": 49.509803921568626
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 1.470588235294116
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 2.970297029702967
+                }
+              },
+              "person": {
+                "mAP": 51.70770067257078,
+                "Rank1": 70.19002375296913,
+                "status": "recurring",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.38457676477256,
+                  "Rank1": 71.55581947743468
+                },
+                "forgetting_pp": {
+                  "mAP": 0.6768760922017805,
+                  "Rank1": 1.3657957244655563
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 1.2921285882316496,
+                  "Rank1": 1.9087136929460553
+                }
+              },
+              "tiger": {
+                "mAP": 51.41193740101678,
+                "Rank1": 86.66666666666667,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 51.4020820488428,
+                  "Rank1": 86.66666666666667
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "vehicle": {
+                "mAP": 41.53255638887,
+                "Rank1": 69.07032181168057,
+                "status": "recurring",
+                "training_identities": 173,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 39.89418475136494,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 1.5494636471990475
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 2.194092827004221
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 44.64515010467248,
+              "Rank1": 68.49155697939771
+            },
+            "macro_current_training": {
+              "mAP": 42.38955433922438,
+              "Rank1": 62.4331870836414
+            },
+            "old_categories": [
+              "panda",
+              "person",
+              "tiger",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.16921902305044512,
+              "Rank1": 1.09646190173968
+            }
+          },
+          "oracle": {
+            "per_category": {
+              "panda": {
+                "mAP": 33.92600733838712,
+                "Rank1": 48.03921568627451,
+                "status": "recurring",
+                "training_identities": 15,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 26.16742517623632,
+                  "Rank1": 49.754901960784316
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 1.7156862745098067
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 3.448275862068971
+                }
+              },
+              "person": {
+                "mAP": 51.70869173026383,
+                "Rank1": 70.19002375296913,
+                "status": "recurring",
+                "training_identities": 225,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.38550102018404,
+                  "Rank1": 71.55581947743468
+                },
+                "forgetting_pp": {
+                  "mAP": 0.6768092899202074,
+                  "Rank1": 1.3657957244655563
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 1.2919782702076936,
+                  "Rank1": 1.9087136929460553
+                }
+              },
+              "tiger": {
+                "mAP": 51.44497503959852,
+                "Rank1": 86.66666666666667,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 51.4356859212553,
+                  "Rank1": 86.66666666666667
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "vehicle": {
+                "mAP": 41.55292842710556,
+                "Rank1": 69.12991656734208,
+                "status": "recurring",
+                "training_identities": 173,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 39.90419042545325,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 1.4898688915375402
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 2.1097046413502047
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 44.65815063383876,
+              "Rank1": 68.5064556683131
+            },
+            "macro_current_training": {
+              "mAP": 42.395875831918836,
+              "Rank1": 62.45305200219524
+            },
+            "old_categories": [
+              "panda",
+              "person",
+              "tiger",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.16920232248005185,
+              "Rank1": 1.1428377226282258
+            }
+          }
+        }
+      },
+      "routing_accuracy": 99.93332777731477,
+      "forgetting_unit": "percentage_points",
+      "new_category_forgetting": null
+    },
+    {
+      "stage_id": "t4",
+      "stage_index": 3,
+      "split": "test",
+      "seen_categories": [
+        "boat",
+        "panda",
+        "person",
+        "tiger",
+        "vehicle"
+      ],
+      "stage_context": {
+        "training_categories": [
+          "boat",
+          "tiger",
+          "vehicle"
+        ],
+        "new_categories": [
+          "boat"
+        ],
+        "recurring_categories": [
+          "tiger",
+          "vehicle"
+        ],
+        "absent_categories": [
+          "panda",
+          "person"
+        ],
+        "seen_before": [
+          "panda",
+          "person",
+          "tiger",
+          "vehicle"
+        ],
+        "total_stages": null,
+        "training_data": {
+          "tiger": {
+            "identities": 48,
+            "images": null,
+            "source_datasets": []
+          },
+          "vehicle": {
+            "identities": 172,
+            "images": null,
+            "source_datasets": []
+          },
+          "boat": {
+            "identities": 72,
+            "images": null,
+            "source_datasets": []
+          }
+        },
+        "provenance": "inferred_from_committed_ecpm"
+      },
+      "retrieval": {
+        "per_dataset": {
+          "prototype": {
+            "per_category": {
+              "boat": {
+                "mAP": 84.20179449816689,
+                "Rank1": 92.5925925925926,
+                "status": "new",
+                "training_identities": 72,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "panda": {
+                "mAP": 33.968246445795735,
+                "Rank1": 48.03921568627451,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 33.968246445795735,
+                  "Rank1": 49.754901960784316
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 1.7156862745098067
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 3.448275862068971
+                }
+              },
+              "person": {
+                "mAP": 51.71314767019099,
+                "Rank1": 70.19002375296913,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.38959404657469,
+                  "Rank1": 71.55581947743468
+                },
+                "forgetting_pp": {
+                  "mAP": 0.6764463763837014,
+                  "Rank1": 1.3657957244655563
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 1.2911846115515537,
+                  "Rank1": 1.9087136929460553
+                }
+              },
+              "tiger": {
+                "mAP": 56.38625208733466,
+                "Rank1": 89.33333333333333,
+                "status": "recurring",
+                "training_identities": 48,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.21080794202051,
+                  "Rank1": 86.66666666666667
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "vehicle": {
+                "mAP": 44.08935296906781,
+                "Rank1": 67.87842669845054,
+                "status": "recurring",
+                "training_identities": 172,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 41.55183902958151,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 2.7413587604290797
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 3.8818565400843843
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 54.07175873411122,
+              "Rank1": 73.60671841272402
+            },
+            "macro_current_training": {
+              "mAP": 61.55913318485646,
+              "Rank1": 83.26811754145882
+            },
+            "old_categories": [
+              "panda",
+              "person",
+              "tiger",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.16911159409592535,
+              "Rank1": 1.4557101898511107
+            }
+          },
+          "oracle": {
+            "per_category": {
+              "boat": {
+                "mAP": 84.20179449816689,
+                "Rank1": 92.5925925925926,
+                "status": "new",
+                "training_identities": 72,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "panda": {
+                "mAP": 33.96088945517483,
+                "Rank1": 48.03921568627451,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 33.96088945517483,
+                  "Rank1": 49.754901960784316
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 1.7156862745098067
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 3.448275862068971
+                }
+              },
+              "person": {
+                "mAP": 51.712460183490336,
+                "Rank1": 70.19002375296913,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.38959404657469,
+                  "Rank1": 71.55581947743468
+                },
+                "forgetting_pp": {
+                  "mAP": 0.6771338630843573,
+                  "Rank1": 1.3657957244655563
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 1.2924968696691577,
+                  "Rank1": 1.9087136929460553
+                }
+              },
+              "tiger": {
+                "mAP": 56.41940477879445,
+                "Rank1": 88.0,
+                "status": "recurring",
+                "training_identities": 48,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.23589557568157,
+                  "Rank1": 86.66666666666667
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "vehicle": {
+                "mAP": 44.09402202642047,
+                "Rank1": 67.75923718712754,
+                "status": "recurring",
+                "training_identities": 172,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 41.57078590917188,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 2.86054827175208
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 4.0506329113923965
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 54.07771418840939,
+              "Rank1": 73.31621384379275
+            },
+            "macro_current_training": {
+              "mAP": 61.5717404344606,
+              "Rank1": 82.7839432599067
+            },
+            "old_categories": [
+              "panda",
+              "person",
+              "tiger",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.16928346577108933,
+              "Rank1": 1.4855075676818608
+            }
+          }
+        },
+        "mixed": {
+          "prototype": {
+            "per_category": {
+              "boat": {
+                "mAP": 81.56813924785975,
+                "Rank1": 92.5925925925926,
+                "status": "new",
+                "training_identities": 72,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "panda": {
+                "mAP": 33.928176521173846,
+                "Rank1": 48.03921568627451,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 33.928405956232375,
+                  "Rank1": 49.509803921568626
+                },
+                "forgetting_pp": {
+                  "mAP": 0.00022943505852879298,
+                  "Rank1": 1.470588235294116
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0006762329442319338,
+                  "Rank1": 2.970297029702967
+                }
+              },
+              "person": {
+                "mAP": 51.7084384458861,
+                "Rank1": 70.19002375296913,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.38457676477256,
+                  "Rank1": 71.55581947743468
+                },
+                "forgetting_pp": {
+                  "mAP": 0.6761383188864585,
+                  "Rank1": 1.3657957244655563
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 1.2907202093520513,
+                  "Rank1": 1.9087136929460553
+                }
+              },
+              "tiger": {
+                "mAP": 55.91290697031216,
+                "Rank1": 89.33333333333333,
+                "status": "recurring",
+                "training_identities": 48,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 51.41193740101678,
+                  "Rank1": 86.66666666666667
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "vehicle": {
+                "mAP": 44.06297162462666,
+                "Rank1": 67.87842669845054,
+                "status": "recurring",
+                "training_identities": 172,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 41.53255638887,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 2.7413587604290797
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 3.8818565400843843
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 53.436126561971705,
+              "Rank1": 73.60671841272402
+            },
+            "macro_current_training": {
+              "mAP": 60.51467261426618,
+              "Rank1": 83.26811754145882
+            },
+            "old_categories": [
+              "panda",
+              "person",
+              "tiger",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.16909193848624682,
+              "Rank1": 1.394435680047188
+            }
+          },
+          "oracle": {
+            "per_category": {
+              "boat": {
+                "mAP": 81.6042934304903,
+                "Rank1": 92.5925925925926,
+                "status": "new",
+                "training_identities": 72,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_pp": {
+                  "mAP": null,
+                  "Rank1": null
+                },
+                "forgetting_relative_percent": {
+                  "mAP": null,
+                  "Rank1": null
+                }
+              },
+              "panda": {
+                "mAP": 33.925907453948405,
+                "Rank1": 48.03921568627451,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 33.92600733838712,
+                  "Rank1": 49.754901960784316
+                },
+                "forgetting_pp": {
+                  "mAP": 9.988443871833397e-05,
+                  "Rank1": 1.7156862745098067
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.00029441849057585735,
+                  "Rank1": 3.448275862068971
+                }
+              },
+              "person": {
+                "mAP": 51.70842104483461,
+                "Rank1": 70.19002375296913,
+                "status": "absent",
+                "training_identities": 0,
+                "training_images": 0,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 52.38550102018404,
+                  "Rank1": 71.55581947743468
+                },
+                "forgetting_pp": {
+                  "mAP": 0.6770799753494288,
+                  "Rank1": 1.3657957244655563
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 1.2924949884292432,
+                  "Rank1": 1.9087136929460553
+                }
+              },
+              "tiger": {
+                "mAP": 55.95315185842717,
+                "Rank1": 88.0,
+                "status": "recurring",
+                "training_identities": 48,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 51.44497503959852,
+                  "Rank1": 86.66666666666667
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 0.0
+                }
+              },
+              "vehicle": {
+                "mAP": 44.06905977292039,
+                "Rank1": 67.75923718712754,
+                "status": "recurring",
+                "training_identities": 172,
+                "training_images": null,
+                "source_datasets": [],
+                "previous_best": {
+                  "mAP": 41.55292842710556,
+                  "Rank1": 70.61978545887962
+                },
+                "forgetting_pp": {
+                  "mAP": 0.0,
+                  "Rank1": 2.86054827175208
+                },
+                "forgetting_relative_percent": {
+                  "mAP": 0.0,
+                  "Rank1": 4.0506329113923965
+                }
+              }
+            },
+            "macro_all_seen": {
+              "mAP": 53.452166712124175,
+              "Rank1": 73.31621384379275
+            },
+            "macro_current_training": {
+              "mAP": 60.542168353945954,
+              "Rank1": 82.7839432599067
+            },
+            "old_categories": [
+              "panda",
+              "person",
+              "tiger",
+              "vehicle"
+            ],
+            "macro_forgetting_old_pp": {
+              "mAP": 0.16929496494703677,
+              "Rank1": 1.4855075676818608
+            }
+          }
+        }
+      },
+      "routing_accuracy": 99.91157534057311,
+      "forgetting_unit": "percentage_points",
+      "new_category_forgetting": null
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "archive": "E:\\Multi_modal_Code\\CVPR2026-VLADR-main\\docs\\stage_reporting_upload.zip",
+  "crc_ok": true,
+  "file_contents_verified": true,
+  "files": [
+    {
+      "path": "train_category_progressive.py",
+      "bytes": 19661,
+      "sha256": "03bb43ee2511f17550b01652ea85eea903123b8eab9e32482cc46b668b564564"
+    },
+    {
+      "path": "reid/evaluation/stage_reporting.py",
+      "bytes": 12296,
+      "sha256": "065862745fbd40e5513029b4939e3889fe4a2b6dba06279f94acf541ac35f848"
+    },
+    {
+      "path": "tools/summarize_category_stages.py",
+      "bytes": 1499,
+      "sha256": "97a36e6c4740a8145207b2467b7f7db71ddd12a9a960fd76ca25da3b5135ac3e"
+    },
+    {
+      "path": "docs/stage_reporting_usage_zh.md",
+      "bytes": 10347,
+      "sha256": "0bf1519092832314896a1929c67545bdc7c88d742e0e9f44884571daf36cfbff"
+    }
+  ],
+  "real_preview": {
+    "source": "E:\\Multi_modal_Code\\结果\\新建文件夹2\\evaluation_summary.json",
+    "source_sha256": "e8d51216f40222351e253c63e8560c2d5f4d9413bc67a7de3e9ddfb8b14f00f0",
+    "stages": 4,
+    "unchanged_metric_comparisons": 120
+  },
+  "tests": {
+    "reporting": 6,
+    "evaluation": 19,
+    "resume": 14,
+    "five_stage_integration": 1,
+    "total": 40
+  }
+}

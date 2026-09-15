@@ -223,6 +223,61 @@ class ProgressiveEvaluationTests(StreamFixture):
         self.assertEqual(restored.total_updates, 6)
         self.assertEqual([e['stage_id'] for e in restored.evaluations], ['t1', 't2', 't3'])
 
+    def test_stage_tables_saved_after_each_commit_and_regenerated_on_resume(self):
+        run = self.fresh()
+        run.run(max_stages=1)
+        data = json.loads((run.output / 'stage_results.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(data['stages']), 1)
+        context = data['stages'][0]['stage_context']
+        self.assertEqual(context['training_categories'], ['person', 'vehicle'])
+        self.assertEqual(context['total_stages'], 3)
+        self.assertIsNone(data['stages'][0]['retrieval']['per_dataset']['prototype']['macro_forgetting_old_pp']['mAP'])
+        self.assertEqual(run.evaluations[0]['stage_context'], context)
+        (run.output / 'stage_results.md').write_text('stale result', encoding='utf-8')
+        restored = ProgressiveRun(run.output, resume=True)
+        restored.run(max_stages=1)
+        text = (run.output / 'stage_results.md').read_text(encoding='utf-8')
+        self.assertNotIn('stale result', text)
+        data = json.loads((run.output / 'stage_results.json').read_text(encoding='utf-8'))
+        self.assertEqual([r['stage_id'] for r in data['stages']], ['t1', 't2'])
+        second = data['stages'][1]
+        self.assertEqual(second['stage_context']['training_categories'], ['panda', 'person'])
+        self.assertEqual(second['stage_context']['absent_categories'], ['vehicle'])
+        self.assertEqual(second['retrieval']['per_dataset']['prototype']['per_category']['vehicle']['status'], 'absent')
+        self.assertEqual(second['retrieval']['per_dataset']['prototype']['old_categories'], ['person', 'vehicle'])
+
+    def test_five_category_five_stage_interleaving_outputs_each_stage(self):
+        layouts = [('person',), ('person', 'panda'), ('vehicle', 'panda'), ('tiger', 'vehicle'), ('boat', 'person')]
+        self.config['stages'] = [dict(stage_id='t' + str(i), categories=[
+            self.entry(c, c + str(i), ['stage{}_a'.format(i), 'stage{}_b'.format(i)]) for c in categories])
+            for i, categories in enumerate(layouts, 1)]
+        for c in ('tiger', 'boat'):
+            for subset, cam in (('query', '0'), ('gallery', '1')):
+                manifest = c + '_' + subset + '.csv'
+                self.rows[manifest] = [dict(path=c + '/test_' + pid + '_' + subset + '.png',
+                    original_pid='test_' + pid, source_dataset=c + '_source', camid=cam) for pid in ('a', 'b')]
+            self.config['evaluation'].append(dict(name=c + '_test', category=c, split='test', protocol='cross_camera',
+                query_manifest=c + '_query.csv', gallery_manifest=c + '_gallery.csv'))
+        self.stream = self.load()
+        samples = [s for stage in self.stream.stages for v in stage.categories for s in v.samples]
+        samples += [s for v in self.stream.evaluations for s in v.query + v.gallery]
+        for s in samples:
+            path = Path(s.path)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            if not path.exists():
+                Image.new('RGB', (17, 13), (110, 60, 30)).save(path)
+        run = self.fresh(epochs=1, iterations_per_epoch=1)
+        for i, active in enumerate(layouts, 1):
+            run.run(max_stages=1)
+            results = json.loads((run.output / 'stage_results.json').read_text(encoding='utf-8'))['stages']
+            self.assertEqual(len(results), i)
+            self.assertEqual(results[-1]['stage_context']['total_stages'], 5)
+            self.assertEqual(results[-1]['stage_context']['training_categories'], sorted(active))
+        self.assertEqual(run.phase, 'complete')
+        self.assertEqual(run.total_updates, 5)
+        self.assertEqual(results[2]['stage_context']['absent_categories'], ['person'])
+        self.assertEqual(len(results[-1]['seen_categories']), 5)
+
     def test_evaluation_write_before_checkpoint_is_rolled_back(self):
         run = self.fresh()
         run.run(max_updates=2)

@@ -19,6 +19,7 @@ from reid.models.category_adapter_bank import CategoryAdapterBank, build_categor
 from reid.trainer_category_progressive import CategoryTrainingConfig
 from reid.trainer_category_resumable import ResumableCategoryTrainer, model_from_bank
 from reid.evaluation.category_progressive import EvaluationConfig, check_evaluation_coverage, evaluate_stage, lifelong_summary
+from reid.evaluation.stage_reporting import stage_context, build_stage_results, format_stage_result, write_stage_results
 from reid.utils.progressive_checkpoint import (append_event, atomic_save, capture_rng, exact_runtime,
     file_digest, log_positions, restore_logs, restore_rng)
 
@@ -187,9 +188,12 @@ class ProgressiveRun:
         self.phase = 'training'
         self.stage_seconds = dict(preparation=time.perf_counter() - started, optimizer_updates=0.)
         self._event('stage_prepared', stage_id=self.stage.stage_id,
+                    training_categories=sorted(v.category for v in self.stage.categories),
                     new_categories=self.stage.new_categories, recurring_categories=self.stage.recurring_categories,
                     absent_categories=self.stage.absent_categories, seen_before=self.stage.seen_before,
                     preparation_seconds=self.stage_seconds['preparation'])
+        print(json.dumps(dict(event='stage_training_start', stage_id=self.stage.stage_id,
+            **stage_context(self.stage, len(self.stream.stages))), ensure_ascii=False), flush=True)
         self.save()
 
     def commit_stage(self):
@@ -216,27 +220,33 @@ class ProgressiveRun:
             return
         stage_id = self.stream.stages[self.pending_evaluation].stage_id
         report = evaluate_stage(self.model, self.memory, self.stream, stage_id, self.evaluation_config)
+        report['stage_context'] = stage_context(self.stream.stage(stage_id), len(self.stream.stages))
+        readable = build_stage_results(self.evaluations + [report])[-1]
         self.evaluations.append(report)
         self.pending_evaluation = None
         append_event(self.output / 'evaluation.jsonl', dict(event='stage_evaluation', **report))
         self._event('stage_evaluated', stage_id=stage_id)
         self.save()
+        self.write_evaluation_summary()
+        print(format_stage_result(readable), flush=True)
 
     def write_evaluation_summary(self):
         if self.settings['evaluate']:
             from reid.utils.progressive_checkpoint import atomic_json
             atomic_json(dict(stages=self.evaluations, lifelong=lifelong_summary(self.evaluations)),
                         self.output / 'evaluation_summary.json')
+            write_stage_results(self.evaluations, self.output)
 
     def run(self, max_updates=None, checkpoint_every=1, max_stages=None):
         for name, value in (('checkpoint_every', checkpoint_every), ('max_updates', max_updates), ('max_stages', max_stages)):
             if value is not None and (type(value) is not int or value <= 0):
                 raise ValueError('{} must be positive'.format(name))
         start_updates, start_stage = self.total_updates, self.stage_index
+        # Restore any missing/stale derived reports from authoritative history.
+        self.write_evaluation_summary()
         while self.phase != 'complete' or self.pending_evaluation is not None:
             if self.pending_evaluation is not None:
                 self.evaluate_pending_stage()
-                self.write_evaluation_summary()
                 if self.phase == 'complete':
                     break
             if self.phase == 'between_stages':
@@ -258,7 +268,6 @@ class ProgressiveRun:
             # Last optimizer update was durably saved before changing ECPM.
             self.commit_stage()
             self.evaluate_pending_stage()
-            self.write_evaluation_summary()
             if max_stages is not None and self.stage_index - start_stage >= max_stages:
                 return self.status()
         self.write_evaluation_summary()

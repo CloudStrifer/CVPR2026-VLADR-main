@@ -485,3 +485,5 @@ oracle 宏平均 mAP 约 54.0777，与正式路由 54.0718 接近，说明本次
 | 关闭 PGCA 是否就移除 ECPM 和所有 Adapter？ | 不是，off + default 只关闭 PGCA 的两个分支，基础结构和 ECPM 仍保留。 |
 
 训练和消融命令的完整操作说明见 [Ubuntu 训练命令手册](E:/Multi_modal_Code/CVPR2026-VLADR-main/docs/ubuntu_training_commands_zh.md)。
+
+每阶段的训练类别、累计已见类别、mAP、R1 与旧类别遗忘输出，见 [逐阶段结果使用说明](stage_reporting_usage_zh.md)。其中 `stage_results.md` 使用旧类别平均遗忘，新类别记为不适用；原始 `lifelong` 字段保持原来的统计口径。
