@@ -25,7 +25,8 @@ def memory_summaries(memory, mode='ecpm'):
     check_summary(mode)
     if mode == 'ecpm':
         return memory.snapshot()
-    return identity_mean_summaries(memory.state_dict()['identity_memory']['rows'])
+    rows = memory.state_dict()['identity_memory']['rows']
+    return identity_mean_summaries(memory.summary_rows(rows, memory.processed_stages))
 
 
 def control_view(memory, candidate, mode='ecpm'):
@@ -34,8 +35,9 @@ def control_view(memory, candidate, mode='ecpm'):
     if mode == 'ecpm':
         return copy.deepcopy(candidate)
     old_rows = memory.state_dict()['identity_memory']['rows']
-    old = identity_mean_summaries(old_rows)
-    all_new = identity_mean_summaries(old_rows + candidate['rows'])
+    old = identity_mean_summaries(memory.summary_rows(old_rows, memory.processed_stages))
+    all_new = identity_mean_summaries(memory.summary_rows(
+        old_rows + candidate['rows'], memory.processed_stages + (candidate['stage_id'],)))
     updates = {c: all_new[c] for c in candidate['category_updates']}
     return dict(old_categories=old, category_updates=updates,
                 drifts={c: prototype_drift(old[c]['category_prototype'], v['category_prototype'])

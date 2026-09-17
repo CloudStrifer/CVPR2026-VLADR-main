@@ -18,7 +18,7 @@ from reid.memory.prototype_views import identity_mean_summaries, control_view
 from reid.utils.progressive_checkpoint import capture_rng
 from train_category_progressive import ProgressiveRun
 from tools.evaluate_category_progressive import main as evaluate_checkpoint
-from tools.run_category_ablations import ABLATIONS, run_suite
+from tools.run_category_ablations import ABLATIONS, DEFAULT_ABLATIONS, run_suite
 from tools.diagnose_pgca_validation import diagnose
 
 
@@ -344,7 +344,7 @@ class ProgressiveEvaluationTests(StreamFixture):
 
     def test_all_ablation_recipes_execute_and_resume(self):
         plan, results = run_suite(self.settings, self.base / 'suite', execute=True, model_factory=lambda **kw: tiny_model())
-        self.assertEqual(set(results), set(ABLATIONS))
+        self.assertEqual(set(results), set(DEFAULT_ABLATIONS))
         self.assertEqual(plan['experiments']['global_only_initialization']['alpha'], 1)
         self.assertEqual(plan['experiments']['mean_control_only']['control_summary'], 'identity_mean')
         _, restored = run_suite(self.settings, self.base / 'suite', execute=True, model_factory=lambda **kw: tiny_model())

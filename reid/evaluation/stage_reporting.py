@@ -74,6 +74,9 @@ def build_stage_results(history):
                       seen_categories=sorted(seen), stage_context=context, retrieval={},
                       routing_accuracy=report['routing']['accuracy'],
                       forgetting_unit='percentage_points', new_category_forgetting=None)
+        if 'module_switches' in report:
+            result['module_switches'] = copy.deepcopy(report['module_switches'])
+            result['effective_pgca'] = copy.deepcopy(report['effective_pgca'])
         for scope, modes in report['retrieval'].items():
             result['retrieval'][scope] = {}
             for mode in ('prototype', 'oracle'):
@@ -131,6 +134,9 @@ def format_stage_result(result, include_oracle=False):
              '- 已见但本阶段未训练：' + names(context['absent_categories']),
              '- 累计已见／本次评估类别：' + names(result['seen_categories']),
              '- 评估集：{}；类别路由准确率：{}%。'.format(result['split'], number(result['routing_accuracy'])), '']
+    if 'module_switches' in result:
+        lines += ['- 模块开关：' + ', '.join(k + '=' + v for k, v in result['module_switches'].items()),
+                  '- PGCA 实际模式：' + ', '.join(k + '=' + v for k, v in result['effective_pgca'].items()), '']
     for scope, modes in result['retrieval'].items():
         for mode in (('prototype', 'oracle') if include_oracle else ('prototype',)):
             entry = modes[mode]

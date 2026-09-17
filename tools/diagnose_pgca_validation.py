@@ -71,6 +71,12 @@ def diagnose(run_dir, output, kind='sources', weights=(0., .1, 1., 10.), device=
                               summary=settings.get('control_summary', 'ecpm'), seed=settings['seed'])
         consistency = dict(mode=settings['consistency'], lambda_con=settings['lambda_con'], gamma=settings['gamma'],
                            summary=settings.get('control_summary', 'ecpm'))
+        # Respect the other branch's module switch. The requested diagnostic
+        # intentionally sweeps/re-enables its own target branch below.
+        if settings.get('emerging_transfer', 'on') == 'off':
+            initialization['mode'] = 'default'
+        if settings.get('recurring_adaptation', 'on') == 'off':
+            consistency['mode'] = 'off'
         (initialization if kind == 'sources' else consistency).update(variant)
         # Every variant starts with identical reference, historical adapters,
         # current candidate, sampler seeds, augmentation and classifier RNG.

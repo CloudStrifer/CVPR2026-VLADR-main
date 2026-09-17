@@ -28,14 +28,39 @@ def _same(a, b):
 
 
 class ECPMMemory(IdentityPrototypeMemory):
-    def __init__(self, model, stream, clustering=FinchConfig()):
+    def __init__(self, model, stream, clustering=FinchConfig(), *,
+                 category_clustering=True, prototype_evolution=True):
         super().__init__(model, stream)
         if not isinstance(clustering, FinchConfig):
             raise TypeError('clustering must be FinchConfig')
         self.clustering = clustering
-        self._runtime = finch_runtime()
+        if type(category_clustering) is not bool or type(prototype_evolution) is not bool:
+            raise ValueError('ECPM module switches must be boolean')
+        self.category_clustering = category_clustering
+        self.prototype_evolution = prototype_evolution
+        self._runtime = finch_runtime() if category_clustering else None
         self._category_memory = {}
         self._last_transition = None
+
+    @property
+    def module_switches(self):
+        return dict(category_clustering=self.category_clustering, prototype_evolution=self.prototype_evolution)
+
+    def summary_rows(self, rows, processed):
+        """Select prototype inputs; retain the full identity ledger for auditing.
+
+        Evolution off uses each category's most recent arrival stage, including
+        its last available stage when that category is absent from this stage.
+        """
+        if self.prototype_evolution:
+            return rows
+        order = {s: i for i, s in enumerate(processed)}
+        latest = {}
+        for row in rows:
+            c, s = row['identity_key'][0], row['first_stage']
+            if c not in latest or order[s] > order[latest[c]]:
+                latest[c] = s
+        return [r for r in rows if r['first_stage'] == latest[r['identity_key'][0]]]
 
     def snapshot(self):
         """Independent copies of all committed historical category modes/centers."""
@@ -56,21 +81,26 @@ class ECPMMemory(IdentityPrototypeMemory):
         stage_id = processed[-1]
         current = sorted({r['identity_key'][0] for r in identity_candidate['rows']})
         updates, drifts = {}, {}
+        summary_rows = self.summary_rows(rows, processed)
         for category in current:
-            updates[category] = build_category_modes(
-                [r for r in rows if r['identity_key'][0] == category], stage_id, self.clustering)
+            inputs = [r for r in summary_rows if r['identity_key'][0] == category]
+            # Preserve the original full-method call path and numerical order.
+            updates[category] = (build_category_modes(inputs, stage_id, self.clustering)
+                if self.category_clustering else build_category_modes(
+                    inputs, stage_id, self.clustering, category_clustering=False))
             drifts[category] = (prototype_drift(old[category]['category_prototype'],
                                               updates[category]['category_prototype']) if category in old else None)
         return dict(binding=copy.deepcopy(identity_candidate['binding']),
                     base_stages=identity_candidate['base_stages'], stage_id=stage_id,
                     rows=copy.deepcopy(identity_candidate['rows']), old_categories=old,
                     category_updates=updates, drifts=drifts, clustering=asdict(self.clustering),
-                    runtime=copy.deepcopy(self._runtime))
+                    runtime=copy.deepcopy(self._runtime), module_switches=self.module_switches)
 
     def _validate_categories(self, categories, rows, processed):
         expected = {r['identity_key'][0] for r in rows}
         if set(categories) != expected:
             raise ValueError('category memory coverage mismatch')
+        rows = self.summary_rows(rows, processed)
         for category, memory in categories.items():
             if set(memory) != {'identity_keys', 'labels', 'mode_prototypes', 'category_prototype',
                                'cluster_sizes', 'last_updated_stage', 'clustering'}:
@@ -93,6 +123,10 @@ class ECPMMemory(IdentityPrototypeMemory):
             fixed = dict(runtime=self._runtime, algorithm='FINCH', partition=0, distance='cosine',
                          neighbors='exact_chunked', tie_break='first_identity_key', chunk_size=self.clustering.chunk_size,
                          singleton=(n == 1), distance_block_bytes=0 if n == 1 else min(n, self.clustering.chunk_size) * n * 4)
+            if not self.category_clustering:
+                fixed = dict(algorithm='identity_mean', distance_block_bytes=0)
+                if not torch.equal(memory['labels'], torch.zeros(n, dtype=torch.long)):
+                    raise ValueError('clustering off requires exactly one identity-mean prototype')
             if set(details) != set(fixed) | {'clustering_seconds'} or any(details[k] != v for k, v in fixed.items()):
                 raise ValueError('incompatible FINCH metadata')
             seconds = details['clustering_seconds']
@@ -114,6 +148,8 @@ class ECPMMemory(IdentityPrototypeMemory):
 
     def _validated_mode_stage(self, prepared):
         rows, processed = self._validated_stage_rows(prepared)
+        if prepared.get('module_switches', dict(category_clustering=True, prototype_evolution=True)) != self.module_switches:
+            raise ValueError('ECPM module switches differ from candidate')
         if prepared['clustering'] != asdict(self.clustering) or prepared['runtime'] != self._runtime:
             raise ValueError('FINCH configuration/runtime mismatch')
         if not _same(prepared['old_categories'], self._category_memory):
@@ -148,6 +184,7 @@ class ECPMMemory(IdentityPrototypeMemory):
     def summary(self):
         report = super().summary()
         report['clustering_config'] = asdict(self.clustering)
+        report['module_switches'] = self.module_switches
         report['finch_runtime'] = copy.deepcopy(self._runtime)
         report['category_modes'] = {c: dict(identities=len(m['identity_keys']), modes=len(m['cluster_sizes']),
             cluster_sizes=m['cluster_sizes'].tolist(), last_updated_stage=m['last_updated_stage'],
@@ -173,14 +210,18 @@ class ECPMMemory(IdentityPrototypeMemory):
     def state_dict(self):
         return copy.deepcopy(dict(kind='ecpm_mode_memory', schema_version=1,
             identity_memory=super().state_dict(), clustering=asdict(self.clustering), runtime=self._runtime,
-            category_memory=self._category_memory, last_transition=self._last_transition))
+            category_memory=self._category_memory, last_transition=self._last_transition,
+            module_switches=self.module_switches))
 
     @classmethod
     def from_state_dict(cls, state, model, stream):
         if state.get('kind') != 'ecpm_mode_memory' or state.get('schema_version') != 1:
             raise ValueError('expected complete ECPM mode checkpoint; upgrade identity-only memory explicitly')
         identity = IdentityPrototypeMemory.from_state_dict(state['identity_memory'], model, stream)
-        memory = cls(model, stream, FinchConfig(**state['clustering']))
+        switches = state.get('module_switches', dict(category_clustering=True, prototype_evolution=True))
+        if not isinstance(switches, dict) or set(switches) != {'category_clustering', 'prototype_evolution'}:
+            raise ValueError('invalid ECPM module switch metadata')
+        memory = cls(model, stream, FinchConfig(**state['clustering']), **switches)
         if state['runtime'] != memory._runtime:
             raise ValueError('FINCH runtime differs; restore the recorded dependency versions')
         categories = copy.deepcopy(state['category_memory'])

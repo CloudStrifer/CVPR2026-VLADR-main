@@ -4,7 +4,7 @@ import argparse
 import json
 import random
 import time
-from dataclasses import asdict
+from dataclasses import asdict, replace
 from pathlib import Path
 
 import numpy as np
@@ -30,7 +30,10 @@ DEFAULTS = dict(device='cpu', reference_checkpoint=None, epochs=10, iterations_p
     amp=False, max_grad_norm=None, consistency='drift', lambda_con=1., gamma=1.,
     init_mode='similarity', alpha=.5, delta=.5, finch_chunk_size=256, control_summary='ecpm',
     transfer_source=None, evaluate=False, eval_split='test', eval_gallery='per_dataset',
-    routing_summary='ecpm', beta=.5, eval_batch_size=128)
+    routing_summary='ecpm', beta=.5, eval_batch_size=128,
+    category_clustering='on', prototype_evolution='on', recurring_adaptation='on', emerging_transfer='on')
+
+MODULE_SWITCHES = ('category_clustering', 'prototype_evolution', 'recurring_adaptation', 'emerging_transfer')
 
 
 class ProgressiveRun:
@@ -43,12 +46,19 @@ class ProgressiveRun:
             if saved.get('kind') != 'ecpm_pgca_continuous' or saved.get('schema_version') != 1:
                 raise ValueError('expected step-8 continuous checkpoint')
             self.settings = dict(saved['settings'])
+            for key in MODULE_SWITCHES:
+                self.settings.setdefault(key, DEFAULTS[key])
             for key, value in (settings or {}).items():
                 if self.settings.get(key) != value:
                     raise ValueError('resume setting changed: {}'.format(key))
         else:
             self.settings = dict(DEFAULTS, **(settings or {}))
         args = self.settings
+        for key in MODULE_SWITCHES:
+            if args[key] not in ('on', 'off'):
+                raise ValueError('{} must be on or off'.format(key))
+        self.module_switches = {key: args[key] for key in MODULE_SWITCHES}
+        memory_switches = {key: args[key] == 'on' for key in ('category_clustering', 'prototype_evolution')}
         if args['workers'] != 0:
             raise ValueError('exact resume requires --workers 0 (no asynchronous prefetch)')
         for key in ('batch_size', 'num_instances', 'prototype_batch_size', 'finch_chunk_size'):
@@ -60,6 +70,11 @@ class ProgressiveRun:
         self.con = PGCAConsistencyConfig(args['consistency'], args['lambda_con'], args['gamma'], args['control_summary'])
         self.init = PGCATransferConfig(args['init_mode'], args['alpha'], args['delta'], args['control_summary'],
                                        args['seed'], args['transfer_source'])
+        # Module-off overrides the branch mode; on preserves all legacy knobs.
+        if args['recurring_adaptation'] == 'off':
+            self.con = replace(self.con, mode='off')
+        if args['emerging_transfer'] == 'off':
+            self.init = replace(self.init, mode='default')
         self.evaluation_config = EvaluationConfig(args['eval_split'], args['eval_gallery'], args['beta'],
                                                    args['routing_summary'], args['eval_batch_size'])
         self.stream = load_category_stream(args['stream_config'])
@@ -88,11 +103,14 @@ class ProgressiveRun:
             self.reference = self.model.export_checkpoint()
             atomic_save(self.reference, self.output / 'reference.pt')
             self.reference_sha256 = file_digest(self.output / 'reference.pt')
-            self.memory = ECPMMemory(self.model, self.stream, FinchConfig(args['finch_chunk_size']))
+            self.memory = ECPMMemory(self.model, self.stream, FinchConfig(args['finch_chunk_size']), **memory_switches)
             self.stage_index, self.total_updates, self.phase, self.reports = 0, 0, 'between_stages', []
             (self.output / 'run_config.json').write_text(json.dumps(dict(settings=args,
-                stream_fingerprint=self.stream.fingerprint, runtime=self.runtime), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-            self._event('run_start')
+                stream_fingerprint=self.stream.fingerprint, runtime=self.runtime,
+                module_switches=self.module_switches,
+                effective_pgca=dict(consistency=asdict(self.con), initialization=asdict(self.init))),
+                ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+            self._event('run_start', module_switches=self.module_switches)
             self.save()
         else:
             if saved['stream_fingerprint'] != self.stream.fingerprint:
@@ -119,6 +137,8 @@ class ProgressiveRun:
                 raise ValueError('ECPM commit cursor differs from training cursor')
             if self.memory.clustering != FinchConfig(args['finch_chunk_size']):
                 raise ValueError('clustering config differs from checkpoint')
+            if self.memory.module_switches != memory_switches:
+                raise ValueError('ECPM module switches differ from run config')
             if self.phase == 'training':
                 self.candidate = saved['candidate']
                 self.trainer = ResumableCategoryTrainer.from_state_dict(saved['trainer'], self.reference,
@@ -188,11 +208,14 @@ class ProgressiveRun:
         self.phase = 'training'
         self.stage_seconds = dict(preparation=time.perf_counter() - started, optimizer_updates=0.)
         self._event('stage_prepared', stage_id=self.stage.stage_id,
+                    module_switches=self.module_switches,
                     training_categories=sorted(v.category for v in self.stage.categories),
                     new_categories=self.stage.new_categories, recurring_categories=self.stage.recurring_categories,
                     absent_categories=self.stage.absent_categories, seen_before=self.stage.seen_before,
                     preparation_seconds=self.stage_seconds['preparation'])
         print(json.dumps(dict(event='stage_training_start', stage_id=self.stage.stage_id,
+            module_switches=self.module_switches,
+            effective_consistency=self.con.mode, effective_initialization=self.init.mode,
             **stage_context(self.stage, len(self.stream.stages))), ensure_ascii=False), flush=True)
         self.save()
 
@@ -221,6 +244,8 @@ class ProgressiveRun:
         stage_id = self.stream.stages[self.pending_evaluation].stage_id
         report = evaluate_stage(self.model, self.memory, self.stream, stage_id, self.evaluation_config)
         report['stage_context'] = stage_context(self.stream.stage(stage_id), len(self.stream.stages))
+        report['module_switches'] = dict(self.module_switches)
+        report['effective_pgca'] = dict(consistency=self.con.mode, initialization=self.init.mode)
         readable = build_stage_results(self.evaluations + [report])[-1]
         self.evaluations.append(report)
         self.pending_evaluation = None
@@ -289,7 +314,9 @@ def main(argv=None, model_factory=build_category_model):
     parser.add_argument('--stream-config', default=argparse.SUPPRESS)
     for key, default in DEFAULTS.items():
         kwargs = dict(default=argparse.SUPPRESS)
-        if isinstance(default, bool):
+        if key in MODULE_SWITCHES:
+            kwargs.update(choices=('on', 'off'), help='module switch; default on; off overrides its legacy branch mode')
+        elif isinstance(default, bool):
             kwargs['action'] = 'store_true'
         elif key == 'max_grad_norm':
             kwargs['type'] = float

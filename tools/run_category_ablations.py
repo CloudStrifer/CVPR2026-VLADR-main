@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from train_category_progressive import DEFAULTS, ProgressiveRun
+from train_category_progressive import DEFAULTS, MODULE_SWITCHES, ProgressiveRun
 from reid.evaluation.category_progressive import lifelong_summary
 from reid.models.category_adapter_bank import build_category_model
 from reid.utils.progressive_checkpoint import atomic_json
@@ -27,15 +27,25 @@ ABLATIONS = {
     'mean_control_and_routing': dict(control_summary='identity_mean', routing_summary='identity_mean'),
 }
 
+# Keep the existing default nine-experiment suite unchanged. Select these
+# explicit names with --experiments for the four requested module ablations.
+DEFAULT_ABLATIONS = tuple(ABLATIONS)
+ABLATIONS.update({
+    'no_category_clustering': dict(category_clustering='off'),
+    'no_prototype_evolution': dict(prototype_evolution='off'),
+    'no_recurring_adaptation': dict(recurring_adaptation='off'),
+    'no_emerging_transfer': dict(emerging_transfer='off'),
+})
+
 
 def run_suite(base, output, names=None, execute=False, model_factory=build_category_model):
-    names = list(ABLATIONS) if names is None else list(names)
+    names = list(DEFAULT_ABLATIONS) if names is None else list(names)
     if not names or len(names) != len(set(names)) or set(names) - set(ABLATIONS):
         raise ValueError('unknown or duplicate ablation name')
     if set(base) - (set(DEFAULTS) | {'stream_config'}):
         raise ValueError('base config contains unknown training options')
     if any(base.get(k, DEFAULTS[k]) != DEFAULTS[k] for k in
-           ('consistency', 'init_mode', 'control_summary', 'routing_summary', 'transfer_source')):
+           ('consistency', 'init_mode', 'control_summary', 'routing_summary', 'transfer_source') + MODULE_SWITCHES):
         raise ValueError('base config must use full-method defaults; ablations apply their own overrides')
     base = dict(base, stream_config=str(Path(base['stream_config']).resolve()), evaluate=True)
     output = Path(output).resolve()

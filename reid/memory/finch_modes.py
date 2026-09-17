@@ -116,7 +116,7 @@ def finch_first_partition(vectors, config=FinchConfig()):
                         distance_block_bytes=0 if n == 1 else min(n, config.chunk_size) * n * 4)
 
 
-def build_category_modes(rows, stage_id, config=FinchConfig()):
+def build_category_modes(rows, stage_id, config=FinchConfig(), *, category_clustering=True):
     rows = sorted(rows, key=lambda row: row['identity_key'])
     if not rows or len({row['identity_key'][0] for row in rows}) != 1:
         raise ValueError('modes require one nonempty category')
@@ -124,7 +124,12 @@ def build_category_modes(rows, stage_id, config=FinchConfig()):
     if len(set(keys)) != len(keys):
         raise ValueError('duplicate identity in mode memory')
     vectors = torch.stack([row['vector'] for row in rows])
-    labels, details = finch_first_partition(vectors, config)
+    if category_clustering:
+        labels, details = finch_first_partition(vectors, config)
+    else:
+        # A single identity-mean prototype; no FINCH import or distance matrix.
+        labels = torch.zeros(len(rows), dtype=torch.long)
+        details = dict(algorithm='identity_mean', clustering_seconds=0., distance_block_bytes=0)
     try:
         modes, center, sizes = aggregate_modes(vectors, labels)
     except FloatingPointError as error:
