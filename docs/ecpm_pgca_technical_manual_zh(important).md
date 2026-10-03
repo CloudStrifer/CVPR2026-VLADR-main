@@ -486,4 +486,6 @@ oracle 宏平均 mAP 约 54.0777，与正式路由 54.0718 接近，说明本次
 
 训练和消融命令的完整操作说明见 [Ubuntu 训练命令手册](E:/Multi_modal_Code/CVPR2026-VLADR-main/docs/ubuntu_training_commands_zh.md)。
 
+本手册的模块公式描述默认全开方法。新增四个独立开关的关闭行为、命令和生效记录见 [四项模块消融说明](module_ablation_switches_zh.md)：关闭聚类使用单中心；关闭累计演化使用最近阶段身份摘要；PGCA 两个开关分别关闭蒸馏和迁移初始化。原有固定权重、随机来源及使用端均值视图对照仍保留。
+
 每阶段的训练类别、累计已见类别、mAP、R1 与旧类别遗忘输出，见 [逐阶段结果使用说明](stage_reporting_usage_zh.md)。其中 `stage_results.md` 使用旧类别平均遗忘，新类别记为不适用；原始 `lifelong` 字段保持原来的统计口径。

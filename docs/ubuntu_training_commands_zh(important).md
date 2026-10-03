@@ -521,6 +521,8 @@ python tools/diagnose_pgca_validation.py \
 
 逐阶段输出、遗忘口径和历史 JSON 转换命令见 [逐阶段结果使用说明](stage_reporting_usage_zh.md)。新代码在每阶段评估完成后立即打印并保存结果，仍需开启 `--evaluate`。本次修改改变源码指纹，旧版本训练不要直接跨版本恢复；已完成结果可用转换工具整理，无需重新训练。
 
+四个独立模块消融开关及匹配本手册预算的命令见 [ECPM / PGCA 四项消融说明](module_ablation_switches_zh.md)。四项默认开启，原完整命令不变；关闭时分别追加 `--category-clustering off`、`--prototype-evolution off`、`--recurring-adaptation off` 或 `--emerging-transfer off`，各组使用独立输出目录。
+
 常见处理：
 
 - **每类别身份数少于 P：** 新实验减小训练 B 或调整 K，使 B/K 不超过任何阶段类别的身份数，同时保持 P≥2、K≥2。
